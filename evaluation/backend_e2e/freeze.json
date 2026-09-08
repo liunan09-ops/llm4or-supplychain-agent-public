@@ -1,0 +1,259 @@
+{
+  "created_at": "2026-09-08T14:03:41.336309+00:00",
+  "source": {
+    "source_sha256": "122e36667436c9cdd8c4b74e8f9471e91923787c71a5fb7b70ebb30645b095f9",
+    "source_files": {
+      "__init__.py": "2a08687ccbb9a50511edf48b66eaece13d7dcd6147e03f7746080a10ddda31a8",
+      "api.py": "99e279356fde56320657be3357756a92e024c7b7c121c07ffea6a21c8b4bd106",
+      "audit.py": "627e5ecd124acfd79bedccfa06177299c748fd474da67fade8d0e01f6ba46c81",
+      "cli.py": "46302ef912f1bf52511c6b9d86e293709308182122bd436f0bb1ecec6ccad773",
+      "data.py": "80bdb714028ca46f889bf3d394bf4d2b9d7550b6911597adfe96eb675df55f87",
+      "evaluation.py": "f7a4ea53211cd67b2ff30bee05cf3a7d10828ac0ba7a374ff1c8d5dee1209241",
+      "language.py": "439b8479f8a0045934f5b4741fa29ab9c33008797a95ac7d59ee3952f57b1d14",
+      "optimizer.py": "af2cb53b58f5e02af88706859c38f4086087787ea6bfa712db5bb4d9dada0cf6",
+      "schemas.py": "fb173ed1828f24cdd652ca7395fedbdaf0cbc2155a5573e85bef0dbcf707ef2c",
+      "service.py": "06e66772737ca907f861e01032d610b31a2707193b42903d9f95b76031a6ee43",
+      "v2/__init__.py": "53f3c82ba05beba7676e6199785b286f7a705789bfb68d15fbc0525afd208c8d",
+      "v2/agent.py": "3df315157903853820b155462b553d668815ef382866abda66a7b7118ebc2c75",
+      "v2/api.py": "f484be77b8f6c4ed93077e8e371ac5e228976be21c1753a72e0fb9920a16bea0",
+      "v2/contracts.py": "f89771ec428fffe0665bf84a32bbd64c813a106c0533f2f2d54078ffd8d6af8d",
+      "v2/database.py": "c91b7533bbce0ae39dc350602b0edf6befdca295f2389c459b51da320d8564dc",
+      "v2/embeddings.py": "e0dd1f5dd8ef62a7c77255ca34ada51e3cfb7ef0a5f49e2a8f012de56409c333",
+      "v2/evaluation.py": "1160bdfcb7a86c2e7827367ed2706f3ccb26cefebffb97def1fd75172a192487",
+      "v2/model.py": "ba2d8de23eb30ac4a15198c2c6ab035c3be142035cb28deadaa11d357f156215",
+      "v2/policies/approval.md": "1ddd395308051e42523d35aef1e8165e94244d5df8d8a8ab93469bc384273a5e",
+      "v2/policies/budget.md": "167b16d640a28fa9501fc895a0741b88d0fd6a99aa3fb2a390dce983e018435a",
+      "v2/policies/emergency.md": "8bc18c55a40df063ddebd471067c96ffa0e395ddb09b2afda04fe03df98481c9",
+      "v2/policies/lead.md": "2ee85526ad3b523640a0f8be81d781c9929d3b34c102ae7ab86c046da9123864",
+      "v2/policies/moq.md": "ade3893fc3c2b51ad857e01f23ba94cf19ed76580f771eddd78ed2fe049efd41",
+      "v2/policies/service.md": "3b6630e47f24c79a00e0d21d3123f45be0b752b2fd1c7a9c80295591914b1f77",
+      "v2/policies/supplier.md": "e65d74c3dc0a44430ff376372cfac46e09980cbaf427014ecbc98b985ef5244f",
+      "v2/retrieval.py": "94ece7a0a5e2c7c72137e291170e76ec8eaec1204c32fa32d1599b5c63f243ae",
+      "v2/semantic_evaluation.py": "2b191d9d47f87b2021813b1f6bd5c4a3948666267fff5631bf84982abbe758ec",
+      "v2/semantic_retrieval.py": "dfd83227912bf80c2adb63c3f85334681ebcbfd34d2a5b34f531dcbf36c6c5ed",
+      "v2/tools.py": "8cb37c573197fc8af197cfe5749e0daf9e447dc828eea7864192eb7695e34a26",
+      "v2/trace.py": "de79335adbb60686042c01417554dcb3ed6950202982705f1b18995f2dc883bb"
+    },
+    "python": "3.12.14",
+    "dependencies": {
+      "scipy": "1.18.1",
+      "pydantic": "2.13.5",
+      "fastapi": "0.141.1",
+      "faiss-cpu": "1.15.0",
+      "numpy": "2.5.3",
+      "httpx": "0.28.1"
+    }
+  },
+  "checkpoint": "f85e98b078061414b95027612f00c5ebf3b3d92c",
+  "runner_sha256": "2fffb77d20d90f00cda32049cfc43c62a2ff10216f87cc677c9b383d7629f1ce",
+  "dataset_sha256": "40d5a5a6a943158931fa9d2ccf8d38ab52398e31dad0acd2710a996962abbf1a",
+  "model": "deepseek-v4-flash",
+  "base_url": "https://api.deepseek.com",
+  "temperature": 0,
+  "max_tokens_per_call": 1200,
+  "retrieval": {
+    "lexical": {
+      "embedding": "tfidf-zh-bigram-word-v1",
+      "documents": 7,
+      "chunks": 8,
+      "dimensions": 529,
+      "corpus_sha256": "e4a834f964a64eeeced7e4e88b9a3c63dcba3947f04ed82b19432850e063de04",
+      "sources": {
+        "policies/approval.md": "1ddd395308051e42523d35aef1e8165e94244d5df8d8a8ab93469bc384273a5e",
+        "policies/budget.md": "167b16d640a28fa9501fc895a0741b88d0fd6a99aa3fb2a390dce983e018435a",
+        "policies/emergency.md": "8bc18c55a40df063ddebd471067c96ffa0e395ddb09b2afda04fe03df98481c9",
+        "policies/lead.md": "2ee85526ad3b523640a0f8be81d781c9929d3b34c102ae7ab86c046da9123864",
+        "policies/moq.md": "ade3893fc3c2b51ad857e01f23ba94cf19ed76580f771eddd78ed2fe049efd41",
+        "policies/service.md": "3b6630e47f24c79a00e0d21d3123f45be0b752b2fd1c7a9c80295591914b1f77",
+        "policies/supplier.md": "e65d74c3dc0a44430ff376372cfac46e09980cbaf427014ecbc98b985ef5244f"
+      }
+    },
+    "hybrid": {
+      "embedding": "tfidf + bge / reciprocal-rank-fusion",
+      "documents": 7,
+      "chunks": 8,
+      "dimensions": {
+        "lexical": 529,
+        "semantic": 512
+      },
+      "corpus_sha256": "e4a834f964a64eeeced7e4e88b9a3c63dcba3947f04ed82b19432850e063de04",
+      "sources": {
+        "policies/approval.md": "1ddd395308051e42523d35aef1e8165e94244d5df8d8a8ab93469bc384273a5e",
+        "policies/budget.md": "167b16d640a28fa9501fc895a0741b88d0fd6a99aa3fb2a390dce983e018435a",
+        "policies/emergency.md": "8bc18c55a40df063ddebd471067c96ffa0e395ddb09b2afda04fe03df98481c9",
+        "policies/lead.md": "2ee85526ad3b523640a0f8be81d781c9929d3b34c102ae7ab86c046da9123864",
+        "policies/moq.md": "ade3893fc3c2b51ad857e01f23ba94cf19ed76580f771eddd78ed2fe049efd41",
+        "policies/service.md": "3b6630e47f24c79a00e0d21d3123f45be0b752b2fd1c7a9c80295591914b1f77",
+        "policies/supplier.md": "e65d74c3dc0a44430ff376372cfac46e09980cbaf427014ecbc98b985ef5244f"
+      },
+      "backend": "hybrid",
+      "chunking": {
+        "method": "existing Markdown ## sections; fixed character windows within each section",
+        "max_section_chars": 700,
+        "overlap_chars": 0,
+        "prepend_document_title": true,
+        "shared_with_lexical": true
+      },
+      "fusion": "equal-weight reciprocal rank fusion at chunk level",
+      "rrf_constant": 60,
+      "candidate_k_per_backend": 5,
+      "default_top_k": 3,
+      "components": {
+        "lexical": {
+          "embedding": "tfidf-zh-bigram-word-v1",
+          "documents": 7,
+          "chunks": 8,
+          "dimensions": 529,
+          "corpus_sha256": "e4a834f964a64eeeced7e4e88b9a3c63dcba3947f04ed82b19432850e063de04",
+          "sources": {
+            "policies/approval.md": "1ddd395308051e42523d35aef1e8165e94244d5df8d8a8ab93469bc384273a5e",
+            "policies/budget.md": "167b16d640a28fa9501fc895a0741b88d0fd6a99aa3fb2a390dce983e018435a",
+            "policies/emergency.md": "8bc18c55a40df063ddebd471067c96ffa0e395ddb09b2afda04fe03df98481c9",
+            "policies/lead.md": "2ee85526ad3b523640a0f8be81d781c9929d3b34c102ae7ab86c046da9123864",
+            "policies/moq.md": "ade3893fc3c2b51ad857e01f23ba94cf19ed76580f771eddd78ed2fe049efd41",
+            "policies/service.md": "3b6630e47f24c79a00e0d21d3123f45be0b752b2fd1c7a9c80295591914b1f77",
+            "policies/supplier.md": "e65d74c3dc0a44430ff376372cfac46e09980cbaf427014ecbc98b985ef5244f"
+          }
+        },
+        "semantic": {
+          "backend": "semantic",
+          "embedding": "BAAI/bge-small-zh-v1.5",
+          "encoder": {
+            "model": "BAAI/bge-small-zh-v1.5",
+            "artifact_repo": "Xenova/bge-small-zh-v1.5",
+            "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+            "files": {
+              "onnx/model.onnx": {
+                "size": 94851877,
+                "sha256": "69a0b846f4f116b5e6aabf9546ea6754d02264f3211a13a1bd69b31b8040749a"
+              },
+              "tokenizer.json": {
+                "size": 439125,
+                "sha256": "48cea5d44424912a6fd1ea647bf4fe50b55ab8b1e5879c3275f80e339e8fae26"
+              },
+              "config.json": {
+                "size": 716,
+                "sha256": "d4193ead3a810fd694fa8a31d7fc72fbaebc0668b603e398734bf2f6538ff42f"
+              }
+            },
+            "dimensions": 512,
+            "precision": "FP32 (not quantized)",
+            "pooling": "last_hidden_state[:, 0, :] (CLS)",
+            "normalization": "L2",
+            "query_instruction": "为这个句子生成表示以用于检索相关文章：",
+            "document_instruction": "",
+            "max_sequence_tokens": 512,
+            "truncation": "right, including special tokens and query instruction",
+            "batch_size": 8,
+            "runtime": "onnxruntime / CPUExecutionProvider",
+            "intra_op_threads": 1,
+            "inter_op_threads": 1,
+            "network_during_inference": false
+          },
+          "documents": 7,
+          "chunks": 8,
+          "dimensions": 512,
+          "chunking": {
+            "method": "existing Markdown ## sections; fixed character windows within each section",
+            "max_section_chars": 700,
+            "overlap_chars": 0,
+            "prepend_document_title": true,
+            "shared_with_lexical": true
+          },
+          "similarity": "cosine (L2-normalized inner product)",
+          "index": "FAISS IndexFlatIP",
+          "default_top_k": 3,
+          "allowed_top_k": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "score_threshold": null,
+          "abstention": "not calibrated; nearest neighbors are not proof of relevance",
+          "corpus_sha256": "e4a834f964a64eeeced7e4e88b9a3c63dcba3947f04ed82b19432850e063de04",
+          "sources": {
+            "policies/approval.md": "1ddd395308051e42523d35aef1e8165e94244d5df8d8a8ab93469bc384273a5e",
+            "policies/budget.md": "167b16d640a28fa9501fc895a0741b88d0fd6a99aa3fb2a390dce983e018435a",
+            "policies/emergency.md": "8bc18c55a40df063ddebd471067c96ffa0e395ddb09b2afda04fe03df98481c9",
+            "policies/lead.md": "2ee85526ad3b523640a0f8be81d781c9929d3b34c102ae7ab86c046da9123864",
+            "policies/moq.md": "ade3893fc3c2b51ad857e01f23ba94cf19ed76580f771eddd78ed2fe049efd41",
+            "policies/service.md": "3b6630e47f24c79a00e0d21d3123f45be0b752b2fd1c7a9c80295591914b1f77",
+            "policies/supplier.md": "e65d74c3dc0a44430ff376372cfac46e09980cbaf427014ecbc98b985ef5244f"
+          }
+        }
+      }
+    },
+    "semantic": {
+      "backend": "semantic",
+      "embedding": "BAAI/bge-small-zh-v1.5",
+      "encoder": {
+        "model": "BAAI/bge-small-zh-v1.5",
+        "artifact_repo": "Xenova/bge-small-zh-v1.5",
+        "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+        "files": {
+          "onnx/model.onnx": {
+            "size": 94851877,
+            "sha256": "69a0b846f4f116b5e6aabf9546ea6754d02264f3211a13a1bd69b31b8040749a"
+          },
+          "tokenizer.json": {
+            "size": 439125,
+            "sha256": "48cea5d44424912a6fd1ea647bf4fe50b55ab8b1e5879c3275f80e339e8fae26"
+          },
+          "config.json": {
+            "size": 716,
+            "sha256": "d4193ead3a810fd694fa8a31d7fc72fbaebc0668b603e398734bf2f6538ff42f"
+          }
+        },
+        "dimensions": 512,
+        "precision": "FP32 (not quantized)",
+        "pooling": "last_hidden_state[:, 0, :] (CLS)",
+        "normalization": "L2",
+        "query_instruction": "为这个句子生成表示以用于检索相关文章：",
+        "document_instruction": "",
+        "max_sequence_tokens": 512,
+        "truncation": "right, including special tokens and query instruction",
+        "batch_size": 8,
+        "runtime": "onnxruntime / CPUExecutionProvider",
+        "intra_op_threads": 1,
+        "inter_op_threads": 1,
+        "network_during_inference": false
+      },
+      "documents": 7,
+      "chunks": 8,
+      "dimensions": 512,
+      "chunking": {
+        "method": "existing Markdown ## sections; fixed character windows within each section",
+        "max_section_chars": 700,
+        "overlap_chars": 0,
+        "prepend_document_title": true,
+        "shared_with_lexical": true
+      },
+      "similarity": "cosine (L2-normalized inner product)",
+      "index": "FAISS IndexFlatIP",
+      "default_top_k": 3,
+      "allowed_top_k": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "score_threshold": null,
+      "abstention": "not calibrated; nearest neighbors are not proof of relevance",
+      "corpus_sha256": "e4a834f964a64eeeced7e4e88b9a3c63dcba3947f04ed82b19432850e063de04",
+      "sources": {
+        "policies/approval.md": "1ddd395308051e42523d35aef1e8165e94244d5df8d8a8ab93469bc384273a5e",
+        "policies/budget.md": "167b16d640a28fa9501fc895a0741b88d0fd6a99aa3fb2a390dce983e018435a",
+        "policies/emergency.md": "8bc18c55a40df063ddebd471067c96ffa0e395ddb09b2afda04fe03df98481c9",
+        "policies/lead.md": "2ee85526ad3b523640a0f8be81d781c9929d3b34c102ae7ab86c046da9123864",
+        "policies/moq.md": "ade3893fc3c2b51ad857e01f23ba94cf19ed76580f771eddd78ed2fe049efd41",
+        "policies/service.md": "3b6630e47f24c79a00e0d21d3123f45be0b752b2fd1c7a9c80295591914b1f77",
+        "policies/supplier.md": "e65d74c3dc0a44430ff376372cfac46e09980cbaf427014ecbc98b985ef5244f"
+      }
+    }
+  },
+  "order": "case index modulo 3 rotates lexical, hybrid, semantic; one run per case/backend",
+  "decision_rule": "Prefer higher E2E; ties consider retrieval quality, latency, dependency/resource readiness. No label or prompt tuning."
+}

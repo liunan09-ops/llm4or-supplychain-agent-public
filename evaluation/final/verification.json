@@ -1,0 +1,43 @@
+{
+  "success": true,
+  "tests": {
+    "previous": 308,
+    "added": 5,
+    "total": 313,
+    "passed": 313,
+    "failed": 0,
+    "skipped": 0
+  },
+  "protected_files_unchanged": 92,
+  "freeze_files_verified": 257,
+  "real_llm_responses_rescored": 72,
+  "retrieval_rankings_and_metrics_unchanged": true,
+  "offline_regression": {
+    "all_case_scores_unchanged": true,
+    "rerun_cases": {
+      "v1_rules_dev": 24,
+      "v1_rules_test": 12,
+      "v2_demo_dev": {
+        "cases": 14,
+        "end_to_end_success": {
+          "passed": 14,
+          "total": 14,
+          "rate": 1.0
+        }
+      },
+      "v2_demo_heldout": {
+        "cases": 24,
+        "end_to_end_success": {
+          "passed": 17,
+          "total": 24,
+          "rate": 0.7083333333333334
+        }
+      }
+    },
+    "new_live_llm_calls": 0
+  },
+  "configured_secret_matches": 0,
+  "key_scan_performed": true,
+  "docker_runtime": "blocked_unavailable",
+  "freeze": "PROJECT_FROZEN_FOR_2027_CAMPUS_RECRUITING"
+}

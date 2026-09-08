@@ -1,0 +1,14 @@
+{
+  "tests": {
+    "previous": 308,
+    "added": 5,
+    "total": 313,
+    "passed": 313,
+    "failed": 0,
+    "skipped": 0
+  },
+  "warnings": 2,
+  "real_embedding_integration_tests": 4,
+  "ruff": "passed",
+  "command": "RUN_EMBEDDING_INTEGRATION=1 .venv/bin/python -m pytest --junitxml=evaluation/final/pytest-final.xml"
+}

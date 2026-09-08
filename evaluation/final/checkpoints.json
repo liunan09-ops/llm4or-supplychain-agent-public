@@ -1,0 +1,7 @@
+{
+  "branch": "supplychain-agent-v2",
+  "previous_checkpoint": "ad58e78bcd98b06510bbca6f8f803f96c961e21f",
+  "semantic_checkpoint": "f85e98b078061414b95027612f00c5ebf3b3d92c",
+  "final_commit_message": "feat: finalize supply chain agent v2 for campus recruiting",
+  "final_commit_note": "The commit containing this manifest is the final commit; its SHA cannot be embedded in its own content."
+}

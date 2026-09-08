@@ -1,5 +1,7 @@
 # Semantic Retrieval 阶段验收
 
+> 本文件保留 Semantic checkpoint 的阶段记录（当时默认 lexical、308 tests）。最终发布 API 默认 hybrid、313 tests 和新的真实 E2E 对照见 [最终报告](AGENT_V2_FINAL_REPORT.md) 与 [检索决策](RETRIEVAL_BACKEND_DECISION.md)。
+
 本阶段在 `supplychain-agent-v2` / `a9cd` worktree 增加真实语义检索和可选 RRF hybrid；默认 lexical 保持不变。没有创建新分支、merge、进行 Docker 阶段或修改简历 PDF。原 Core 记录与固定数据不覆盖。
 
 ## 模型与实现

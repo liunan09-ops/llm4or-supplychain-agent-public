@@ -1,0 +1,887 @@
+{
+  "status": "completed",
+  "model": "deepseek-v4-flash",
+  "dataset_sha256": "40d5a5a6a943158931fa9d2ccf8d38ab52398e31dad0acd2710a996962abbf1a",
+  "freeze": "backend_e2e/freeze.json",
+  "freeze_sha256": "3627ac04c04caaff46f71345aaec3c966cb7c1fc5b7ab6b3fc013a1fa16206e0",
+  "inputs_unchanged": true,
+  "runs": {
+    "lexical": {
+      "metrics": {
+        "end_to_end_success": {
+          "passed": 22,
+          "total": 24,
+          "rate": 0.9166666666666666
+        },
+        "intent_correct": {
+          "passed": 23,
+          "total": 24,
+          "rate": 0.9583333333333334
+        },
+        "raw_model_intent_correct": {
+          "passed": 21,
+          "total": 22,
+          "rate": 0.9545454545454546
+        },
+        "tool_selection_correct": {
+          "passed": 23,
+          "total": 24,
+          "rate": 0.9583333333333334
+        },
+        "tool_arguments_correct": {
+          "passed": 21,
+          "total": 24,
+          "rate": 0.875
+        },
+        "retrieval_hit": {
+          "passed": 2,
+          "total": 2,
+          "rate": 1.0
+        },
+        "constraint_pass": {
+          "passed": 5,
+          "total": 5,
+          "rate": 1.0
+        },
+        "clarification_correct": {
+          "passed": 4,
+          "total": 4,
+          "rate": 1.0
+        },
+        "refusal_correct": {
+          "passed": 2,
+          "total": 2,
+          "rate": 1.0
+        },
+        "total_requests": 24,
+        "optimizer_outcomes": {
+          "optimal": 5,
+          "tool_failure": 2,
+          "infeasible": 2
+        },
+        "optimization_feasibility": {
+          "passed": 5,
+          "total": 9,
+          "rate": 0.5555555555555556
+        },
+        "validator_pass_rate": {
+          "passed": 5,
+          "total": 5,
+          "rate": 1.0
+        },
+        "llm_calls": 93,
+        "http_attempts": 93,
+        "llm_calls_per_request": {
+          "p50": 4.0,
+          "max": 8
+        },
+        "latency_ms": {
+          "p50": 3653.9719999999998,
+          "p95": 8060.0871,
+          "total": 97465.482
+        },
+        "known_usage_tokens": {
+          "prompt_tokens": 143379,
+          "completion_tokens": 5682,
+          "total_tokens": 149061
+        },
+        "all_usage_known": true,
+        "estimated_model_cost": null,
+        "cost_note": "No cache-hit/miss usage breakdown and frozen provider price table in the existing client; no reliable monetary estimate.",
+        "diagnostic_counts": {
+          "argument_extraction_or_tool_argument_failure": 3,
+          "routing_failure": 1,
+          "tool_selection_failure": 1,
+          "llm_generation_failure": 1,
+          "expected_clarification": 4,
+          "expected_solver_infeasible": 2,
+          "expected_refusal": 2,
+          "expected_injected_tool_failure": 1
+        },
+        "failures": [
+          {
+            "id": "v2-test-13",
+            "message": "先看所有物料库存，再按预算9800元出补货建议。",
+            "status": "llm_failure",
+            "labels": [
+              "routing_failure",
+              "tool_selection_failure",
+              "argument_extraction_or_tool_argument_failure",
+              "llm_generation_failure"
+            ],
+            "reason": "malformed_intent",
+            "score": {
+              "intent_correct": false,
+              "raw_model_intent_correct": true,
+              "status_correct": false,
+              "tool_selection_correct": false,
+              "tool_arguments_correct": false,
+              "retrieval_hit": null,
+              "constraint_pass": null,
+              "answer_correct": true,
+              "end_to_end_success": false,
+              "actual_tools": [],
+              "expected_tools": [
+                "inventory_query",
+                "policy_retrieval",
+                "replenishment_optimizer",
+                "solution_validator",
+                "supplier_query"
+              ]
+            }
+          },
+          {
+            "id": "v2-test-17",
+            "message": "计划周期7天，控制器不能缺货",
+            "status": "infeasible",
+            "labels": [
+              "argument_extraction_or_tool_argument_failure",
+              "expected_solver_infeasible"
+            ],
+            "reason": "BEARING：现货 40，在途 0，7 天窗口内可用库存 40，原始需求 150。[SQLite snapshot cc18a8ef96f0]\nBELT：现货 15，在途 12，7 天窗口内可用库存 15，原始需求 90。[SQLite snapshot cc18a8ef96f0]\nMOTOR：现货 8，在途 0，7 天窗口内可用库存 8，原始需求 30。[SQLite snapshot cc18a8ef96f0]\nPLC：现货 4，在途 0，7 天窗口内可用库存 4，原始需求 10。[SQLite snapshot cc18a8ef96f0]\nSENSOR：现货 20，在途 5，7 天窗口内可用库存 25，原始需求 65。[SQLite snapshot cc18a8ef96f0]\nBEARING：供应商 SUP-B（approved），单价 16.0，MOQ 30，上限 180，交期 4 天。[SQLite snapshot cc18a8ef96f0]\nBELT：供应商 SUP-B（approved），单价 28.0，MOQ 20，上限 100，交期 5 天。[SQLite snapshot cc18a8ef96f0]\nMOTOR：供应商 SUP-A（approved），单价 220.0，MOQ 5，上限 40，交期 3 天。[SQLite snapshot cc18a8ef96f0]\nPLC：供应商 SUP-C（approved），单价 460.0，MOQ 2，上限 12，交期 10 天。[SQLite snapshot cc18a8ef96f0]\nSENSOR：供应商 SUP-A（approved），单价 65.0，MOQ 10，上限 80，交期 2 天。[SQLite snapshot cc18a8ef96f0]\n[POL-SERVICE:01 · policies/service.md] POL-SERVICE 服务水平要求\n## 服务与保护 SKU\n最低服务水平约束要求每个 SKU 分别达到下限。结果中的总体满足率定义为一减总缺货量除以总需求量，仅用于结果展示；本版本不支持总体满足率硬约束。未指定服务水平时不额外添加下限。用户明确要求保护的 SKU 必须零缺货；数据中的 critical 标签本身不自动触发硬保护。禁止采购的 SKU 可以使用现有库存满足需求；禁止采购与零缺货保护可能同时导致不可行。\n[POL-APPROVAL:02 · policies/approval.md] POL-APPROVAL 采购审批规则\n## 异常处理\n约束不可行时报告阻碍条件，由申请人决定是否提交新的预算或服务要求；不得自动放宽预算、MOQ、服务水平或改写供应商资质。\n[POL-EMERGENCY:01 · policies/emergency.md] POL-EMERGENCY 紧急采购规则\n## 紧急采购不豁免约束\n停线风险、紧急采购或急单不自动豁免预算、供应商资质、MOQ、交期及供货上限。申请人需要给出具体 SKU、数量或服务要求。不支持通过加价自动缩短交期，也不支持未经审批的替代供应商。当前模型不包含加急运输决策。\n[POL-LEAD:01 · policies/lead.md] POL-LEAD 交期与在途规则\n## 计划窗口与在途\n新采购交期超过计划窗口时不可订购；等于窗口时允许订购。在途订单仅统计 in_transit 且预计到货日不超过窗口的数量，已收货 received 不重复加到库存，cancelled 不计入。可用库存等于现货加窗口内在途到货。本版本是单期汇总模型，不保证逐日库存不为负，也不模拟需求在时间上的变化。\n[POL-MOQ:01 · policies/moq.md] POL-MOQ 最小起订量规则\n## MOQ 与供货上限\n每个 SKU 的订购数量必须为非负整数；不采购时数量为零，采购时数量不得低于该 SKU 的最小起订量 MOQ，也不得超过供货上限。MOQ、价格及上限以供应商数据库为准，禁止模型自行编造。起订量不是整箱倍数约束；本版本没有包装倍数字段。\n当前条件不可行，未放宽约束。充分证据：PLC 交期 10 天超过计划期 7 天，现有库存无法满足服务约束。；未自动放松预算、服务水平、保护清单、交期或采购限制。",
+            "score": {
+              "intent_correct": true,
+              "raw_model_intent_correct": true,
+              "status_correct": true,
+              "tool_selection_correct": true,
+              "tool_arguments_correct": false,
+              "retrieval_hit": null,
+              "constraint_pass": null,
+              "answer_correct": true,
+              "end_to_end_success": false,
+              "actual_tools": [
+                "inventory_query",
+                "policy_retrieval",
+                "replenishment_optimizer",
+                "supplier_query"
+              ],
+              "expected_tools": [
+                "inventory_query",
+                "policy_retrieval",
+                "replenishment_optimizer",
+                "supplier_query"
+              ]
+            }
+          }
+        ]
+      },
+      "cases": [
+        {
+          "id": "v2-test-01",
+          "path": "backend_e2e/lexical/v2-test-01.json",
+          "sha256": "b83cec4e423ea32d0fb4031863eb3f859cedf73d0824f7ba7efa6418234725de"
+        },
+        {
+          "id": "v2-test-02",
+          "path": "backend_e2e/lexical/v2-test-02.json",
+          "sha256": "8eee1a46f6aad08261285577471c3a1249d3da6b9e6ec0aeb240e758c42fb43b"
+        },
+        {
+          "id": "v2-test-03",
+          "path": "backend_e2e/lexical/v2-test-03.json",
+          "sha256": "29c443b2483d2a34f364db02f5178ed6db4f107a7e1147833cafc518405734aa"
+        },
+        {
+          "id": "v2-test-04",
+          "path": "backend_e2e/lexical/v2-test-04.json",
+          "sha256": "488c900a395aa6efd0766d0a2a229a44d0f64d347cf57a6f105e8826164da6c8"
+        },
+        {
+          "id": "v2-test-05",
+          "path": "backend_e2e/lexical/v2-test-05.json",
+          "sha256": "c5cf4746c07f231751c889b396beecedde5a2e9834515165b95f7d97a6cf3661"
+        },
+        {
+          "id": "v2-test-06",
+          "path": "backend_e2e/lexical/v2-test-06.json",
+          "sha256": "967375cd92027eb686520ae57d3ff2910abe794f7a31a8d7a4513717eee9f0eb"
+        },
+        {
+          "id": "v2-test-07",
+          "path": "backend_e2e/lexical/v2-test-07.json",
+          "sha256": "f874e001140d7b1b6e650433221aa2bf2319de51d253f49272e03dbe7756c1d1"
+        },
+        {
+          "id": "v2-test-08",
+          "path": "backend_e2e/lexical/v2-test-08.json",
+          "sha256": "3cb3b847287e119bc52181487fe701982d693cdfeeeb5b78e6ff787cb230c521"
+        },
+        {
+          "id": "v2-test-09",
+          "path": "backend_e2e/lexical/v2-test-09.json",
+          "sha256": "b0b165b1620f0ad0ffeca67eed1301696d2869ef1a6c64fc1b6ee5e136a53d81"
+        },
+        {
+          "id": "v2-test-10",
+          "path": "backend_e2e/lexical/v2-test-10.json",
+          "sha256": "6af34367d4d5e5ea919b87e33a97b7ea55f8760b06f74ebbc32ebf7643583999"
+        },
+        {
+          "id": "v2-test-11",
+          "path": "backend_e2e/lexical/v2-test-11.json",
+          "sha256": "3b5dc372e1c52f724be123de8956f97a81c6e83416733551550772b6897b7695"
+        },
+        {
+          "id": "v2-test-12",
+          "path": "backend_e2e/lexical/v2-test-12.json",
+          "sha256": "070b2b360953ba854f326d16b47ec2601ea30a47fc1b9008201026afb12948d0"
+        },
+        {
+          "id": "v2-test-13",
+          "path": "backend_e2e/lexical/v2-test-13.json",
+          "sha256": "f202e86f23c344752ceb709cd45a42574ba1cdd7597376794a09a8dd5a6c3c5b"
+        },
+        {
+          "id": "v2-test-14",
+          "path": "backend_e2e/lexical/v2-test-14.json",
+          "sha256": "6fedc25da2ab540754b049eaec31b8c6fe173da8b19d08729ef63d681f22d8ad"
+        },
+        {
+          "id": "v2-test-15",
+          "path": "backend_e2e/lexical/v2-test-15.json",
+          "sha256": "fdb08ebed6a51d6233e66b3dae40d61c879b75ece7b0b763866d34b0d250960a"
+        },
+        {
+          "id": "v2-test-16",
+          "path": "backend_e2e/lexical/v2-test-16.json",
+          "sha256": "5b269c25d6e534d75b9a388f75650f02c10e2a10cb65d8c23d2c53d08cf83ffa"
+        },
+        {
+          "id": "v2-test-17",
+          "path": "backend_e2e/lexical/v2-test-17.json",
+          "sha256": "2340e1c3ec17a49f0d91036a5a317262fab9e1d0490bce793659305e10e82322"
+        },
+        {
+          "id": "v2-test-18",
+          "path": "backend_e2e/lexical/v2-test-18.json",
+          "sha256": "2f59bdec3c7dd62c233c6a1e8001c12579d699d6f6ca649d7236739d4b897f66"
+        },
+        {
+          "id": "v2-test-19",
+          "path": "backend_e2e/lexical/v2-test-19.json",
+          "sha256": "571c7cab11e209c47f008dd9077fe4ce00704bda5565c9abce8e31fb88851209"
+        },
+        {
+          "id": "v2-test-20",
+          "path": "backend_e2e/lexical/v2-test-20.json",
+          "sha256": "b0e4e919a8f3dd1e1e600be2bb30adc19fb9a5ecd66e5d1030a8beeb5875f122"
+        },
+        {
+          "id": "v2-test-21",
+          "path": "backend_e2e/lexical/v2-test-21.json",
+          "sha256": "9fcd974ef64876123d7321a2826e26aa6a2dbfdf111ac976d3e5f3fb1f078cdc"
+        },
+        {
+          "id": "v2-test-22",
+          "path": "backend_e2e/lexical/v2-test-22.json",
+          "sha256": "b20b2b9262a41d4d929ab4f8796198bf8e9bb474f13669b6e97d8bfa5a99c3d9"
+        },
+        {
+          "id": "v2-test-23",
+          "path": "backend_e2e/lexical/v2-test-23.json",
+          "sha256": "f476044ba1a9adee2765cf1cbfaddfdc2db5306b3f558c358d69c035e431cbd0"
+        },
+        {
+          "id": "v2-test-24",
+          "path": "backend_e2e/lexical/v2-test-24.json",
+          "sha256": "441e4d2a6afa5f61d6ffb8bd138a53dcfe17b4aa47bfbd1b844abc2f0182f044"
+        }
+      ]
+    },
+    "hybrid": {
+      "metrics": {
+        "end_to_end_success": {
+          "passed": 22,
+          "total": 24,
+          "rate": 0.9166666666666666
+        },
+        "intent_correct": {
+          "passed": 24,
+          "total": 24,
+          "rate": 1.0
+        },
+        "raw_model_intent_correct": {
+          "passed": 21,
+          "total": 22,
+          "rate": 0.9545454545454546
+        },
+        "tool_selection_correct": {
+          "passed": 24,
+          "total": 24,
+          "rate": 1.0
+        },
+        "tool_arguments_correct": {
+          "passed": 22,
+          "total": 24,
+          "rate": 0.9166666666666666
+        },
+        "retrieval_hit": {
+          "passed": 2,
+          "total": 2,
+          "rate": 1.0
+        },
+        "constraint_pass": {
+          "passed": 5,
+          "total": 5,
+          "rate": 1.0
+        },
+        "clarification_correct": {
+          "passed": 4,
+          "total": 4,
+          "rate": 1.0
+        },
+        "refusal_correct": {
+          "passed": 2,
+          "total": 2,
+          "rate": 1.0
+        },
+        "total_requests": 24,
+        "optimizer_outcomes": {
+          "optimal": 6,
+          "tool_failure": 2,
+          "infeasible": 2
+        },
+        "optimization_feasibility": {
+          "passed": 6,
+          "total": 10,
+          "rate": 0.6
+        },
+        "validator_pass_rate": {
+          "passed": 6,
+          "total": 6,
+          "rate": 1.0
+        },
+        "llm_calls": 100,
+        "http_attempts": 100,
+        "llm_calls_per_request": {
+          "p50": 4.0,
+          "max": 8
+        },
+        "latency_ms": {
+          "p50": 4088.541,
+          "p95": 9275.482799999998,
+          "total": 110896.407
+        },
+        "known_usage_tokens": {
+          "prompt_tokens": 176643,
+          "completion_tokens": 6048,
+          "total_tokens": 182691
+        },
+        "all_usage_known": true,
+        "estimated_model_cost": null,
+        "cost_note": "No cache-hit/miss usage breakdown and frozen provider price table in the existing client; no reliable monetary estimate.",
+        "diagnostic_counts": {
+          "argument_extraction_or_tool_argument_failure": 2,
+          "expected_clarification": 4,
+          "expected_solver_infeasible": 2,
+          "expected_refusal": 2,
+          "expected_injected_tool_failure": 1,
+          "llm_generation_failure": 1
+        },
+        "failures": [
+          {
+            "id": "v2-test-17",
+            "message": "计划周期7天，控制器不能缺货",
+            "status": "infeasible",
+            "labels": [
+              "argument_extraction_or_tool_argument_failure",
+              "expected_solver_infeasible"
+            ],
+            "reason": "当前条件不可行，未放宽约束。充分证据：PLC 交期 10 天超过计划期 7 天，现有库存无法满足服务约束。；未自动放松预算、服务水平、保护清单、交期或采购限制。\n[POL-LEAD:01 · policies/lead.md] POL-LEAD 交期与在途规则\n## 计划窗口与在途\n新采购交期超过计划窗口时不可订购；等于窗口时允许订购。在途订单仅统计 in_transit 且预计到货日不超过窗口的数量，已收货 received 不重复加到库存，cancelled 不计入。可用库存等于现货加窗口内在途到货。本版本是单期汇总模型，不保证逐日库存不为负，也不模拟需求在时间上的变化。\n[POL-APPROVAL:02 · policies/approval.md] POL-APPROVAL 采购审批规则\n## 异常处理\n约束不可行时报告阻碍条件，由申请人决定是否提交新的预算或服务要求；不得自动放宽预算、MOQ、服务水平或改写供应商资质。\n[POL-SERVICE:01 · policies/service.md] POL-SERVICE 服务水平要求\n## 服务与保护 SKU\n最低服务水平约束要求每个 SKU 分别达到下限。结果中的总体满足率定义为一减总缺货量除以总需求量，仅用于结果展示；本版本不支持总体满足率硬约束。未指定服务水平时不额外添加下限。用户明确要求保护的 SKU 必须零缺货；数据中的 critical 标签本身不自动触发硬保护。禁止采购的 SKU 可以使用现有库存满足需求；禁止采购与零缺货保护可能同时导致不可行。",
+            "score": {
+              "intent_correct": true,
+              "raw_model_intent_correct": true,
+              "status_correct": true,
+              "tool_selection_correct": true,
+              "tool_arguments_correct": false,
+              "retrieval_hit": null,
+              "constraint_pass": null,
+              "answer_correct": true,
+              "end_to_end_success": false,
+              "actual_tools": [
+                "inventory_query",
+                "policy_retrieval",
+                "replenishment_optimizer",
+                "supplier_query"
+              ],
+              "expected_tools": [
+                "inventory_query",
+                "policy_retrieval",
+                "replenishment_optimizer",
+                "supplier_query"
+              ]
+            }
+          },
+          {
+            "id": "v2-test-22",
+            "message": "预算11000元，计划周期14天，传感器不能缺货，禁止采购PLC，轴承需求120件",
+            "status": "llm_failure",
+            "labels": [
+              "llm_generation_failure"
+            ],
+            "reason": "answer_policy_citation_missing",
+            "score": {
+              "intent_correct": true,
+              "raw_model_intent_correct": true,
+              "status_correct": false,
+              "tool_selection_correct": true,
+              "tool_arguments_correct": true,
+              "retrieval_hit": null,
+              "constraint_pass": null,
+              "answer_correct": true,
+              "end_to_end_success": false,
+              "actual_tools": [
+                "inventory_query",
+                "policy_retrieval",
+                "replenishment_optimizer",
+                "solution_validator",
+                "supplier_query"
+              ],
+              "expected_tools": [
+                "inventory_query",
+                "policy_retrieval",
+                "replenishment_optimizer",
+                "solution_validator",
+                "supplier_query"
+              ]
+            }
+          }
+        ]
+      },
+      "cases": [
+        {
+          "id": "v2-test-01",
+          "path": "backend_e2e/hybrid/v2-test-01.json",
+          "sha256": "fd580ea6b876faa1b30776f0644b2e12a5ca854c8cac82d4a90832845cd3f4dc"
+        },
+        {
+          "id": "v2-test-02",
+          "path": "backend_e2e/hybrid/v2-test-02.json",
+          "sha256": "0c4d8c39266f16b237a8565857652470eb53d8b3cd63fd692f34115eaa15e537"
+        },
+        {
+          "id": "v2-test-03",
+          "path": "backend_e2e/hybrid/v2-test-03.json",
+          "sha256": "9ec89fdd53d8205064f20df7bbe514f317045f01a8d3e4555996fbda0ac7f5a9"
+        },
+        {
+          "id": "v2-test-04",
+          "path": "backend_e2e/hybrid/v2-test-04.json",
+          "sha256": "0ee3ea1a16f9075851fb53d3e7ad99aeb5c0ee0dbdce6d4aad61b6c5db0035c3"
+        },
+        {
+          "id": "v2-test-05",
+          "path": "backend_e2e/hybrid/v2-test-05.json",
+          "sha256": "3af14385620430dfc2b27d9b855a59d5b60de90848a3b90193946722a8a49cc5"
+        },
+        {
+          "id": "v2-test-06",
+          "path": "backend_e2e/hybrid/v2-test-06.json",
+          "sha256": "97e555cb5604a0796e08641769733392de53d32986c644e34217c6517841df25"
+        },
+        {
+          "id": "v2-test-07",
+          "path": "backend_e2e/hybrid/v2-test-07.json",
+          "sha256": "d5887dd6052cd231588125da291dc6c3dff6170ef6c7dc64084a254863881de6"
+        },
+        {
+          "id": "v2-test-08",
+          "path": "backend_e2e/hybrid/v2-test-08.json",
+          "sha256": "684571d5f62a1b8bb91572379da3e8436c57671e6fc426b3890ef3b80d784b8d"
+        },
+        {
+          "id": "v2-test-09",
+          "path": "backend_e2e/hybrid/v2-test-09.json",
+          "sha256": "1799be656df641597b63addfbba6c3ce246649827f1222de9bd48aa70fdebbcf"
+        },
+        {
+          "id": "v2-test-10",
+          "path": "backend_e2e/hybrid/v2-test-10.json",
+          "sha256": "8e39fbc31c650dc84c5cf253f042601255338e68f424fb0defbc99978dbb8c9e"
+        },
+        {
+          "id": "v2-test-11",
+          "path": "backend_e2e/hybrid/v2-test-11.json",
+          "sha256": "c32177ed2484629810cdbc340c05b6127b0960c907289d7a50986715d200e879"
+        },
+        {
+          "id": "v2-test-12",
+          "path": "backend_e2e/hybrid/v2-test-12.json",
+          "sha256": "095fa822efabc2d981c900f8b2fe76ac4964dc349ad6ae1fccba73d3f566e45a"
+        },
+        {
+          "id": "v2-test-13",
+          "path": "backend_e2e/hybrid/v2-test-13.json",
+          "sha256": "e2fa0fa089bbef816a6ccc0ef77fd3b2646904b61b484443b87bf07aaa783a29"
+        },
+        {
+          "id": "v2-test-14",
+          "path": "backend_e2e/hybrid/v2-test-14.json",
+          "sha256": "7ee14399bc8d135e6ce7f9945197c3c09613cbdc13f316ffa0bd451be6063049"
+        },
+        {
+          "id": "v2-test-15",
+          "path": "backend_e2e/hybrid/v2-test-15.json",
+          "sha256": "c7d9b5499c01f94d7dca99dd1272183e14525d034a7c418a5fcb5ac5e72ea4a8"
+        },
+        {
+          "id": "v2-test-16",
+          "path": "backend_e2e/hybrid/v2-test-16.json",
+          "sha256": "6b735302ad01fce62a62e8e27774bb24f3dbd757d78830193d6ad10421e3869f"
+        },
+        {
+          "id": "v2-test-17",
+          "path": "backend_e2e/hybrid/v2-test-17.json",
+          "sha256": "e4fea0b5bec44509271a749b4459f2aa2eb47e829f3947b3eed0e17390fce548"
+        },
+        {
+          "id": "v2-test-18",
+          "path": "backend_e2e/hybrid/v2-test-18.json",
+          "sha256": "853f379cd0794b7e91dc75aedd515c4ffe46a6a70ebed31c2fa135d1ed7cb2a9"
+        },
+        {
+          "id": "v2-test-19",
+          "path": "backend_e2e/hybrid/v2-test-19.json",
+          "sha256": "3edcae86683e9315530c645a6e5e12783ed12159672bdfee5c041993f76555df"
+        },
+        {
+          "id": "v2-test-20",
+          "path": "backend_e2e/hybrid/v2-test-20.json",
+          "sha256": "7a7ebfcfe7617a31dbd086a895fa9413b184ead6bbb21f10edc2fbf54d468042"
+        },
+        {
+          "id": "v2-test-21",
+          "path": "backend_e2e/hybrid/v2-test-21.json",
+          "sha256": "25d5b13dc3f60d50d97d3a2269663e22af5c237b6c4f74d1755963f0edd2cc59"
+        },
+        {
+          "id": "v2-test-22",
+          "path": "backend_e2e/hybrid/v2-test-22.json",
+          "sha256": "3006308f180c83ee6f6b836c16edd1e309bf13a4da845173e20e3c0083be48af"
+        },
+        {
+          "id": "v2-test-23",
+          "path": "backend_e2e/hybrid/v2-test-23.json",
+          "sha256": "be58eb8be0acb138e7218098c4ff90c0ca5645500c76f36ee22cbad0dd93f535"
+        },
+        {
+          "id": "v2-test-24",
+          "path": "backend_e2e/hybrid/v2-test-24.json",
+          "sha256": "c90146e843c424224aec20090f1a43e4a6af8bf224178e2d5ddea61e4733dd7f"
+        }
+      ]
+    },
+    "semantic": {
+      "metrics": {
+        "end_to_end_success": {
+          "passed": 21,
+          "total": 24,
+          "rate": 0.875
+        },
+        "intent_correct": {
+          "passed": 24,
+          "total": 24,
+          "rate": 1.0
+        },
+        "raw_model_intent_correct": {
+          "passed": 21,
+          "total": 22,
+          "rate": 0.9545454545454546
+        },
+        "tool_selection_correct": {
+          "passed": 23,
+          "total": 24,
+          "rate": 0.9583333333333334
+        },
+        "tool_arguments_correct": {
+          "passed": 22,
+          "total": 24,
+          "rate": 0.9166666666666666
+        },
+        "retrieval_hit": {
+          "passed": 2,
+          "total": 2,
+          "rate": 1.0
+        },
+        "constraint_pass": {
+          "passed": 5,
+          "total": 5,
+          "rate": 1.0
+        },
+        "clarification_correct": {
+          "passed": 4,
+          "total": 4,
+          "rate": 1.0
+        },
+        "refusal_correct": {
+          "passed": 2,
+          "total": 2,
+          "rate": 1.0
+        },
+        "total_requests": 24,
+        "optimizer_outcomes": {
+          "optimal": 5,
+          "tool_failure": 3,
+          "infeasible": 2
+        },
+        "optimization_feasibility": {
+          "passed": 5,
+          "total": 10,
+          "rate": 0.5
+        },
+        "validator_pass_rate": {
+          "passed": 5,
+          "total": 5,
+          "rate": 1.0
+        },
+        "llm_calls": 96,
+        "http_attempts": 96,
+        "llm_calls_per_request": {
+          "p50": 4.0,
+          "max": 8
+        },
+        "latency_ms": {
+          "p50": 3726.0575,
+          "p95": 8342.54005,
+          "total": 102761.314
+        },
+        "known_usage_tokens": {
+          "prompt_tokens": 164537,
+          "completion_tokens": 6073,
+          "total_tokens": 170610
+        },
+        "all_usage_known": true,
+        "estimated_model_cost": null,
+        "cost_note": "No cache-hit/miss usage breakdown and frozen provider price table in the existing client; no reliable monetary estimate.",
+        "diagnostic_counts": {
+          "tool_selection_failure": 1,
+          "argument_extraction_or_tool_argument_failure": 2,
+          "execution_limit": 1,
+          "evidence_selection_failure": 1,
+          "expected_clarification": 4,
+          "expected_solver_infeasible": 2,
+          "expected_refusal": 2,
+          "expected_injected_tool_failure": 1
+        },
+        "failures": [
+          {
+            "id": "v2-test-02",
+            "message": "请按目前场景给出一份补货建议。",
+            "status": "limit_exceeded",
+            "labels": [
+              "tool_selection_failure",
+              "argument_extraction_or_tool_argument_failure",
+              "execution_limit"
+            ],
+            "reason": "执行终止：max_replans。未发布未经确认的方案。",
+            "score": {
+              "intent_correct": true,
+              "raw_model_intent_correct": true,
+              "status_correct": false,
+              "tool_selection_correct": false,
+              "tool_arguments_correct": false,
+              "retrieval_hit": null,
+              "constraint_pass": null,
+              "answer_correct": true,
+              "end_to_end_success": false,
+              "actual_tools": [
+                "inventory_query",
+                "policy_retrieval",
+                "replenishment_optimizer",
+                "supplier_query"
+              ],
+              "expected_tools": [
+                "inventory_query",
+                "policy_retrieval",
+                "replenishment_optimizer",
+                "solution_validator",
+                "supplier_query"
+              ]
+            }
+          },
+          {
+            "id": "v2-test-11",
+            "message": "急单能换成没审批的供方吗，制度怎么说？",
+            "status": "completed",
+            "labels": [
+              "evidence_selection_failure"
+            ],
+            "reason": "[POL-APPROVAL:02 · policies/approval.md] POL-APPROVAL 采购审批规则\n## 异常处理\n约束不可行时报告阻碍条件，由申请人决定是否提交新的预算或服务要求；不得自动放宽预算、MOQ、服务水平或改写供应商资质。",
+            "score": {
+              "intent_correct": true,
+              "raw_model_intent_correct": true,
+              "status_correct": true,
+              "tool_selection_correct": true,
+              "tool_arguments_correct": true,
+              "retrieval_hit": true,
+              "constraint_pass": null,
+              "answer_correct": false,
+              "end_to_end_success": false,
+              "actual_tools": [
+                "policy_retrieval"
+              ],
+              "expected_tools": [
+                "policy_retrieval"
+              ]
+            }
+          },
+          {
+            "id": "v2-test-17",
+            "message": "计划周期7天，控制器不能缺货",
+            "status": "infeasible",
+            "labels": [
+              "argument_extraction_or_tool_argument_failure",
+              "expected_solver_infeasible"
+            ],
+            "reason": "当前条件不可行，未放宽约束。充分证据：PLC 交期 10 天超过计划期 7 天，现有库存无法满足服务约束。；未自动放松预算、服务水平、保护清单、交期或采购限制。\n[POL-BUDGET:01 · policies/budget.md] POL-BUDGET 预算规则\n## 预算硬约束\n采购支出不得超过预算。预算只限制采购成本，不包括期末持有成本和缺货惩罚；优化目标则包含三者。未指定预算时使用场景默认预算；“预算降低百分比”相对于场景默认预算计算一次。绝对预算与相对预算变动不能同时指定。不得将降低总成本误解成降低预算。\n[POL-APPROVAL:02 · policies/approval.md] POL-APPROVAL 采购审批规则\n## 异常处理\n约束不可行时报告阻碍条件，由申请人决定是否提交新的预算或服务要求；不得自动放宽预算、MOQ、服务水平或改写供应商资质。\n[POL-EMERGENCY:01 · policies/emergency.md] POL-EMERGENCY 紧急采购规则\n## 紧急采购不豁免约束\n停线风险、紧急采购或急单不自动豁免预算、供应商资质、MOQ、交期及供货上限。申请人需要给出具体 SKU、数量或服务要求。不支持通过加价自动缩短交期，也不支持未经审批的替代供应商。当前模型不包含加急运输决策。",
+            "score": {
+              "intent_correct": true,
+              "raw_model_intent_correct": true,
+              "status_correct": true,
+              "tool_selection_correct": true,
+              "tool_arguments_correct": false,
+              "retrieval_hit": null,
+              "constraint_pass": null,
+              "answer_correct": true,
+              "end_to_end_success": false,
+              "actual_tools": [
+                "inventory_query",
+                "policy_retrieval",
+                "replenishment_optimizer",
+                "supplier_query"
+              ],
+              "expected_tools": [
+                "inventory_query",
+                "policy_retrieval",
+                "replenishment_optimizer",
+                "supplier_query"
+              ]
+            }
+          }
+        ]
+      },
+      "cases": [
+        {
+          "id": "v2-test-01",
+          "path": "backend_e2e/semantic/v2-test-01.json",
+          "sha256": "823a8bac9a8cdfb8cbdbed98223130eb4167a005cabaa97ceb16007615a06ce4"
+        },
+        {
+          "id": "v2-test-02",
+          "path": "backend_e2e/semantic/v2-test-02.json",
+          "sha256": "d24f49081c2cb28738d6b2b0b4d9d183913761f7f61ac512bedd96dd15acb8ef"
+        },
+        {
+          "id": "v2-test-03",
+          "path": "backend_e2e/semantic/v2-test-03.json",
+          "sha256": "12bf3247d34d7ec5dfb000299eef750149b34a5676f14ca36031b47be1fccc2e"
+        },
+        {
+          "id": "v2-test-04",
+          "path": "backend_e2e/semantic/v2-test-04.json",
+          "sha256": "ca821dc9a0eb5dd01ac368bea7c1a6ff3693d25514964658dcd12de13c93379c"
+        },
+        {
+          "id": "v2-test-05",
+          "path": "backend_e2e/semantic/v2-test-05.json",
+          "sha256": "d82a7399bf55e19e74d91ed8c3bd140cf16ff24a04dbe06ec2b722f8f9da62e7"
+        },
+        {
+          "id": "v2-test-06",
+          "path": "backend_e2e/semantic/v2-test-06.json",
+          "sha256": "7941270967d288959223f43764c70560b425a826f3e2f149dc12342934e7160f"
+        },
+        {
+          "id": "v2-test-07",
+          "path": "backend_e2e/semantic/v2-test-07.json",
+          "sha256": "c8dadcffc8ac82aa801f0ed2a631024c611a0a58b157fce0e83039894c8bde7a"
+        },
+        {
+          "id": "v2-test-08",
+          "path": "backend_e2e/semantic/v2-test-08.json",
+          "sha256": "da19ef3c76fbee1bfc4edb2f403d4e46cb7ae336ba6ee707c557f0b39e7d2a2f"
+        },
+        {
+          "id": "v2-test-09",
+          "path": "backend_e2e/semantic/v2-test-09.json",
+          "sha256": "b3183f1d0e9aff0294d708552f0edaf9948eaad16ab798f6a06688e253a82476"
+        },
+        {
+          "id": "v2-test-10",
+          "path": "backend_e2e/semantic/v2-test-10.json",
+          "sha256": "aa39926527abe31ec3baedf080dda9e770f9c9abde17d926cd3c030addae24eb"
+        },
+        {
+          "id": "v2-test-11",
+          "path": "backend_e2e/semantic/v2-test-11.json",
+          "sha256": "3267df5952f693e2f0e4051fbaaf82beebdcae2fc0efaa6d6d4f3ab66ca6b5a1"
+        },
+        {
+          "id": "v2-test-12",
+          "path": "backend_e2e/semantic/v2-test-12.json",
+          "sha256": "5170568ee6eb7b51d28180f29783d36f73eb49ba220a6e62aa329a22ab02cd7f"
+        },
+        {
+          "id": "v2-test-13",
+          "path": "backend_e2e/semantic/v2-test-13.json",
+          "sha256": "aaa41b67fb54147742c9cc1cef0496057321c0ee624890cd98ed5a179bad1c05"
+        },
+        {
+          "id": "v2-test-14",
+          "path": "backend_e2e/semantic/v2-test-14.json",
+          "sha256": "9c528b98a61ed6b286e00ebcf799337747cf24e468c435569681ffdd5e001cae"
+        },
+        {
+          "id": "v2-test-15",
+          "path": "backend_e2e/semantic/v2-test-15.json",
+          "sha256": "759abd5ab0b6bc5d2ba983c3cf91a0a51ffe3045f6aa67ff5ae9b63f366b6d97"
+        },
+        {
+          "id": "v2-test-16",
+          "path": "backend_e2e/semantic/v2-test-16.json",
+          "sha256": "11fbff95e084c2cea44b1330d5ee0ca75264ac0ebf1420810c507229a7e5ea04"
+        },
+        {
+          "id": "v2-test-17",
+          "path": "backend_e2e/semantic/v2-test-17.json",
+          "sha256": "540b5bbf0047dfc897e6e200254fba7c383c5f1f84c86cde10fc56eabf3e090b"
+        },
+        {
+          "id": "v2-test-18",
+          "path": "backend_e2e/semantic/v2-test-18.json",
+          "sha256": "91f00b95c3f99697e38be45e3bca8c8eae77687ae63e99455ea20644312fdbb9"
+        },
+        {
+          "id": "v2-test-19",
+          "path": "backend_e2e/semantic/v2-test-19.json",
+          "sha256": "c1ed3dd25465a2ac84657a587ee7967a26ae777c466668bc553cb41ab3133fbf"
+        },
+        {
+          "id": "v2-test-20",
+          "path": "backend_e2e/semantic/v2-test-20.json",
+          "sha256": "de3572da36555a99bc17fd8e9c79a74d05d3636f0404f183addb1d17f77bda12"
+        },
+        {
+          "id": "v2-test-21",
+          "path": "backend_e2e/semantic/v2-test-21.json",
+          "sha256": "7320145937e3cd7129ce2a3910a10d7fddb5832c7c5b3f76662b5ed05d05e579"
+        },
+        {
+          "id": "v2-test-22",
+          "path": "backend_e2e/semantic/v2-test-22.json",
+          "sha256": "0b18b7008d367b796dcf4993b3a8b9e1767592b6cd25d59769111185cc2fc115"
+        },
+        {
+          "id": "v2-test-23",
+          "path": "backend_e2e/semantic/v2-test-23.json",
+          "sha256": "97f9dbd05caad951523646a36d399f0869da227a8f500c5539033f39ac66bb07"
+        },
+        {
+          "id": "v2-test-24",
+          "path": "backend_e2e/semantic/v2-test-24.json",
+          "sha256": "d6be7633ce5941858f9c32aedf7558f9ded144f4cc380168230a3d3a4d686505"
+        }
+      ]
+    }
+  }
+}

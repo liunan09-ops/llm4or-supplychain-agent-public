@@ -13,3 +13,11 @@ evaluation/runs_v2
 evaluation/evidence
 evaluation/results_v2.json
 evaluation/report_v2.md
+evaluation/backend_e2e
+evaluation/semantic_v2
+evaluation/final
+evaluation/retrieval_backend_e2e*
+*.sqlite3*
+*.onnx
+*.safetensors
+*.part

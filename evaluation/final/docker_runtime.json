@@ -1,0 +1,28 @@
+{
+  "commands": [
+    {
+      "command": "docker --version",
+      "exit_code": 127,
+      "output": "docker: command not found"
+    },
+    {
+      "command": "docker info",
+      "exit_code": 127,
+      "output": "docker: command not found"
+    }
+  ],
+  "docker_cli": null,
+  "desktop_and_cli_paths": {
+    "/Applications/Docker.app": false,
+    "/Applications/Docker Desktop.app": false,
+    "/usr/local/bin/docker": false,
+    "/opt/homebrew/bin/docker": false
+  },
+  "image_build_success": null,
+  "container_startup_success": null,
+  "endpoint_result": null,
+  "restart_verified": false,
+  "semantic_in_container_verified": false,
+  "blocker": "Docker configuration implemented but runtime verification blocked because Docker is unavailable on the current machine.",
+  "installed_software": false
+}

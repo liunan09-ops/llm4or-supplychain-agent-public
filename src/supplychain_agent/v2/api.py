@@ -29,7 +29,7 @@ def install_routes(app, audit_path, capacity):
     seed_policies(business)
     retriever = create_retriever(
         business.policies(),
-        backend=os.getenv("AGENT_RETRIEVAL_BACKEND", "lexical"),
+        backend=os.getenv("AGENT_RETRIEVAL_BACKEND", "hybrid"),
         model_dir=os.getenv("AGENT_EMBEDDING_MODEL_DIR"),
     )
     traces = TraceStore(path)
