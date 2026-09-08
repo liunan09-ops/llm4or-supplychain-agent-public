@@ -1,0 +1,130 @@
+{
+  "freeze_sha256": "bc82c16d6d65498ad71c2231f667d724c855ac742f5f7e7be61944befd677ea2",
+  "inputs_unchanged": true,
+  "metrics": {
+    "dev": {
+      "lexical": {
+        "hit_at_1": {
+          "passed": 6,
+          "total": 6,
+          "rate": 1.0
+        },
+        "hit_at_3": {
+          "passed": 6,
+          "total": 6,
+          "rate": 1.0
+        },
+        "recall_at_1": 0.9166666666666666,
+        "recall_at_3": 1.0,
+        "mrr_at_3": 1.0,
+        "query_latency_ms": {
+          "p50": 0.0473749969387427,
+          "p95": 0.830520992167294,
+          "scope": "sequential warm-index CPU lookup including query encoding; not a load test"
+        }
+      },
+      "semantic": {
+        "hit_at_1": {
+          "passed": 6,
+          "total": 6,
+          "rate": 1.0
+        },
+        "hit_at_3": {
+          "passed": 6,
+          "total": 6,
+          "rate": 1.0
+        },
+        "recall_at_1": 0.9166666666666666,
+        "recall_at_3": 1.0,
+        "mrr_at_3": 1.0,
+        "query_latency_ms": {
+          "p50": 9.194062498863786,
+          "p95": 10.583312250673771,
+          "scope": "sequential warm-index CPU lookup including query encoding; not a load test"
+        }
+      },
+      "hybrid": {
+        "hit_at_1": {
+          "passed": 6,
+          "total": 6,
+          "rate": 1.0
+        },
+        "hit_at_3": {
+          "passed": 6,
+          "total": 6,
+          "rate": 1.0
+        },
+        "recall_at_1": 0.9166666666666666,
+        "recall_at_3": 1.0,
+        "mrr_at_3": 1.0,
+        "query_latency_ms": {
+          "p50": 9.095021006942261,
+          "p95": 9.2922397525399,
+          "scope": "sequential warm-index CPU lookup including query encoding; not a load test"
+        }
+      }
+    },
+    "heldout": {
+      "lexical": {
+        "hit_at_1": {
+          "passed": 10,
+          "total": 12,
+          "rate": 0.8333333333333334
+        },
+        "hit_at_3": {
+          "passed": 11,
+          "total": 12,
+          "rate": 0.9166666666666666
+        },
+        "recall_at_1": 0.7916666666666666,
+        "recall_at_3": 0.875,
+        "mrr_at_3": 0.875,
+        "query_latency_ms": {
+          "p50": 0.013874996511731297,
+          "p95": 0.032643748272676,
+          "scope": "sequential warm-index CPU lookup including query encoding; not a load test"
+        }
+      },
+      "semantic": {
+        "hit_at_1": {
+          "passed": 8,
+          "total": 12,
+          "rate": 0.6666666666666666
+        },
+        "hit_at_3": {
+          "passed": 12,
+          "total": 12,
+          "rate": 1.0
+        },
+        "recall_at_1": 0.5833333333333334,
+        "recall_at_3": 0.9583333333333334,
+        "mrr_at_3": 0.8194444444444443,
+        "query_latency_ms": {
+          "p50": 9.270770991861355,
+          "p95": 11.084548102371627,
+          "scope": "sequential warm-index CPU lookup including query encoding; not a load test"
+        }
+      },
+      "hybrid": {
+        "hit_at_1": {
+          "passed": 11,
+          "total": 12,
+          "rate": 0.9166666666666666
+        },
+        "hit_at_3": {
+          "passed": 12,
+          "total": 12,
+          "rate": 1.0
+        },
+        "recall_at_1": 0.8333333333333334,
+        "recall_at_3": 0.9583333333333334,
+        "mrr_at_3": 0.9583333333333334,
+        "query_latency_ms": {
+          "p50": 9.178291998978239,
+          "p95": 10.75240029822453,
+          "scope": "sequential warm-index CPU lookup including query encoding; not a load test"
+        }
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@
   "kind": "deterministic_demo",
   "mode": "demo",
   "created_at": "2026-09-08T13:26:32.938124+00:00",
-  "dataset": "/Users/zhenhaoran/.codex/worktrees/a9cd/ln秋招/supplychain-agent/evaluation/heldout_v2.jsonl",
+  "dataset": "evaluation/heldout_v2.jsonl",
   "dataset_sha256": "40d5a5a6a943158931fa9d2ccf8d38ab52398e31dad0acd2710a996962abbf1a",
   "metadata": {
     "source_sha256": "122e36667436c9cdd8c4b74e8f9471e91923787c71a5fb7b70ebb30645b095f9",

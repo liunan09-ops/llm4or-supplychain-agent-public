@@ -1,0 +1,33 @@
+{
+  "success": true,
+  "live": {
+    "http_status": 200,
+    "outcome": "completed",
+    "solver": "optimal",
+    "validation": {
+      "valid": true,
+      "checks": 139,
+      "violations": []
+    },
+    "tools": [
+      "inventory_query",
+      "supplier_query",
+      "policy_retrieval",
+      "policy_retrieval",
+      "policy_retrieval",
+      "policy_retrieval",
+      "replenishment_optimizer",
+      "solution_validator"
+    ],
+    "llm_calls": 8,
+    "http_attempts": 8,
+    "elapsed_ms": 10349.235,
+    "model": "deepseek-v4-flash",
+    "request_id": "502a19d880e346b0a5aae7e41a1a1946"
+  },
+  "image_id": "sha256:36e1916b64c5623d17057ec6082e40c0d77ebd536d24b9f8c81671ed7eeb2a04",
+  "offline_network": "none",
+  "restart": true,
+  "persisted_sqlite": true,
+  "image_source_matches": true
+}

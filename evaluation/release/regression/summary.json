@@ -1,0 +1,24 @@
+{
+  "all_case_scores_unchanged": true,
+  "rerun_cases": {
+    "v1_rules_dev": 24,
+    "v1_rules_test": 12,
+    "v2_demo_dev": {
+      "cases": 14,
+      "end_to_end_success": {
+        "passed": 14,
+        "total": 14,
+        "rate": 1.0
+      }
+    },
+    "v2_demo_heldout": {
+      "cases": 24,
+      "end_to_end_success": {
+        "passed": 17,
+        "total": 24,
+        "rate": 0.7083333333333334
+      }
+    }
+  },
+  "new_live_llm_calls": 0
+}

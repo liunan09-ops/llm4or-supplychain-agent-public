@@ -1,0 +1,278 @@
+[
+  {
+    "command": [
+      "docker",
+      "image",
+      "inspect",
+      "supplychain-agent:v2",
+      "--format",
+      "{{.Id}}"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "docker",
+      "volume",
+      "inspect",
+      "supplychain-release-model-20260908"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "docker",
+      "volume",
+      "create",
+      "supplychain-release-c8bb917a6a-db"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "-v",
+      "supplychain-release-c8bb917a6a-db:/app/.runtime",
+      "-v",
+      "supplychain-release-model-20260908:/models/bge:ro",
+      "-e",
+      "AGENT_EMBEDDING_MODEL_DIR=/models/bge",
+      "--network",
+      "none",
+      "--name",
+      "supplychain-release-c8bb917a6a-offline",
+      "supplychain-agent:v2"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "supplychain-release-c8bb917a6a-offline",
+      "python",
+      "-c",
+      "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8765/v2/health')"
+    ],
+    "exit_code": 1
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "supplychain-release-c8bb917a6a-offline",
+      "python",
+      "-c",
+      "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8765/v2/health')"
+    ],
+    "exit_code": 1
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "supplychain-release-c8bb917a6a-offline",
+      "python",
+      "-c",
+      "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8765/v2/health')"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "supplychain-release-c8bb917a6a-offline",
+      "python",
+      "-",
+      "offline"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "supplychain-release-c8bb917a6a-offline",
+      "python",
+      "-",
+      "embedding"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "docker",
+      "stop",
+      "supplychain-release-c8bb917a6a-offline"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "docker",
+      "start",
+      "supplychain-release-c8bb917a6a-offline"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "supplychain-release-c8bb917a6a-offline",
+      "python",
+      "-c",
+      "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8765/v2/health')"
+    ],
+    "exit_code": 1
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "supplychain-release-c8bb917a6a-offline",
+      "python",
+      "-c",
+      "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8765/v2/health')"
+    ],
+    "exit_code": 1
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "supplychain-release-c8bb917a6a-offline",
+      "python",
+      "-c",
+      "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8765/v2/health')"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "supplychain-release-c8bb917a6a-offline",
+      "python",
+      "-",
+      "restart"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "docker",
+      "stop",
+      "supplychain-release-c8bb917a6a-offline"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "-v",
+      "supplychain-release-c8bb917a6a-db:/app/.runtime",
+      "-v",
+      "supplychain-release-model-20260908:/models/bge:ro",
+      "-e",
+      "AGENT_EMBEDDING_MODEL_DIR=/models/bge",
+      "-p",
+      "127.0.0.1::8765",
+      "--env",
+      "DEEPSEEK_API_KEY",
+      "--name",
+      "supplychain-release-c8bb917a6a-live",
+      "supplychain-agent:v2"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "supplychain-release-c8bb917a6a-live",
+      "python",
+      "-c",
+      "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8765/v2/health')"
+    ],
+    "exit_code": 1
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "supplychain-release-c8bb917a6a-live",
+      "python",
+      "-c",
+      "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8765/v2/health')"
+    ],
+    "exit_code": 1
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "supplychain-release-c8bb917a6a-live",
+      "python",
+      "-c",
+      "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8765/v2/health')"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "docker",
+      "port",
+      "supplychain-release-c8bb917a6a-live",
+      "8765/tcp"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "supplychain-release-c8bb917a6a-live",
+      "python",
+      "-",
+      "live"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "supplychain-release-c8bb917a6a-offline"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "docker",
+      "rm",
+      "-f",
+      "supplychain-release-c8bb917a6a-live"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "docker",
+      "volume",
+      "rm",
+      "supplychain-release-c8bb917a6a-db"
+    ],
+    "exit_code": 0
+  }
+]

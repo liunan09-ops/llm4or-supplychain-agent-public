@@ -1,0 +1,46 @@
+{
+  "success": true,
+  "previous_head": "e10ce8f9766337b8e42f83b2d057722d51a0612d",
+  "tests": {
+    "passed": 313,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "added": 0
+  },
+  "historical_manifest_files": 257,
+  "privacy_only_files": 29,
+  "frozen_source_test_data_files": 125,
+  "protected_checkpoint_files": 92,
+  "real_llm_responses_rescored": 72,
+  "retrieval_rankings_metrics_unchanged": true,
+  "offline_regression": {
+    "all_case_scores_unchanged": true,
+    "rerun_cases": {
+      "v1_rules_dev": 24,
+      "v1_rules_test": 12,
+      "v2_demo_dev": {
+        "cases": 14,
+        "end_to_end_success": {
+          "passed": 14,
+          "total": 14,
+          "rate": 1.0
+        }
+      },
+      "v2_demo_heldout": {
+        "cases": 24,
+        "end_to_end_success": {
+          "passed": 17,
+          "total": 24,
+          "rate": 0.7083333333333334
+        }
+      }
+    },
+    "new_live_llm_calls": 0
+  },
+  "docker_runtime": "passed",
+  "public_release_snapshot_safe": true,
+  "release_files_verified": 304,
+  "history_privacy_cleaned": false,
+  "additional_project_features_required": false
+}

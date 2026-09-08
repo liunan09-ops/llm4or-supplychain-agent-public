@@ -12,9 +12,9 @@
 
 | 分层 | 可以使用的表述 |
 | --- | --- |
-| A · 可直接写简历 | Python、DeepSeek Native Tool Calling、有界 Agent、FastAPI、Pydantic、SQLite、SciPy/HiGHS MILP、独立 Validator、BGE embedding、FAISS、Hybrid Retrieval / RRF、Pytest |
-| B · 可面试提，不建议全堆进简历 | 显式状态机/工具掩码、TF-IDF 中文双字、ONNX Runtime CPU、CLS pooling、L2/cosine、SHA-256 冻结、uv.lock、有限重试与 trace；Docker 只能说编写了配置、实机被环境阻塞 |
-| C · 禁止写成已完成能力 | 企业生产/ABB 落地、生产级、多租户、高并发、业务降本、Docker 部署成功、模型微调/训练、LoRA、CUDA/vLLM、reranker、LangGraph/LangChain、Multi-Agent、Kubernetes、Redis/Kafka、ERP 接入 |
+| A · 可直接写简历 | Python、DeepSeek Native Tool Calling、有界 Agent、FastAPI、Pydantic、SQLite、SciPy/HiGHS MILP、独立 Validator、BGE embedding、FAISS、Semantic Retrieval、Hybrid Retrieval / RRF、ONNX Runtime CPU、Pytest、Docker（本地 ARM64 实测） |
+| B · 可面试提，不建议全堆进简历 | 显式状态机/工具掩码、TF-IDF 中文双字、ONNX Runtime CPU、CLS pooling、L2/cosine、SHA-256 冻结、uv.lock、有限重试与 trace；Docker digest/命名卷/只读模型挂载 |
+| C · 禁止写成已完成能力 | 企业生产/ABB 落地、生产级、多租户、高并发、业务降本、云端部署/生产 Docker 部署、模型微调/训练、LoRA、CUDA/vLLM、reranker、LangGraph/LangChain、Multi-Agent、Kubernetes、Redis/Kafka、ERP 接入 |
 
 ## 三、最终可安全使用的数字
 
@@ -23,16 +23,16 @@
 | 6 类业务工具 | finish_request 是结束信号，不算第 7 个业务工具 | [tools.py](src/supplychain_agent/v2/tools.py) |
 | 5 SKU、3 供应商、3 订单 | 合成数据规模，不是用户/业务吞吐规模 | [database.py](src/supplychain_agent/v2/database.py) |
 | 7 份政策、8 个片段、512 维 BGE | 合成采购制度；固定预训练模型，无微调 | [检索冻结](evaluation/final/retrieval/freeze.json) |
-| 313/313 测试通过 | Semantic 基线 308，本轮新增 5；4 项真实模型集成，0 fail/error/skip | [最终测试](evaluation/final/test_summary.json) |
+| 313/313 测试通过 | 本轮 Final 基线 313，新增 0；4 项真实模型集成，0 fail/error/skip | [最终测试](evaluation/release/verification.json) |
 | hybrid 22/24 Agent 成功 | 本次真实 DeepSeek、同一固定合成留出；包含澄清、拒绝和故障注入；不是生产准确率 | [新 E2E 结果](evaluation/retrieval_backend_e2e_results.json) |
 | lexical 22/24、semantic 21/24 | 本次真实对照，不把 hybrid 包装成提升 E2E 成功率 | [E2E 报告](evaluation/retrieval_backend_e2e_report.md) |
 | hybrid Hit@1 11/12、Hit@3 12/12 | 独立检索固定留出，不能当最终答案正确率 | [hybrid](evaluation/final/retrieval/heldout_hybrid.json) |
 | Recall@3 0.9583 | 12 条问题上的平均文档覆盖；跨问题累计 14 个相关文档标注项（含重复文档），取回 13 项，但 13/14 的 micro recall 不等于此 macro recall | [逐例检索](evaluation/final/retrieval/heldout_hybrid.json) |
 | 已发布可行方案重验 5/5 | 本次 hybrid 发布的可行方案；不能扩大到所有请求/所有条件 | [新 E2E](evaluation/retrieval_backend_e2e_results.json) |
 | 实际 Validator 调用 6/6 | 包含一条随后最终引用失败、没有发布的方案；分母与 5/5 不同 | [新 E2E](evaluation/retrieval_backend_e2e_results.json) |
-| V1 36/36、V2 demo 14/14 和 17/24 | V1 评分与旧版一致；demo 留出失败保留，不能称为 LLM 成绩 | [回归](evaluation/final/regression/summary.json) |
+| V1 36/36、V2 demo 14/14 和 17/24 | V1 评分与旧版一致；demo 留出失败保留，不能称为 LLM 成绩 | [回归](evaluation/release/regression/summary.json) |
 
-Hybrid 本次 100 次逻辑模型调用、100 次 HTTP 尝试、182691 API tokens，p50/p95 4.089/9.275 秒可以用于面试解释取舍，不建议挤进简历；不代表 SLA 或成本。可靠人民币金额未计算。Docker 未验证，没有可写成成功的部署数字。
+Hybrid 本次 100 次逻辑模型调用、100 次 HTTP 尝试、182691 API tokens，p50/p95 4.089/9.275 秒可以用于面试解释取舍，不建议挤进简历；不代表 SLA 或成本。可靠人民币金额未计算。Docker 已完成本地 Linux ARM64 clean runtime、断网离线、真实 DeepSeek 和重启验证；不能扩写成云端/生产部署。单次7次模型调用、8.82秒只供面试讲解，不是吞吐或SLA。
 
 ## 四、最终通用版 3 条中文 bullet
 
@@ -46,17 +46,17 @@ Hybrid 本次 100 次逻辑模型调用、100 次 HTTP 尝试、182691 API token
 
 - 设计 DeepSeek Native Tool Calling Agent，以 Pydantic Schema 和状态机限制工具参数/顺序，实现 6 类业务工具、有限修复和 SQLite trace。
 - 打通真实模型、MILP 求解和独立验证，检索与最终证据选择分开审计；hybrid 后端在同一 24 条合成留出请求中完成 22 条。
-- 集成本地 BGE/FAISS 与 RRF 混合检索，独立检索 Hit@1 11/12、Hit@3 12/12；以 FastAPI 和 313 项通过测试支撑复现。
+- 集成本地 BGE/FAISS 与 RRF 混合检索，独立检索 Hit@1 11/12、Hit@3 12/12；以 FastAPI、Docker 实测及 313 项通过测试支撑复现。
 
 ## 六、偏“OR + AI 决策智能”版
 
 - 建立含库存、在途、MOQ、预算、交期及逐 SKU 服务约束的单期补货 MILP，通过 SQLite 同请求快照提供一致业务输入。
 - 用 DeepSeek 解析需求并调用查询/优化工具，独立 Validator 重算约束和汇总成本；24 条合成留出请求完成 22 条，发布方案重验 5/5。
-- 增加 BGE + TF-IDF/RRF 政策证据检索，固定 12 条检索问题 Hit@3 12/12、Recall@3 0.9583；完成 313 项测试及原离线回归。
+- 增加 BGE + TF-IDF/RRF 政策证据检索，固定 12 条检索问题 Hit@3 12/12、Recall@3 0.9583；完成 313 项测试、原回归和 Docker 本地运行验证。
 
 ## 七、技术栈一行版本
 
-**Python / DeepSeek Tool Calling / FastAPI / SQLite / SciPy-HiGHS MILP / BGE-FAISS-RRF / Pytest**
+**Python / DeepSeek Tool Calling / FastAPI / SQLite / SciPy-HiGHS MILP / BGE-FAISS-RRF / ONNX Runtime / Pytest / Docker**
 
 ## 八、60 秒项目介绍
 
@@ -72,7 +72,7 @@ Hybrid 本次 100 次逻辑模型调用、100 次 HTTP 尝试、182691 API token
 
 检索部分先保留原 TF-IDF baseline，再增加固定 BGE-small-zh-v1.5 的 512 维 ONNX 本地推理，用 CLS、L2 和 FAISS cosine 排序。Hybrid 把两路 top-5 按等权 RRF 融合。所有方法共用原分块和同一评测集，没有针对留出集写特殊规则。结果不是单向提升：纯 semantic 的 Hit@1 是 8/12，低于 lexical 的 10/12；hybrid 为 11/12。
 
-最终真实 DeepSeek 对照中，lexical 和 hybrid 都是 22/24，semantic 是 21/24。Hybrid 的独立检索覆盖更好，但 p95 和 token 用量更高，因此我把它设为准备好模型后的默认后端，同时保留显式 lexical 模式。两条 hybrid 失败分别是显式 7 天参数被省略、最终政策引用缺失。完整测试有 313 项通过，原回归记录和全部失败都保留。当前最大限制是合成小样本、没有生产部署和独立评测；Docker 也因本机无运行环境而没有宣称验证成功。
+最终真实 DeepSeek 对照中，lexical 和 hybrid 都是 22/24，semantic 是 21/24。Hybrid 的独立检索覆盖更好，但 p95 和 token 用量更高，因此我把它设为准备好模型后的默认后端，同时保留显式 lexical 模式。两条 hybrid 失败分别是显式 7 天参数被省略、最终政策引用缺失。完整测试有 313 项通过，原回归记录和全部失败都保留。当前最大限制是合成小样本、没有生产部署和独立评测；Docker 已在本地 ARM64 上验证无key离线、真实LLM、BGE/FAISS和重启，尚无云端或生产部署。
 
 ## 十、面试追问及回答要点
 
@@ -99,12 +99,12 @@ Hybrid 本次 100 次逻辑模型调用、100 次 HTTP 尝试、182691 API token
 21. **Hybrid 为什么更好/不一定更好？** 这 12 条检索问题上两路信息互补，Hit@1 为 11/12；但真实 Agent E2E 与 lexical 都是 22/24，且时延与 token 更多。不能做普遍因果推断。
 22. **为什么不加 reranker？** 当前只有 8 个片段，已有检索对照足以支持本轮取舍。缺乏独立更大样本时继续叠模型易变成针对测试调参，冻结时不扩功能。
 23. **为什么不用 Multi-Agent？** 这里是短同步请求和有限工具，单 Agent 状态机足够；多代理会增加调用、状态与评测复杂度，没有已验证业务收益。
-24. **为什么不用 Kubernetes？** 当前是本机单服务与 SQLite，未验证生产并发，也没有编排需求。Docker 尚未实机通过，更不能跳到 K8s 关键词。
+24. **为什么不用 Kubernetes？** 当前是本机单服务与 SQLite，未验证生产并发，也没有编排需求。本地 Docker 通过不构成 Kubernetes 或高可用能力。
 25. **如何评测 Agent？** 同一固定请求及 ground truth，评分与提示词隔离；分别看意图、工具集合/参数、检索、终态、约束和 E2E，保存每条失败与分母。拒绝、澄清和故障注入单独解释。
 26. **22/24 两个失败是什么？** Core 历史为 v2-test-02 最终政策引用缺失、v2-test-17 显式 7 天省略；本次默认 hybrid 为 v2-test-22 引用缺失、v2-test-17 同类参数问题。相同总分不意味着同一失败，完整 trace 可查。
 27. **如何控制 hallucination？** 事实来自只读快照，方案来自 solver+validator，最后 LLM 选择证据 ID、代码渲染原文；限制虚构空间，但不保证语义抽取或证据选择永远正确。
 28. **如何限制无限循环和失败扩散？** 模型/工具调用上限、有限重试与重规划、工具掩码、HTTP/solver 超时和请求边界耗时检查；不宣称可以强杀任意同步阻塞函数。
-29. **Docker 怎么做？** 写了锁依赖、非 root、持久目录、healthcheck、可选 semantic 构建和只读模型挂载；本机 docker 命令 exit 127，未实测 build/run，所以只能讲设计和 blocker。
+29. **Docker 怎么做？** 固定基础镜像 digest 与 uv.lock，非 root、命名卷持久化、readiness、只读模型卷；新卷下载并校验 BGE，实际断网运行离线 Agent，真实 DeepSeek 串联5类工具、MILP和Validator，stop/start后记录仍可查。只证明本地 ARM64 可复现。
 30. **为什么 Validator 6/6，发布方案却只有 5/5？** Hybrid 有一个 proposal 验证成功后在解释阶段失败，没有发布。调用通过率与已发布可行方案重验不是同一分母。
 31. **当前最大限制是什么？** 合成小样本、同一 AI 辅助编写过程、无独立企业分布；没有无相关文档的拒答校准、生产鉴权和并发验证。当前可用于校招展示，不能包装成生产系统。
 32. **AI 辅助开发的边界？** 如实说使用了 AI 辅助设计、实现和文档；本人应能运行测试、跟一条 trace、解释 MILP/Validator 和改一个约束。不要把生成代码等同于独立掌握，也不要写“精通”。

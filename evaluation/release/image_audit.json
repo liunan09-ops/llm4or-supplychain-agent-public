@@ -1,0 +1,38 @@
+{
+  "image": "supplychain-agent:v2",
+  "configured_credentials_checked": 1,
+  "secret_matches": 0,
+  "forbidden_files": [],
+  "layers": 13,
+  "files": 10893,
+  "bundled_onnx_examples": [
+    {
+      "path": "app/.venv/lib/python3.12/site-packages/onnxruntime/datasets/logreg_iris.onnx",
+      "bytes": 670
+    },
+    {
+      "path": "app/.venv/lib/python3.12/site-packages/onnxruntime/datasets/mul_1.onnx",
+      "bytes": 130
+    },
+    {
+      "path": "app/.venv/lib/python3.12/site-packages/onnxruntime/datasets/sigmoid.onnx",
+      "bytes": 103
+    }
+  ],
+  "image_id": "sha256:36e1916b64c5623d17057ec6082e40c0d77ebd536d24b9f8c81671ed7eeb2a04",
+  "architecture": "arm64",
+  "size_bytes": 167015697,
+  "user": "10001:10001",
+  "image_env_names": [
+    "PATH",
+    "LANG",
+    "GPG_KEY",
+    "PYTHON_VERSION",
+    "PYTHON_SHA256",
+    "UV_PYTHON_DOWNLOADS",
+    "PYTHONUNBUFFERED",
+    "PYTHONDONTWRITEBYTECODE",
+    "AGENT_AUDIT_PATH",
+    "AGENT_BUSINESS_PATH"
+  ]
+}

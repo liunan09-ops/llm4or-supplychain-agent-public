@@ -1,0 +1,30 @@
+{
+  "baseline": "e10ce8f9766337b8e42f83b2d057722d51a0612d",
+  "docker_client": "29.7.2 (a7dcaa6)",
+  "docker_server": "29.7.2",
+  "host_architecture": "aarch64",
+  "runtime": "Docker Desktop / linux",
+  "initial_build": {
+    "command": "docker build -t supplychain-agent:v2 .",
+    "exit_code": 0,
+    "semantic_dependency_probe_exit_code": 1,
+    "error": "ModuleNotFoundError: No module named onnxruntime"
+  },
+  "fixed_build": {
+    "command": "docker build -t supplychain-agent:v2 .",
+    "exit_code": 0,
+    "log": "docker-build-initial-fixed.log"
+  },
+  "model_prepare": {
+    "command": "docker run --rm --name supplychain-release-prepare -v supplychain-release-model-20260908:/models/bge --entrypoint python supplychain-agent:v2 scripts/prepare_embeddings.py --model-dir /models/bge",
+    "exit_code": 0,
+    "fresh_volume": true,
+    "host_mounts": false
+  },
+  "release_rebuild": {
+    "command": "docker build -t supplychain-agent:v2 .",
+    "exit_code": 0,
+    "log": "docker-build.log",
+    "reason": "final README included; application source and dependency lock unchanged"
+  }
+}

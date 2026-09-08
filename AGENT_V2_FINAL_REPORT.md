@@ -76,11 +76,11 @@ API 报告的三路 token 均完整，金额估计为 null：原客户端未保�
 
 最终重跑仍逐例一致。三路共享 7 文档/8 片段、原 700 字符分块。BGE-small-zh-v1.5 固定 ONNX FP32 revision，512 维，CLS/L2/cosine；hybrid 两路各 top-5、等权 RRF 常数 60、评测 top-3。Semantic 首位命中下降与剩余漏召回完整保留。[最终检索冻结与输出](evaluation/final/retrieval/summary.json)。
 
-## 7. Phase 4 · Docker
+## 7. Phase 4 · Docker（历史 Final checkpoint）
 
 实际 `docker --version`、`docker info` 均 exit 127，CLI 与 Docker Desktop 常见路径均不存在。没有安装替代平台。静态检查了非 root、锁依赖、healthcheck、可选 semantic 构建参数、只读模型挂载及秘密/缓存排除。
 
-**Docker configuration implemented but runtime verification blocked because Docker is unavailable on the current machine.**
+以上为 e10ce8f 阶段历史阻塞；本轮已由实际 ARM64 runtime 验证关闭，见文末 Final Release 与 [Docker记录](DOCKER_RUNTIME_VERIFICATION.md)。
 
 不能声称 image build、容器启动/重启、容器内 BGE 或真实 API 成功。[完整记录](DOCKER_RUNTIME_VERIFICATION.md)。本机 Python/FastAPI 测试不能替代容器验收。
 
@@ -100,7 +100,7 @@ API 报告的三路 token 均完整，金额估计为 null：原客户端未保�
 
 可写：DeepSeek Native Tool Calling、有界 Agent、FastAPI/Pydantic、SQLite、MILP/独立 Validator、BGE/ONNX/FAISS、Hybrid RRF、固定数据对照、313/313 tests、合成留出 hybrid 22/24、独立检索 11/12 与 12/12、12 题 macro Recall@3 0.9583。
 
-不可写：ABB 内部落地、生产级/生产准确率、业务降本、RAG 或召回 100%、E2E 提升、模型微调/训练、reranker、Docker 部署成功、多代理/K8s/Redis/Kafka、第三方盲测或保证 offer。
+不可写：ABB 内部落地、生产级/生产准确率、业务降本、RAG 或召回 100%、E2E 提升、模型微调/训练、reranker、云端/生产部署、多代理/K8s/Redis/Kafka、第三方盲测或保证 offer。
 
 [简历素材](RESUME_AGENT_V2_EVIDENCE.md) 提供三种方向的各 3 条 bullets、技术栈一行、60 秒/3 分钟介绍及 32 个追问。源码和证据在项目目录；项目外 zip、简历脚本、tmp 和简历目录不修改、不提交。模型、密钥、数据库、缓存与构建产物不进入 Git。
 
@@ -108,4 +108,18 @@ API 报告的三路 token 均完整，金额估计为 null：原客户端未保�
 
 **PROJECT_FROZEN_FOR_2027_CAMPUS_RECRUITING**
 
-没有发现阻碍以个人合成数据项目如实展示和投递的 P0。Docker、独立大样本、拒答校准、生产权限/并发和独立进程硬超时作为 nice-to-have，不影响当前投递；不再继续扩功能。最终判断见 [FINAL_FREEZE_DECISION.md](FINAL_FREEZE_DECISION.md)。
+没有发现阻碍以个人合成数据项目如实展示和投递的 P0。独立大样本、拒答校准、生产权限/并发和独立进程硬超时作为 nice-to-have，不影响当前投递；不再继续扩功能。最终判断见 [FINAL_FREEZE_DECISION.md](FINAL_FREEZE_DECISION.md)。
+
+## Final Release · Runtime / Public Audit
+
+基线 e10ce8f；在同一分支/worktree完成。默认镜像缺少 semantic 依赖的问题已实际复现并最小修复，Python/uv digest固定，新增模型准备脚本复制与目录权限，无新增业务源码/依赖/测试。全新Docker模型卷下载3个固定hash文件，断网无key离线、BGE ONNX CPU、三路FAISS检索、MILP/独立Validator及stop/start持久化通过；真实DeepSeek代表请求HTTP200/completed，7次调用、约8.82秒。Docker具体证据见 [实测报告](DOCKER_RUNTIME_VERIFICATION.md)。
+
+完整pytest仍313 passed、0 failed/error/skip，Ruff通过；74条原离线回归评分不变，6×3开发和12×3留出检索排名/指标不变；72条此前真实E2E响应重新计分一致。没有新增在线24条统计，不把冒烟请求混进旧分母。[Release gate](evaluation/release/verification.json)。
+
+公开审计覆盖index/工作区/项目历史blob及实际image layers；29份历史证据仅清理数据路径或JUnit主机名，旧hash保留于旧checkpoint，新gate验证变换且不改答案/指标。[安全审计](PUBLIC_REPO_SAFETY_AUDIT.md)仅准许公开已审计当前项目快照；旧历史机器元数据仍保留，不直接公开整个求职仓库。
+
+**PROJECT_FROZEN_FOR_2027_CAMPUS_RECRUITING**
+
+**NO_ADDITIONAL_PROJECT_FEATURES_REQUIRED**
+
+[校招缺口审计](CAMPUS_RECRUITING_GAP_AUDIT.md)将PyTorch/Transformer/Attention等归为面试准备；不继续V3、训练、分布式功能或修改简历PDF。Release提交消息：`chore: complete runtime verification and release audit`。

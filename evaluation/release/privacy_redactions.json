@@ -1,0 +1,179 @@
+{
+  "baseline": "e10ce8f9766337b8e42f83b2d057722d51a0612d",
+  "changes": [
+    {
+      "path": "evaluation/evidence/pytest-baseline.xml",
+      "old_sha256": "81596e101520dede7dabe596b03548d6be4eae8f89bc2a18eef4edb1213f8f8d",
+      "new_sha256": "2b57785ff7836a2fb958a25c60d77c4347206539928fc1fc0c2e26ec8ee6d7f1",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "evaluation/evidence/pytest-final.xml",
+      "old_sha256": "99152c4064bdc3bf86cf09398624d12e4545d0581053c7ef03299306463c1e2a",
+      "new_sha256": "0e0835e005d22de55304b306dde95f4e39903cc9adde4fc6ed59dfb3480f355f",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "evaluation/evidence/pytest-phase1.xml",
+      "old_sha256": "350fe8f4beb499a826cbee82ea016a80c5c993e48fe3ee774772167a87a501ed",
+      "new_sha256": "42ea568ced85bc2d9189c9050928f11d11318d0fa7fe18518102a420b22901de",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "evaluation/evidence/pytest-phase2.xml",
+      "old_sha256": "1d5d16c1b6175b274f3885f7777099b59b74d8d0d98a9931203878defc5f2213",
+      "new_sha256": "1c1281a35a6c5c256a12ac97d0b0b23c656f91b6831e32fc5a94dc744e03164a",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "evaluation/evidence/pytest-phase3.xml",
+      "old_sha256": "094d14b6885f9d6ad99009b713fe9df56977524f240c1bfc992bbc903833d26b",
+      "new_sha256": "9d62a4fe0864729e531f61f0d6ad7d7062c9bc3996b7a1a4027ae66acd9520d4",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "evaluation/evidence/pytest-phase4.xml",
+      "old_sha256": "e1020c324663407283015f1fa506279f3979d8a634a2819f34c9ebb5009f53dc",
+      "new_sha256": "9229c516a31641890f4857a81dc58ccf6524d2fc5f4e7b5d2dcc8d37042eb4d4",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "evaluation/evidence/pytest-phase5.xml",
+      "old_sha256": "c2f30fff3a9073f1dc2f2906ee31f33356b2d6888e6b52b9debabaae4f27b663",
+      "new_sha256": "b929e8cfc93c1e558e762c58aa04a4eef28b8ad9034dcd77bc1e70409a9e2988",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "evaluation/evidence/pytest-phase6.xml",
+      "old_sha256": "878f418142b078a34526dd06b2f8a4bd8c2f2f3379bc791a6dd721fabc4c19e1",
+      "new_sha256": "061ecd8473e764db8a94bf78c1eca1249bd91100ab4b0ac2f457b68728ece312",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "evaluation/evidence/pytest-phase7.xml",
+      "old_sha256": "2e6df698524f96e56f3b2a6f598c18fc64330171d4c56dcce714392b72314e4f",
+      "new_sha256": "5dbf53d23f3eff61f8ea5e2783633fc687472ee0647200557754166840fa8751",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "evaluation/final/pytest-final.xml",
+      "old_sha256": "7637a635528b17b172e70d5ab0f5d96f936e6c9f214852aa0a2cd3da6c1210f6",
+      "new_sha256": "3f990c3361fda3243ed8fb20939ace61bbb28a38bfd70226cf7adf16d960b99a",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "evaluation/final/regression/v1_rules_dev/report.json",
+      "old_sha256": "58b28a34616d9d5718f90fe7c1b01873d82f872da0e15766549866434e9573ec",
+      "new_sha256": "ab6c0992a09913ebc7ce7f0ea48d76a41368b822660a3cc505307524484ddd45",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "evaluation/final/regression/v1_rules_test/report.json",
+      "old_sha256": "88afb47e5a8d2f2af3dfc715774f896758b8f83234d2af876cabbdf2252cf359",
+      "new_sha256": "b829cce29da4bc6e833b1494beb801c95b80e11426dd9222e4edf9c37a85210d",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "evaluation/final/regression/v2_demo_dev.json",
+      "old_sha256": "437de33db2a12ec1609fcc17d2755fa72be2d3edb527c68d8bb7e766298671c5",
+      "new_sha256": "e92a78c31af6ebcb629068eecf36362e410c34f6958d15981bc5e3c8c4ee2a88",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "evaluation/final/regression/v2_demo_heldout.json",
+      "old_sha256": "c7dbfbd5f90f1204d2d8a3234733d2997b2cfbe93c454cafa8b949baa2dea0ed",
+      "new_sha256": "30b76a3c991116471e737229c824b03c13a72b7afe33e874fae14bfc5dfc8bbb",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "evaluation/semantic_v2/pytest-baseline.xml",
+      "old_sha256": "775746e561d94c7b4c56e9ff090062ba8ba771cc4159384dd9ea145099ba4080",
+      "new_sha256": "2b3508f4738dc16a44b76a94b593a3d8c09f3aa7514c8d292e7b76a35d2314c6",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "evaluation/semantic_v2/pytest-final.xml",
+      "old_sha256": "4e7e1d392ec6a6457783749455fc8af7f64b4e13bec006665c435d3285905dfc",
+      "new_sha256": "7366d5f15d2e754dd65aca82a227544ffe0a510b79ef3ea57b7e52574c977456",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "evaluation/semantic_v2/regression/v1_rules_dev/report.json",
+      "old_sha256": "a82741ea5b12eaba5c37abcde13dba27d0af281454cd908a47c5ecf18bbcac4d",
+      "new_sha256": "940a2d54cc6ba96bcbf698093a8ad983d2ac1466357dd74808a90f509d973538",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "evaluation/semantic_v2/regression/v1_rules_test/report.json",
+      "old_sha256": "82ce5451c023743dda2ce6ef46ca68f784d4ccf0b88c2cfd2f1f4762d256e052",
+      "new_sha256": "aa563e5a54d2c6096a053dd467a307a63513282bc4f7ef97958d9e868998c131",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "evaluation/semantic_v2/regression/v2_demo_dev.json",
+      "old_sha256": "b6ad3de36283a91b9b99c74ef721ea73cbcc4e4d8a6c705ca03dde22c6906d6e",
+      "new_sha256": "306fadd0ae64ce59e343890a166e41a4a2adab7f992396a5ca3a1cbec5fd59ea",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "evaluation/semantic_v2/regression/v2_demo_heldout.json",
+      "old_sha256": "fdd66211d4212b4c448c3f4fd6e0956a03d19a4edfc41f7478148d0397da55a8",
+      "new_sha256": "cca19bd412ba66cefb5bcc4c594208eb3067de758fe9a2ae63409a0531e95095",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "reports/first-test-llm/report.json",
+      "old_sha256": "482f7445d6f1cbc4154ed6053a5ba260a3f7ad800fb2a704adb5d51d71d35813",
+      "new_sha256": "1d3f354d37bdc8cf333c72577331efe8dbf5fab9d9f9c48f41ad7228ddee00b4",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "reports/first-test-rules/report.json",
+      "old_sha256": "0fc97a3af7a9757d885b46106acc0cb0cdd31803b099d73928b1168b5408ed6a",
+      "new_sha256": "b7a98a650fe8149d786346c5058e9cee1fc4944f04231467f26a145b8e0ec7f3",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "reports/llm-dev-v1.1/report.json",
+      "old_sha256": "fd9457970b3d20ffb4d67933f50cdc54bff04acbbc8c820c49c92df28caf7cc0",
+      "new_sha256": "58444eddcffee95533a1bf7aca12a5749cd229750c22436ec92d75472c771821",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "reports/llm-dev-v1.2/report.json",
+      "old_sha256": "90d5b85e2fe253e8bcf708592e853a5004c3597c6ffe9a838e987d3487cc21dc",
+      "new_sha256": "b25c38a0796ec2b99cd1131b2ff1b352aee3eaae8e14e5d21100063696825807",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "reports/rules-dev-v1.1/report.json",
+      "old_sha256": "85e068a0b61fe9119147ce937e7f7bfd5b2848fe56afdb81508c769b389a8832",
+      "new_sha256": "ad412595bbbe10b16e8037d20fe72da94b7d3d3484b3bff945a24c79e2676833",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "reports/rules-dev-v1.2/report.json",
+      "old_sha256": "472e313e23027dd9b30baeef12f72cca44ac7cb7a03fee2d1f120e8c8a5c5f2b",
+      "new_sha256": "89b8d38759286314df432d8689fe7f2a974c22b0251efea4bb9423fa4ebd0124",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "reports/rules-dev-v1/report.json",
+      "old_sha256": "fbb1c0d04efb59fda554003e911c2a1fd2bb725062ff39612455d432551c052e",
+      "new_sha256": "7116f80b2d306c49968c7c6cebc0312b4e73b5963abac30d692c04be7326699f",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "reports/v2-regression-rules-dev/report.json",
+      "old_sha256": "85004115f8a7433647a3e2e4a37fa7df656581703683f50d5110b50486fc8d2c",
+      "new_sha256": "8729258f2b9c553af95a443bb646aa341c77a60a37d274a0c3d556c29b98a6f3",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    },
+    {
+      "path": "reports/v2-regression-rules-test/report.json",
+      "old_sha256": "b6f5c802c53a57e0e32cb6e845bed81239bc09070e743bc8477d8d9770e0748c",
+      "new_sha256": "71cb77e78d462a8fa06849f8030e6e7550b02ca02a5866b984ae5d306d9053d5",
+      "change": "only repository-relative dataset paths and/or JUnit hostname"
+    }
+  ]
+}

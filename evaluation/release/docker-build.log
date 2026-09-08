@@ -1,0 +1,129 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.40kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for ghcr.io/astral-sh/uv:0.12.9@sha256:8b940d3a9d65bed080436972241af2e21c84b5e8c9193f7014ed71479ee795ff
+#2 DONE 1.1s
+
+#3 [internal] load metadata for docker.io/library/python:3.12-slim@sha256:78387bc3881b8273120a12ebe6c1ab22b018ccc2c9adf565ae1ac9b536e184ea
+#3 DONE 1.5s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 381B done
+#4 DONE 0.0s
+
+#5 FROM ghcr.io/astral-sh/uv:0.12.9@sha256:8b940d3a9d65bed080436972241af2e21c84b5e8c9193f7014ed71479ee795ff
+#5 resolve ghcr.io/astral-sh/uv:0.12.9@sha256:8b940d3a9d65bed080436972241af2e21c84b5e8c9193f7014ed71479ee795ff 0.0s done
+#5 DONE 0.0s
+
+#6 [stage-0  1/10] FROM docker.io/library/python:3.12-slim@sha256:78387bc3881b8273120a12ebe6c1ab22b018ccc2c9adf565ae1ac9b536e184ea
+#6 resolve docker.io/library/python:3.12-slim@sha256:78387bc3881b8273120a12ebe6c1ab22b018ccc2c9adf565ae1ac9b536e184ea 0.0s done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 20.83kB done
+#7 DONE 0.0s
+
+#8 [stage-0  2/10] COPY --from=ghcr.io/astral-sh/uv:0.12.9@sha256:8b940d3a9d65bed080436972241af2e21c84b5e8c9193f7014ed71479ee795ff /uv /usr/local/bin/uv
+#8 CACHED
+
+#9 [stage-0  3/10] WORKDIR /app
+#9 CACHED
+
+#10 [stage-0  4/10] COPY pyproject.toml uv.lock README.md ./
+#10 DONE 0.0s
+
+#11 [stage-0  5/10] COPY src ./src
+#11 DONE 0.0s
+
+#12 [stage-0  6/10] COPY evals ./evals
+#12 DONE 0.0s
+
+#13 [stage-0  7/10] COPY evaluation ./evaluation
+#13 DONE 0.0s
+
+#14 [stage-0  8/10] COPY scripts/prepare_embeddings.py ./scripts/prepare_embeddings.py
+#14 DONE 0.0s
+
+#15 [stage-0  9/10] RUN case "1" in       0) uv sync --frozen --no-dev --no-editable ;;       1) uv sync --frozen --no-dev --no-editable --extra semantic ;;       *) echo "WITH_SEMANTIC must be 0 or 1" >&2; exit 2 ;;     esac
+#15 0.168 Using CPython 3.12.14 interpreter at: /usr/local/bin/python3
+#15 0.168 Creating virtual environment at: .venv
+#15 0.211    Building supplychain-decision-agent @ file:///app
+#15 0.459 Downloading sympy (6.0MiB)
+#15 0.463 Downloading faiss-cpu (9.4MiB)
+#15 0.464 Downloading pygments (1.2MiB)
+#15 0.465 Downloading scipy (32.4MiB)
+#15 0.465 Downloading numpy (15.0MiB)
+#15 0.466 Downloading pydantic-core (1.9MiB)
+#15 0.467 Downloading onnxruntime (14.5MiB)
+#15 0.468 Downloading tokenizers (3.1MiB)
+#15 0.469 Downloading hf-xet (4.1MiB)
+#15 1.962  Downloaded pygments
+#15 2.638       Built supplychain-decision-agent @ file:///app
+#15 2.816  Downloaded pydantic-core
+#15 4.410  Downloaded tokenizers
+#15 5.302  Downloaded hf-xet
+#15 6.756  Downloaded sympy
+#15 8.715  Downloaded faiss-cpu
+#15 11.35  Downloaded onnxruntime
+#15 11.48  Downloaded numpy
+#15 14.41  Downloaded scipy
+#15 14.41 Prepared 39 packages in 14.23s
+#15 14.51 Installed 39 packages in 102ms
+#15 14.51  + annotated-doc==0.0.5
+#15 14.51  + annotated-types==0.8.0
+#15 14.51  + anyio==4.15.1
+#15 14.51  + certifi==2026.7.22
+#15 14.51  + click==8.5.0
+#15 14.51  + coloredlogs==15.0.1
+#15 14.51  + faiss-cpu==1.15.0
+#15 14.51  + fastapi==0.141.1
+#15 14.51  + filelock==3.32.5
+#15 14.51  + flatbuffers==25.12.19
+#15 14.51  + fsspec==2026.7.0
+#15 14.51  + h11==0.16.0
+#15 14.51  + hf-xet==1.6.0
+#15 14.51  + httpcore==1.0.9
+#15 14.51  + httpx==0.28.1
+#15 14.51  + huggingface-hub==1.30.0
+#15 14.51  + humanfriendly==10.0
+#15 14.51  + idna==3.19
+#15 14.51  + markdown-it-py==4.2.0
+#15 14.51  + mdurl==0.1.2
+#15 14.51  + mpmath==1.3.0
+#15 14.51  + numpy==2.5.3
+#15 14.51  + onnxruntime==1.23.2
+#15 14.51  + packaging==26.3
+#15 14.51  + protobuf==7.36.1
+#15 14.51  + pydantic==2.13.5
+#15 14.51  + pydantic-core==2.46.5
+#15 14.51  + pygments==2.21.0
+#15 14.51  + pyyaml==6.0.3
+#15 14.51  + rich==14.3.4
+#15 14.51  + scipy==1.18.1
+#15 14.51  + starlette==1.6.0
+#15 14.51  + supplychain-decision-agent==0.1.0 (from file:///app)
+#15 14.51  + sympy==1.14.0
+#15 14.51  + tokenizers==0.22.2
+#15 14.51  + tqdm==4.70.0
+#15 14.51  + typing-extensions==4.16.0
+#15 14.51  + typing-inspection==0.4.4
+#15 14.51  + uvicorn==0.52.4
+#15 DONE 14.7s
+
+#16 [stage-0 10/10] RUN groupadd --gid 10001 agent && useradd --uid 10001 --gid agent --create-home agent     && mkdir -p /app/.runtime /models/bge && chown -R agent:agent /app/.runtime /models/bge
+#16 DONE 0.1s
+
+#17 exporting to image
+#17 exporting layers
+#17 exporting layers 4.2s done
+#17 exporting manifest sha256:0e9e0ce93ef7666cf3b97d0d7f9136e492e274406a4d3b18ab0d9ba2145c0aad done
+#17 exporting config sha256:7e8114fecd11dd1591dbe2b2e6f784d2f22d741362fe16ba6947b740cfd0bde8 done
+#17 exporting attestation manifest sha256:b1ba52178d675dac3d83610126e7e7b2fea0e9f7e1093d43a197071fc09d19df done
+#17 exporting manifest list sha256:36e1916b64c5623d17057ec6082e40c0d77ebd536d24b9f8c81671ed7eeb2a04 done
+#17 naming to docker.io/library/supplychain-agent:v2 done
+#17 unpacking to docker.io/library/supplychain-agent:v2
+#17 unpacking to docker.io/library/supplychain-agent:v2 1.2s done
+#17 DONE 5.4s

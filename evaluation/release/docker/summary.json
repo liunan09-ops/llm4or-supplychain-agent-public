@@ -1,0 +1,29 @@
+{
+  "success": true,
+  "live": {
+    "http_status": 200,
+    "outcome": "completed",
+    "solver": "optimal",
+    "validation": {
+      "valid": true,
+      "checks": 139,
+      "violations": []
+    },
+    "tools": [
+      "inventory_query",
+      "supplier_query",
+      "policy_retrieval",
+      "replenishment_optimizer",
+      "solution_validator"
+    ],
+    "llm_calls": 7,
+    "http_attempts": 7,
+    "elapsed_ms": 8821.427,
+    "model": "deepseek-v4-flash",
+    "request_id": "b7a49ec396ff4467a1c8ea921b3aa023"
+  },
+  "offline_network": "none",
+  "restart": true,
+  "persisted_sqlite": true,
+  "image_source_matches": true
+}

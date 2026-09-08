@@ -12,7 +12,7 @@
     "solver_source": "production",
     "validator_source": "production",
     "provenance": "synthetic engineering regression set; not a public benchmark",
-    "cases_path": "/Users/zhenhaoran/.codex/worktrees/0bdd/ln秋招/supplychain-agent/evals/cases-v1.1.jsonl",
+    "cases_path": "evals/cases-v1.1.jsonl",
     "cases_sha256": "958643ed048dc3c7446f287748f88ac7a6e39adc33ad3b11eedab7c8a5a420fe",
     "matches_frozen_cases": true,
     "selected_case_ids": [

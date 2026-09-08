@@ -1,0 +1,388 @@
+{
+  "mode": "embedding",
+  "health": {
+    "http_status": 200,
+    "wall_ms": 6.516249999947377,
+    "body": {
+      "status": "ok",
+      "version": "0.1.0",
+      "data": "synthetic",
+      "llm_key_configured": false
+    }
+  },
+  "readiness": {
+    "http_status": 200,
+    "wall_ms": 1.1572500000056607,
+    "body": {
+      "status": "ok",
+      "snapshot_id": "cc18a8ef96f0239dba65ad262def21e8ea60ff394bba37ad73f10dc7d7af255a",
+      "retrieval": {
+        "embedding": "tfidf + bge / reciprocal-rank-fusion",
+        "documents": 7,
+        "chunks": 8,
+        "dimensions": {
+          "lexical": 529,
+          "semantic": 512
+        },
+        "corpus_sha256": "e4a834f964a64eeeced7e4e88b9a3c63dcba3947f04ed82b19432850e063de04",
+        "sources": {
+          "policies/approval.md": "1ddd395308051e42523d35aef1e8165e94244d5df8d8a8ab93469bc384273a5e",
+          "policies/budget.md": "167b16d640a28fa9501fc895a0741b88d0fd6a99aa3fb2a390dce983e018435a",
+          "policies/emergency.md": "8bc18c55a40df063ddebd471067c96ffa0e395ddb09b2afda04fe03df98481c9",
+          "policies/lead.md": "2ee85526ad3b523640a0f8be81d781c9929d3b34c102ae7ab86c046da9123864",
+          "policies/moq.md": "ade3893fc3c2b51ad857e01f23ba94cf19ed76580f771eddd78ed2fe049efd41",
+          "policies/service.md": "3b6630e47f24c79a00e0d21d3123f45be0b752b2fd1c7a9c80295591914b1f77",
+          "policies/supplier.md": "e65d74c3dc0a44430ff376372cfac46e09980cbaf427014ecbc98b985ef5244f"
+        },
+        "backend": "hybrid",
+        "chunking": {
+          "method": "existing Markdown ## sections; fixed character windows within each section",
+          "max_section_chars": 700,
+          "overlap_chars": 0,
+          "prepend_document_title": true,
+          "shared_with_lexical": true
+        },
+        "fusion": "equal-weight reciprocal rank fusion at chunk level",
+        "rrf_constant": 60,
+        "candidate_k_per_backend": 5,
+        "default_top_k": 3,
+        "components": {
+          "lexical": {
+            "embedding": "tfidf-zh-bigram-word-v1",
+            "documents": 7,
+            "chunks": 8,
+            "dimensions": 529,
+            "corpus_sha256": "e4a834f964a64eeeced7e4e88b9a3c63dcba3947f04ed82b19432850e063de04",
+            "sources": {
+              "policies/approval.md": "1ddd395308051e42523d35aef1e8165e94244d5df8d8a8ab93469bc384273a5e",
+              "policies/budget.md": "167b16d640a28fa9501fc895a0741b88d0fd6a99aa3fb2a390dce983e018435a",
+              "policies/emergency.md": "8bc18c55a40df063ddebd471067c96ffa0e395ddb09b2afda04fe03df98481c9",
+              "policies/lead.md": "2ee85526ad3b523640a0f8be81d781c9929d3b34c102ae7ab86c046da9123864",
+              "policies/moq.md": "ade3893fc3c2b51ad857e01f23ba94cf19ed76580f771eddd78ed2fe049efd41",
+              "policies/service.md": "3b6630e47f24c79a00e0d21d3123f45be0b752b2fd1c7a9c80295591914b1f77",
+              "policies/supplier.md": "e65d74c3dc0a44430ff376372cfac46e09980cbaf427014ecbc98b985ef5244f"
+            }
+          },
+          "semantic": {
+            "backend": "semantic",
+            "embedding": "BAAI/bge-small-zh-v1.5",
+            "encoder": {
+              "model": "BAAI/bge-small-zh-v1.5",
+              "artifact_repo": "Xenova/bge-small-zh-v1.5",
+              "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+              "files": {
+                "onnx/model.onnx": {
+                  "size": 94851877,
+                  "sha256": "69a0b846f4f116b5e6aabf9546ea6754d02264f3211a13a1bd69b31b8040749a"
+                },
+                "tokenizer.json": {
+                  "size": 439125,
+                  "sha256": "48cea5d44424912a6fd1ea647bf4fe50b55ab8b1e5879c3275f80e339e8fae26"
+                },
+                "config.json": {
+                  "size": 716,
+                  "sha256": "d4193ead3a810fd694fa8a31d7fc72fbaebc0668b603e398734bf2f6538ff42f"
+                }
+              },
+              "dimensions": 512,
+              "precision": "FP32 (not quantized)",
+              "pooling": "last_hidden_state[:, 0, :] (CLS)",
+              "normalization": "L2",
+              "query_instruction": "为这个句子生成表示以用于检索相关文章：",
+              "document_instruction": "",
+              "max_sequence_tokens": 512,
+              "truncation": "right, including special tokens and query instruction",
+              "batch_size": 8,
+              "runtime": "onnxruntime / CPUExecutionProvider",
+              "intra_op_threads": 1,
+              "inter_op_threads": 1,
+              "network_during_inference": false
+            },
+            "documents": 7,
+            "chunks": 8,
+            "dimensions": 512,
+            "chunking": {
+              "method": "existing Markdown ## sections; fixed character windows within each section",
+              "max_section_chars": 700,
+              "overlap_chars": 0,
+              "prepend_document_title": true,
+              "shared_with_lexical": true
+            },
+            "similarity": "cosine (L2-normalized inner product)",
+            "index": "FAISS IndexFlatIP",
+            "default_top_k": 3,
+            "allowed_top_k": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "score_threshold": null,
+            "abstention": "not calibrated; nearest neighbors are not proof of relevance",
+            "corpus_sha256": "e4a834f964a64eeeced7e4e88b9a3c63dcba3947f04ed82b19432850e063de04",
+            "sources": {
+              "policies/approval.md": "1ddd395308051e42523d35aef1e8165e94244d5df8d8a8ab93469bc384273a5e",
+              "policies/budget.md": "167b16d640a28fa9501fc895a0741b88d0fd6a99aa3fb2a390dce983e018435a",
+              "policies/emergency.md": "8bc18c55a40df063ddebd471067c96ffa0e395ddb09b2afda04fe03df98481c9",
+              "policies/lead.md": "2ee85526ad3b523640a0f8be81d781c9929d3b34c102ae7ab86c046da9123864",
+              "policies/moq.md": "ade3893fc3c2b51ad857e01f23ba94cf19ed76580f771eddd78ed2fe049efd41",
+              "policies/service.md": "3b6630e47f24c79a00e0d21d3123f45be0b752b2fd1c7a9c80295591914b1f77",
+              "policies/supplier.md": "e65d74c3dc0a44430ff376372cfac46e09980cbaf427014ecbc98b985ef5244f"
+            }
+          }
+        }
+      },
+      "data": "synthetic / demo data"
+    }
+  },
+  "embedding": {
+    "manifest": {
+      "model": "BAAI/bge-small-zh-v1.5",
+      "artifact_repo": "Xenova/bge-small-zh-v1.5",
+      "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+      "files": {
+        "onnx/model.onnx": {
+          "size": 94851877,
+          "sha256": "69a0b846f4f116b5e6aabf9546ea6754d02264f3211a13a1bd69b31b8040749a"
+        },
+        "tokenizer.json": {
+          "size": 439125,
+          "sha256": "48cea5d44424912a6fd1ea647bf4fe50b55ab8b1e5879c3275f80e339e8fae26"
+        },
+        "config.json": {
+          "size": 716,
+          "sha256": "d4193ead3a810fd694fa8a31d7fc72fbaebc0668b603e398734bf2f6538ff42f"
+        }
+      },
+      "dimensions": 512,
+      "precision": "FP32 (not quantized)",
+      "pooling": "last_hidden_state[:, 0, :] (CLS)",
+      "normalization": "L2",
+      "query_instruction": "为这个句子生成表示以用于检索相关文章：",
+      "document_instruction": "",
+      "max_sequence_tokens": 512,
+      "truncation": "right, including special tokens and query instruction",
+      "batch_size": 8,
+      "runtime": "onnxruntime / CPUExecutionProvider",
+      "intra_op_threads": 1,
+      "inter_op_threads": 1,
+      "network_during_inference": false
+    },
+    "shape": [
+      1,
+      512
+    ],
+    "norm": 1.0,
+    "providers": [
+      "CPUExecutionProvider"
+    ]
+  },
+  "retrieval": {
+    "lexical": {
+      "query": "采购预算和供应商资质",
+      "embedding": "tfidf-zh-bigram-word-v1",
+      "index": "FAISS IndexFlatIP",
+      "corpus_sha256": "e4a834f964a64eeeced7e4e88b9a3c63dcba3947f04ed82b19432850e063de04",
+      "hits": [
+        {
+          "score": 0.265384316444397,
+          "citation": {
+            "id": "POL-APPROVAL:02",
+            "source": "policies/approval.md",
+            "text": "POL-APPROVAL 采购审批规则\n## 异常处理\n约束不可行时报告阻碍条件，由申请人决定是否提交新的预算或服务要求；不得自动放宽预算、MOQ、服务水平或改写供应商资质。",
+            "source_sha256": "1ddd395308051e42523d35aef1e8165e94244d5df8d8a8ab93469bc384273a5e",
+            "provenance": "synthetic / demo data"
+          }
+        },
+        {
+          "score": 0.22999955713748932,
+          "citation": {
+            "id": "POL-EMERGENCY:01",
+            "source": "policies/emergency.md",
+            "text": "POL-EMERGENCY 紧急采购规则\n## 紧急采购不豁免约束\n停线风险、紧急采购或急单不自动豁免预算、供应商资质、MOQ、交期及供货上限。申请人需要给出具体 SKU、数量或服务要求。不支持通过加价自动缩短交期，也不支持未经审批的替代供应商。当前模型不包含加急运输决策。",
+            "source_sha256": "8bc18c55a40df063ddebd471067c96ffa0e395ddb09b2afda04fe03df98481c9",
+            "provenance": "synthetic / demo data"
+          }
+        },
+        {
+          "score": 0.21414604783058167,
+          "citation": {
+            "id": "POL-SUPPLIER:01",
+            "source": "policies/supplier.md",
+            "text": "POL-SUPPLIER 供应商管理制度\n## 固定供应商与资质\n每个 SKU 使用数据库中唯一指定的供应商报价。只有 approved 状态允许新采购；inactive 状态按供货上限为零处理。禁止从模型记忆生成供应商名称、价格、起订量或交期。本版本不做多供应商分配，也不执行新增供应商操作。",
+            "source_sha256": "e65d74c3dc0a44430ff376372cfac46e09980cbaf427014ecbc98b985ef5244f",
+            "provenance": "synthetic / demo data"
+          }
+        }
+      ]
+    },
+    "semantic": {
+      "query": "采购预算和供应商资质",
+      "backend": "semantic",
+      "embedding": "BAAI/bge-small-zh-v1.5",
+      "model_revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+      "index": "FAISS IndexFlatIP",
+      "similarity": "cosine (L2-normalized inner product)",
+      "corpus_sha256": "e4a834f964a64eeeced7e4e88b9a3c63dcba3947f04ed82b19432850e063de04",
+      "top_k": 3,
+      "hits": [
+        {
+          "score": 0.6299595832824707,
+          "citation": {
+            "id": "POL-APPROVAL:02",
+            "source": "policies/approval.md",
+            "text": "POL-APPROVAL 采购审批规则\n## 异常处理\n约束不可行时报告阻碍条件，由申请人决定是否提交新的预算或服务要求；不得自动放宽预算、MOQ、服务水平或改写供应商资质。",
+            "source_sha256": "1ddd395308051e42523d35aef1e8165e94244d5df8d8a8ab93469bc384273a5e",
+            "provenance": "synthetic / demo data"
+          }
+        },
+        {
+          "score": 0.6011877655982971,
+          "citation": {
+            "id": "POL-APPROVAL:01",
+            "source": "policies/approval.md",
+            "text": "POL-APPROVAL 采购审批规则\n## 审批与执行边界\n本系统只生成采购建议，不具有下单或付款权限。采购申请必须由采购负责人审核；预算外申请需要财务审批。Agent 不得声称已经创建订单、完成付款或获得审批。采购订单查询只读。",
+            "source_sha256": "1ddd395308051e42523d35aef1e8165e94244d5df8d8a8ab93469bc384273a5e",
+            "provenance": "synthetic / demo data"
+          }
+        },
+        {
+          "score": 0.5775540471076965,
+          "citation": {
+            "id": "POL-SUPPLIER:01",
+            "source": "policies/supplier.md",
+            "text": "POL-SUPPLIER 供应商管理制度\n## 固定供应商与资质\n每个 SKU 使用数据库中唯一指定的供应商报价。只有 approved 状态允许新采购；inactive 状态按供货上限为零处理。禁止从模型记忆生成供应商名称、价格、起订量或交期。本版本不做多供应商分配，也不执行新增供应商操作。",
+            "source_sha256": "e65d74c3dc0a44430ff376372cfac46e09980cbaf427014ecbc98b985ef5244f",
+            "provenance": "synthetic / demo data"
+          }
+        }
+      ]
+    },
+    "hybrid": {
+      "query": "采购预算和供应商资质",
+      "backend": "hybrid",
+      "embedding": "tfidf + bge / reciprocal-rank-fusion",
+      "index": "two FAISS IndexFlatIP indices + RRF",
+      "corpus_sha256": "e4a834f964a64eeeced7e4e88b9a3c63dcba3947f04ed82b19432850e063de04",
+      "top_k": 3,
+      "rrf_constant": 60,
+      "candidate_k_per_backend": 5,
+      "hits": [
+        {
+          "score": 0.03278688524590164,
+          "citation": {
+            "id": "POL-APPROVAL:02",
+            "source": "policies/approval.md",
+            "text": "POL-APPROVAL 采购审批规则\n## 异常处理\n约束不可行时报告阻碍条件，由申请人决定是否提交新的预算或服务要求；不得自动放宽预算、MOQ、服务水平或改写供应商资质。",
+            "source_sha256": "1ddd395308051e42523d35aef1e8165e94244d5df8d8a8ab93469bc384273a5e",
+            "provenance": "synthetic / demo data"
+          },
+          "components": {
+            "lexical": {
+              "rank": 1,
+              "score": 0.265384316444397,
+              "rrf_contribution": 0.01639344262295082
+            },
+            "semantic": {
+              "rank": 1,
+              "score": 0.6299595832824707,
+              "rrf_contribution": 0.01639344262295082
+            }
+          }
+        },
+        {
+          "score": 0.031754032258064516,
+          "citation": {
+            "id": "POL-EMERGENCY:01",
+            "source": "policies/emergency.md",
+            "text": "POL-EMERGENCY 紧急采购规则\n## 紧急采购不豁免约束\n停线风险、紧急采购或急单不自动豁免预算、供应商资质、MOQ、交期及供货上限。申请人需要给出具体 SKU、数量或服务要求。不支持通过加价自动缩短交期，也不支持未经审批的替代供应商。当前模型不包含加急运输决策。",
+            "source_sha256": "8bc18c55a40df063ddebd471067c96ffa0e395ddb09b2afda04fe03df98481c9",
+            "provenance": "synthetic / demo data"
+          },
+          "components": {
+            "lexical": {
+              "rank": 2,
+              "score": 0.22999955713748932,
+              "rrf_contribution": 0.016129032258064516
+            },
+            "semantic": {
+              "rank": 4,
+              "score": 0.568140983581543,
+              "rrf_contribution": 0.015625
+            }
+          }
+        },
+        {
+          "score": 0.031746031746031744,
+          "citation": {
+            "id": "POL-SUPPLIER:01",
+            "source": "policies/supplier.md",
+            "text": "POL-SUPPLIER 供应商管理制度\n## 固定供应商与资质\n每个 SKU 使用数据库中唯一指定的供应商报价。只有 approved 状态允许新采购；inactive 状态按供货上限为零处理。禁止从模型记忆生成供应商名称、价格、起订量或交期。本版本不做多供应商分配，也不执行新增供应商操作。",
+            "source_sha256": "e65d74c3dc0a44430ff376372cfac46e09980cbaf427014ecbc98b985ef5244f",
+            "provenance": "synthetic / demo data"
+          },
+          "components": {
+            "lexical": {
+              "rank": 3,
+              "score": 0.21414604783058167,
+              "rrf_contribution": 0.015873015873015872
+            },
+            "semantic": {
+              "rank": 3,
+              "score": 0.5775540471076965,
+              "rrf_contribution": 0.015873015873015872
+            }
+          }
+        }
+      ]
+    }
+  },
+  "installed_source_sha256": {
+    "__init__.py": "2a08687ccbb9a50511edf48b66eaece13d7dcd6147e03f7746080a10ddda31a8",
+    "api.py": "99e279356fde56320657be3357756a92e024c7b7c121c07ffea6a21c8b4bd106",
+    "audit.py": "627e5ecd124acfd79bedccfa06177299c748fd474da67fade8d0e01f6ba46c81",
+    "cli.py": "46302ef912f1bf52511c6b9d86e293709308182122bd436f0bb1ecec6ccad773",
+    "data.py": "80bdb714028ca46f889bf3d394bf4d2b9d7550b6911597adfe96eb675df55f87",
+    "evaluation.py": "f7a4ea53211cd67b2ff30bee05cf3a7d10828ac0ba7a374ff1c8d5dee1209241",
+    "language.py": "439b8479f8a0045934f5b4741fa29ab9c33008797a95ac7d59ee3952f57b1d14",
+    "optimizer.py": "af2cb53b58f5e02af88706859c38f4086087787ea6bfa712db5bb4d9dada0cf6",
+    "schemas.py": "fb173ed1828f24cdd652ca7395fedbdaf0cbc2155a5573e85bef0dbcf707ef2c",
+    "service.py": "06e66772737ca907f861e01032d610b31a2707193b42903d9f95b76031a6ee43",
+    "v2/__init__.py": "53f3c82ba05beba7676e6199785b286f7a705789bfb68d15fbc0525afd208c8d",
+    "v2/agent.py": "3df315157903853820b155462b553d668815ef382866abda66a7b7118ebc2c75",
+    "v2/api.py": "6258973045754ab29b2e21d157454f4d4471f8e7dc549a0e653720e976b6e70e",
+    "v2/contracts.py": "f89771ec428fffe0665bf84a32bbd64c813a106c0533f2f2d54078ffd8d6af8d",
+    "v2/database.py": "c91b7533bbce0ae39dc350602b0edf6befdca295f2389c459b51da320d8564dc",
+    "v2/embeddings.py": "e0dd1f5dd8ef62a7c77255ca34ada51e3cfb7ef0a5f49e2a8f012de56409c333",
+    "v2/evaluation.py": "1160bdfcb7a86c2e7827367ed2706f3ccb26cefebffb97def1fd75172a192487",
+    "v2/model.py": "ba2d8de23eb30ac4a15198c2c6ab035c3be142035cb28deadaa11d357f156215",
+    "v2/policies/approval.md": "1ddd395308051e42523d35aef1e8165e94244d5df8d8a8ab93469bc384273a5e",
+    "v2/policies/budget.md": "167b16d640a28fa9501fc895a0741b88d0fd6a99aa3fb2a390dce983e018435a",
+    "v2/policies/emergency.md": "8bc18c55a40df063ddebd471067c96ffa0e395ddb09b2afda04fe03df98481c9",
+    "v2/policies/lead.md": "2ee85526ad3b523640a0f8be81d781c9929d3b34c102ae7ab86c046da9123864",
+    "v2/policies/moq.md": "ade3893fc3c2b51ad857e01f23ba94cf19ed76580f771eddd78ed2fe049efd41",
+    "v2/policies/service.md": "3b6630e47f24c79a00e0d21d3123f45be0b752b2fd1c7a9c80295591914b1f77",
+    "v2/policies/supplier.md": "e65d74c3dc0a44430ff376372cfac46e09980cbaf427014ecbc98b985ef5244f",
+    "v2/retrieval.py": "94ece7a0a5e2c7c72137e291170e76ec8eaec1204c32fa32d1599b5c63f243ae",
+    "v2/semantic_evaluation.py": "2b191d9d47f87b2021813b1f6bd5c4a3948666267fff5631bf84982abbe758ec",
+    "v2/semantic_retrieval.py": "dfd83227912bf80c2adb63c3f85334681ebcbfd34d2a5b34f531dcbf36c6c5ed",
+    "v2/tools.py": "8cb37c573197fc8af197cfe5749e0daf9e447dc828eea7864192eb7695e34a26",
+    "v2/trace.py": "de79335adbb60686042c01417554dcb3ed6950202982705f1b18995f2dc883bb"
+  },
+  "versions": {
+    "fastapi": "0.141.1",
+    "pydantic": "2.13.5",
+    "scipy": "1.18.1",
+    "numpy": "2.5.3",
+    "faiss-cpu": "1.15.0",
+    "onnxruntime": "1.23.2",
+    "tokenizers": "0.22.2"
+  },
+  "runtime": {
+    "machine": "aarch64",
+    "python": "3.12.14",
+    "uid": 10001,
+    "key_present": false
+  }
+}

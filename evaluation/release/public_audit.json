@@ -1,0 +1,230 @@
+{
+  "public_release_snapshot_safe": true,
+  "scope": "project index and matching working tree; history scanned for credentials",
+  "tracked_files": 307,
+  "reachable_project_blobs": 272,
+  "configured_credentials_checked": 1,
+  "blockers": [],
+  "forbidden_files": [],
+  "unstaged_differences": [],
+  "findings": {
+    "index": {
+      "evaluation/evidence/pytest-baseline.xml": {
+        "test_fake_email": 3
+      },
+      "evaluation/evidence/pytest-final.xml": {
+        "test_fake_email": 3
+      },
+      "evaluation/evidence/pytest-phase1.xml": {
+        "test_fake_email": 3
+      },
+      "evaluation/evidence/pytest-phase2.xml": {
+        "test_fake_email": 3
+      },
+      "evaluation/evidence/pytest-phase3.xml": {
+        "test_fake_email": 3
+      },
+      "evaluation/evidence/pytest-phase4.xml": {
+        "test_fake_email": 3
+      },
+      "evaluation/evidence/pytest-phase5.xml": {
+        "test_fake_email": 3
+      },
+      "evaluation/evidence/pytest-phase6.xml": {
+        "test_fake_email": 3
+      },
+      "evaluation/evidence/pytest-phase7.xml": {
+        "test_fake_email": 3
+      },
+      "evaluation/final/pytest-final.xml": {
+        "test_fake_email": 3
+      },
+      "evaluation/release/pytest-final.xml": {
+        "test_fake_email": 3
+      },
+      "evaluation/semantic_v2/pytest-baseline.xml": {
+        "test_fake_email": 3
+      },
+      "evaluation/semantic_v2/pytest-final.xml": {
+        "test_fake_email": 3
+      },
+      "scripts/audit_public_repo.py": {
+        "test_fake_email": 3
+      },
+      "tests/test_language.py": {
+        "test_fake_email": 3
+      }
+    },
+    "working": {
+      "evaluation/evidence/pytest-baseline.xml": {
+        "test_fake_email": 3
+      },
+      "evaluation/evidence/pytest-final.xml": {
+        "test_fake_email": 3
+      },
+      "evaluation/evidence/pytest-phase1.xml": {
+        "test_fake_email": 3
+      },
+      "evaluation/evidence/pytest-phase2.xml": {
+        "test_fake_email": 3
+      },
+      "evaluation/evidence/pytest-phase3.xml": {
+        "test_fake_email": 3
+      },
+      "evaluation/evidence/pytest-phase4.xml": {
+        "test_fake_email": 3
+      },
+      "evaluation/evidence/pytest-phase5.xml": {
+        "test_fake_email": 3
+      },
+      "evaluation/evidence/pytest-phase6.xml": {
+        "test_fake_email": 3
+      },
+      "evaluation/evidence/pytest-phase7.xml": {
+        "test_fake_email": 3
+      },
+      "evaluation/final/pytest-final.xml": {
+        "test_fake_email": 3
+      },
+      "evaluation/release/pytest-final.xml": {
+        "test_fake_email": 3
+      },
+      "evaluation/semantic_v2/pytest-baseline.xml": {
+        "test_fake_email": 3
+      },
+      "evaluation/semantic_v2/pytest-final.xml": {
+        "test_fake_email": 3
+      },
+      "scripts/audit_public_repo.py": {
+        "test_fake_email": 3
+      },
+      "tests/test_language.py": {
+        "test_fake_email": 3
+      }
+    },
+    "history": {
+      "e281ea5c2c83905d80d4dfa282036892b3a523c2": {
+        "path": "evaluation/evidence/pytest-baseline.xml",
+        "test_fake_email": 3
+      },
+      "148a632626dfc98c537e28e57e0b74b71261c6f7": {
+        "path": "evaluation/evidence/pytest-final.xml",
+        "test_fake_email": 3
+      },
+      "ad3641f9e50add3a891001cf95e952e1c8d45a53": {
+        "path": "evaluation/evidence/pytest-phase1.xml",
+        "test_fake_email": 3
+      },
+      "685262572524999b8170c1f773953f9a0c9882ca": {
+        "path": "evaluation/evidence/pytest-phase2.xml",
+        "test_fake_email": 3
+      },
+      "ac3e51b2ab643c58b7e9ca3bb7aa5703b2d28e1e": {
+        "path": "evaluation/evidence/pytest-phase3.xml",
+        "test_fake_email": 3
+      },
+      "ca7ee000235f4d50e5b339750e31821fafbe28b0": {
+        "path": "evaluation/evidence/pytest-phase4.xml",
+        "test_fake_email": 3
+      },
+      "e39b0b2ecd8f84a731e33ab0dac71b08b19b7af1": {
+        "path": "evaluation/evidence/pytest-phase5.xml",
+        "test_fake_email": 3
+      },
+      "864e4703c2ddf189cdc3c3e8db095e09e83568f5": {
+        "path": "evaluation/evidence/pytest-phase6.xml",
+        "test_fake_email": 3
+      },
+      "25165554000ec39d9f436de6719c9d8f2b0c8698": {
+        "path": "evaluation/evidence/pytest-phase7.xml",
+        "test_fake_email": 3
+      },
+      "35f702d922eb0da9325734fa39f7e9d5bc9606d7": {
+        "path": "evaluation/final/pytest-final.xml",
+        "test_fake_email": 3
+      },
+      "edb8e76a4b138dc3b4a8d8352ead987c14428c2c": {
+        "path": "evaluation/final/regression/v1_rules_dev/report.json",
+        "personal_path": 1
+      },
+      "766415d61faeb3f7e2f56c6fd1413f820dca1052": {
+        "path": "evaluation/final/regression/v1_rules_test/report.json",
+        "personal_path": 1
+      },
+      "01e6ed4883847a6ed3159d8071413ddc870edc0b": {
+        "path": "evaluation/final/regression/v2_demo_dev.json",
+        "personal_path": 1
+      },
+      "f7ee7157c0e08689eb7dc18fd70d59e705bbae6e": {
+        "path": "evaluation/final/regression/v2_demo_heldout.json",
+        "personal_path": 1
+      },
+      "3d2241007c6538539049d01c592e7f4faa37e795": {
+        "path": "evaluation/semantic_v2/pytest-baseline.xml",
+        "test_fake_email": 3
+      },
+      "f9bc1b5ca0280f2be2f58119b3c4515202118063": {
+        "path": "evaluation/semantic_v2/pytest-final.xml",
+        "test_fake_email": 3
+      },
+      "782a6f0e7891001d0c37d28affbed1b969b0fed9": {
+        "path": "evaluation/semantic_v2/regression/v1_rules_dev/report.json",
+        "personal_path": 1
+      },
+      "290e09cc77fbc4cf3c4b1464d9609e5c98a431e3": {
+        "path": "evaluation/semantic_v2/regression/v1_rules_test/report.json",
+        "personal_path": 1
+      },
+      "a6abb92ceb07b21061ab2aefcf31ed93d506cf70": {
+        "path": "evaluation/semantic_v2/regression/v2_demo_dev.json",
+        "personal_path": 1
+      },
+      "63c5e8695eb87d07898359fca3f9df50d59a241d": {
+        "path": "evaluation/semantic_v2/regression/v2_demo_heldout.json",
+        "personal_path": 1
+      },
+      "99224fb3897bd2d5641ad6728d9d13081de3d1e9": {
+        "path": "reports/first-test-llm/report.json",
+        "personal_path": 1
+      },
+      "849a072a95417427829b1e4ad98008d2d46b4f7d": {
+        "path": "reports/first-test-rules/report.json",
+        "personal_path": 1
+      },
+      "af9e637d3a3fc1577f8377172287fb0296f8ea72": {
+        "path": "reports/llm-dev-v1.1/report.json",
+        "personal_path": 1
+      },
+      "c8f427df800cbb0b9deb6ce075944db4e42b4eeb": {
+        "path": "reports/llm-dev-v1.2/report.json",
+        "personal_path": 1
+      },
+      "5d5de970aafdc20abd57c4d87ed37937bc7b6e94": {
+        "path": "reports/rules-dev-v1.1/report.json",
+        "personal_path": 1
+      },
+      "7b164cd7efcfd7278a3b8549d75f20a603054b5a": {
+        "path": "reports/rules-dev-v1.2/report.json",
+        "personal_path": 1
+      },
+      "8efb0894f90aca3266dbceb7984360a21bc49c67": {
+        "path": "reports/rules-dev-v1/report.json",
+        "personal_path": 1
+      },
+      "83f54e8feca8223d0f87bc5a792bc3013878fb56": {
+        "path": "reports/v2-regression-rules-dev/report.json",
+        "personal_path": 1
+      },
+      "4b934428d19a9a9fe2316b16f1cf10e0dad1fd59": {
+        "path": "reports/v2-regression-rules-test/report.json",
+        "personal_path": 1
+      },
+      "3ccbb7622af6d8bab9c50d38261895cef1d90804": {
+        "path": "tests/test_language.py",
+        "test_fake_email": 3
+      }
+    }
+  },
+  "history_privacy": "Old dataset paths remain in historical blobs. Publish a clean project snapshot; existing history is not privacy-cleaned.",
+  "human_review": "See PUBLIC_REPO_SAFETY_AUDIT.md for fake credentials and business data."
+}
