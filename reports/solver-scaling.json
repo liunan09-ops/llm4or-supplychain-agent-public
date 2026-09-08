@@ -1,0 +1,117 @@
+{
+  "date": "2026-09-07T04:30:40.734066+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "python": "3.12.14",
+  "scope": "synthetic solver scaling smoke; 3 seeds per size; no business claims",
+  "time_limit_seconds": 5,
+  "records": [
+    {
+      "sku_count": 5,
+      "seed": 7,
+      "status": "optimal",
+      "elapsed_ms": 7.682,
+      "mip_gap": 0.0,
+      "validated": true,
+      "objective": 222956.0
+    },
+    {
+      "sku_count": 5,
+      "seed": 23,
+      "status": "optimal",
+      "elapsed_ms": 3.891,
+      "mip_gap": 0.0,
+      "validated": true,
+      "objective": 131094.0
+    },
+    {
+      "sku_count": 5,
+      "seed": 61,
+      "status": "optimal",
+      "elapsed_ms": 9.621,
+      "mip_gap": 0.0,
+      "validated": true,
+      "objective": 158490.0
+    },
+    {
+      "sku_count": 20,
+      "seed": 7,
+      "status": "optimal",
+      "elapsed_ms": 3.398,
+      "mip_gap": 0.0,
+      "validated": true,
+      "objective": 568394.0
+    },
+    {
+      "sku_count": 20,
+      "seed": 23,
+      "status": "optimal",
+      "elapsed_ms": 12.429,
+      "mip_gap": 0.0,
+      "validated": true,
+      "objective": 439572.0
+    },
+    {
+      "sku_count": 20,
+      "seed": 61,
+      "status": "optimal",
+      "elapsed_ms": 8.295,
+      "mip_gap": 0.0,
+      "validated": true,
+      "objective": 595749.0
+    },
+    {
+      "sku_count": 50,
+      "seed": 7,
+      "status": "optimal",
+      "elapsed_ms": 11.835,
+      "mip_gap": 0.0,
+      "validated": true,
+      "objective": 1188770.0
+    },
+    {
+      "sku_count": 50,
+      "seed": 23,
+      "status": "optimal",
+      "elapsed_ms": 9.863,
+      "mip_gap": 0.0,
+      "validated": true,
+      "objective": 1017029.0
+    },
+    {
+      "sku_count": 50,
+      "seed": 61,
+      "status": "optimal",
+      "elapsed_ms": 9.007,
+      "mip_gap": 0.0,
+      "validated": true,
+      "objective": 1232484.38
+    },
+    {
+      "sku_count": 100,
+      "seed": 7,
+      "status": "optimal",
+      "elapsed_ms": 16.457,
+      "mip_gap": 0.0,
+      "validated": true,
+      "objective": 2081516.0
+    },
+    {
+      "sku_count": 100,
+      "seed": 23,
+      "status": "optimal",
+      "elapsed_ms": 19.497,
+      "mip_gap": 0.0,
+      "validated": true,
+      "objective": 2022442.0
+    },
+    {
+      "sku_count": 100,
+      "seed": 61,
+      "status": "optimal",
+      "elapsed_ms": 23.715,
+      "mip_gap": 2.2543881707475017e-16,
+      "validated": true,
+      "objective": 2065577.23
+    }
+  ]
+}

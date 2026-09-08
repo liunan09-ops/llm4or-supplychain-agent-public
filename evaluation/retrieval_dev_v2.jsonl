@@ -1,0 +1,6 @@
+{"id":"rag-dev-01","query":"采购预算是否包括持有成本和缺货惩罚","relevant_documents":["POL-BUDGET"]}
+{"id":"rag-dev-02","query":"起订量是不是整箱倍数","relevant_documents":["POL-MOQ"]}
+{"id":"rag-dev-03","query":"紧急停线是否可以绕开预算审批","relevant_documents":["POL-EMERGENCY","POL-APPROVAL"]}
+{"id":"rag-dev-04","query":"在途订单什么时候加到库存","relevant_documents":["POL-LEAD"]}
+{"id":"rag-dev-05","query":"供应商inactive能采购吗","relevant_documents":["POL-SUPPLIER"]}
+{"id":"rag-dev-06","query":"服务水平约束逐SKU还是总体满足率","relevant_documents":["POL-SERVICE"]}

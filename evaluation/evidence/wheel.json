@@ -1,0 +1,14 @@
+{
+  "wheel": "supplychain_decision_agent-0.1.0-py3-none-any.whl",
+  "sha256": "c43341ad0af06cec47b82ad21612f871e879e2c9e6b159b22fc23b760b304e2b",
+  "policy_resources": [
+    "supplychain_agent/v2/policies/approval.md",
+    "supplychain_agent/v2/policies/budget.md",
+    "supplychain_agent/v2/policies/emergency.md",
+    "supplychain_agent/v2/policies/lead.md",
+    "supplychain_agent/v2/policies/moq.md",
+    "supplychain_agent/v2/policies/service.md",
+    "supplychain_agent/v2/policies/supplier.md"
+  ],
+  "success": true
+}

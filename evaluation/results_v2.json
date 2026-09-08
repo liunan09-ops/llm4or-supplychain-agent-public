@@ -1,0 +1,353 @@
+{
+  "provenance": "synthetic / demo data; AI-assisted development and dataset authoring",
+  "protocol": "PROTOCOL_V2.md",
+  "runs": {
+    "dev_demo_final": {
+      "path": "runs_v2/dev_demo_final.json",
+      "sha256": "04a7535c1daccf287c3245a26a2369b0aac79090f020f20af2e9985626d138ca",
+      "kind": "deterministic_demo",
+      "metrics": {
+        "intent_correct": {
+          "passed": 14,
+          "total": 14,
+          "rate": 1.0
+        },
+        "raw_model_intent_correct": {
+          "passed": 0,
+          "total": 0,
+          "rate": null
+        },
+        "tool_selection_correct": {
+          "passed": 14,
+          "total": 14,
+          "rate": 1.0
+        },
+        "tool_arguments_correct": {
+          "passed": 14,
+          "total": 14,
+          "rate": 1.0
+        },
+        "retrieval_hit": {
+          "passed": 2,
+          "total": 2,
+          "rate": 1.0
+        },
+        "constraint_pass": {
+          "passed": 3,
+          "total": 3,
+          "rate": 1.0
+        },
+        "end_to_end_success": {
+          "passed": 14,
+          "total": 14,
+          "rate": 1.0
+        },
+        "clarification_correct": {
+          "passed": 3,
+          "total": 3,
+          "rate": 1.0
+        },
+        "refusal_correct": {
+          "passed": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "latency_ms": {
+          "p50": 5.346,
+          "p95": 17.042199999999998,
+          "total": 104.77199999999999
+        },
+        "llm_calls": 0,
+        "http_attempts": 0,
+        "known_usage_tokens": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        },
+        "all_usage_known": true,
+        "estimated_model_cost": null,
+        "cost_note": "No versioned provider/cache-aware price table was supplied; no cost invented."
+      },
+      "dataset_sha256": "bd734818e56c8b150d68786f0c153e296331db415dbde42e0f76bcce4454aba8",
+      "source_sha256": "a0f91e8c3b0a80bd967bf57c66f9c7236ba434b7deb68c08eccf49fb0639c40a",
+      "failed_case_ids": []
+    },
+    "dev_llm_final": {
+      "path": "runs_v2/dev_llm_final.json",
+      "sha256": "8aaefe3b9d3dac8d76a55026343fcf55c5667f6854259d502caed122f94c23e0",
+      "kind": "live_llm",
+      "metrics": {
+        "intent_correct": {
+          "passed": 14,
+          "total": 14,
+          "rate": 1.0
+        },
+        "raw_model_intent_correct": {
+          "passed": 12,
+          "total": 13,
+          "rate": 0.9230769230769231
+        },
+        "tool_selection_correct": {
+          "passed": 14,
+          "total": 14,
+          "rate": 1.0
+        },
+        "tool_arguments_correct": {
+          "passed": 13,
+          "total": 14,
+          "rate": 0.9285714285714286
+        },
+        "retrieval_hit": {
+          "passed": 2,
+          "total": 2,
+          "rate": 1.0
+        },
+        "constraint_pass": {
+          "passed": 3,
+          "total": 3,
+          "rate": 1.0
+        },
+        "end_to_end_success": {
+          "passed": 14,
+          "total": 14,
+          "rate": 1.0
+        },
+        "clarification_correct": {
+          "passed": 3,
+          "total": 3,
+          "rate": 1.0
+        },
+        "refusal_correct": {
+          "passed": 1,
+          "total": 1,
+          "rate": 1.0
+        },
+        "latency_ms": {
+          "p50": 4394.108,
+          "p95": 11192.974549999999,
+          "total": 71338.006
+        },
+        "llm_calls": 52,
+        "http_attempts": 52,
+        "known_usage_tokens": {
+          "prompt_tokens": 77421,
+          "completion_tokens": 2919,
+          "total_tokens": 80340
+        },
+        "all_usage_known": true,
+        "estimated_model_cost": null,
+        "cost_note": "No versioned provider/cache-aware price table was supplied; no cost invented."
+      },
+      "dataset_sha256": "bd734818e56c8b150d68786f0c153e296331db415dbde42e0f76bcce4454aba8",
+      "source_sha256": "a0f91e8c3b0a80bd967bf57c66f9c7236ba434b7deb68c08eccf49fb0639c40a",
+      "failed_case_ids": []
+    },
+    "heldout_demo": {
+      "path": "runs_v2/heldout_demo.json",
+      "sha256": "d5d732f606a35003038ca707eaa611a37082c9e5d2b1b27d0099739a2731a12e",
+      "kind": "deterministic_demo",
+      "metrics": {
+        "intent_correct": {
+          "passed": 17,
+          "total": 24,
+          "rate": 0.7083333333333334
+        },
+        "raw_model_intent_correct": {
+          "passed": 0,
+          "total": 0,
+          "rate": null
+        },
+        "tool_selection_correct": {
+          "passed": 17,
+          "total": 24,
+          "rate": 0.7083333333333334
+        },
+        "tool_arguments_correct": {
+          "passed": 18,
+          "total": 24,
+          "rate": 0.75
+        },
+        "retrieval_hit": {
+          "passed": 1,
+          "total": 2,
+          "rate": 0.5
+        },
+        "constraint_pass": {
+          "passed": 4,
+          "total": 4,
+          "rate": 1.0
+        },
+        "end_to_end_success": {
+          "passed": 17,
+          "total": 24,
+          "rate": 0.7083333333333334
+        },
+        "clarification_correct": {
+          "passed": 4,
+          "total": 4,
+          "rate": 1.0
+        },
+        "refusal_correct": {
+          "passed": 2,
+          "total": 2,
+          "rate": 1.0
+        },
+        "latency_ms": {
+          "p50": 3.6985,
+          "p95": 14.20095,
+          "total": 148.052
+        },
+        "llm_calls": 0,
+        "http_attempts": 0,
+        "known_usage_tokens": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        },
+        "all_usage_known": true,
+        "estimated_model_cost": null,
+        "cost_note": "No versioned provider/cache-aware price table was supplied; no cost invented."
+      },
+      "dataset_sha256": "40d5a5a6a943158931fa9d2ccf8d38ab52398e31dad0acd2710a996962abbf1a",
+      "source_sha256": "a0f91e8c3b0a80bd967bf57c66f9c7236ba434b7deb68c08eccf49fb0639c40a",
+      "failed_case_ids": [
+        "v2-test-02",
+        "v2-test-03",
+        "v2-test-05",
+        "v2-test-06",
+        "v2-test-09",
+        "v2-test-11",
+        "v2-test-13"
+      ]
+    },
+    "heldout_llm": {
+      "path": "runs_v2/heldout_llm.json",
+      "sha256": "020e7ca5773e3b46d8974f0d669ce6f4ca4c3fa0e4e07ce8797741262a8db8de",
+      "kind": "live_llm",
+      "metrics": {
+        "intent_correct": {
+          "passed": 24,
+          "total": 24,
+          "rate": 1.0
+        },
+        "raw_model_intent_correct": {
+          "passed": 21,
+          "total": 22,
+          "rate": 0.9545454545454546
+        },
+        "tool_selection_correct": {
+          "passed": 24,
+          "total": 24,
+          "rate": 1.0
+        },
+        "tool_arguments_correct": {
+          "passed": 22,
+          "total": 24,
+          "rate": 0.9166666666666666
+        },
+        "retrieval_hit": {
+          "passed": 2,
+          "total": 2,
+          "rate": 1.0
+        },
+        "constraint_pass": {
+          "passed": 5,
+          "total": 5,
+          "rate": 1.0
+        },
+        "end_to_end_success": {
+          "passed": 22,
+          "total": 24,
+          "rate": 0.9166666666666666
+        },
+        "clarification_correct": {
+          "passed": 4,
+          "total": 4,
+          "rate": 1.0
+        },
+        "refusal_correct": {
+          "passed": 2,
+          "total": 2,
+          "rate": 1.0
+        },
+        "latency_ms": {
+          "p50": 3625.688,
+          "p95": 7275.70875,
+          "total": 93485.629
+        },
+        "llm_calls": 97,
+        "http_attempts": 97,
+        "known_usage_tokens": {
+          "prompt_tokens": 150390,
+          "completion_tokens": 5811,
+          "total_tokens": 156201
+        },
+        "all_usage_known": true,
+        "estimated_model_cost": null,
+        "cost_note": "No versioned provider/cache-aware price table was supplied; no cost invented."
+      },
+      "dataset_sha256": "40d5a5a6a943158931fa9d2ccf8d38ab52398e31dad0acd2710a996962abbf1a",
+      "source_sha256": "a0f91e8c3b0a80bd967bf57c66f9c7236ba434b7deb68c08eccf49fb0639c40a",
+      "failed_case_ids": [
+        "v2-test-02",
+        "v2-test-17"
+      ]
+    },
+    "retrieval_dev": {
+      "path": "runs_v2/retrieval_dev.json",
+      "sha256": "9814dad10a9f9de3c764a625d33dd165f44a54c7d5f15ef983dd9c81c017e88d",
+      "kind": "independent_retrieval",
+      "metrics": {
+        "hit_at_1": {
+          "passed": 6,
+          "total": 6,
+          "rate": 1.0
+        },
+        "hit_at_3": {
+          "passed": 6,
+          "total": 6,
+          "rate": 1.0
+        },
+        "recall_at_3": 1.0,
+        "mrr_at_3": 1.0
+      },
+      "dataset_sha256": "ae89b72b4796005fb26df9a95abaf3f181a758cecb086b9e0e2d0a435f93f5bf",
+      "source_sha256": "e543b2f6b3b71c4837f20d290b3e8dc3c0623ece75714c02e8cbee456012df0b",
+      "failed_case_ids": []
+    },
+    "retrieval_heldout": {
+      "path": "runs_v2/retrieval_heldout.json",
+      "sha256": "8a9d8f2a3c15b07a7124fe46d5477661797fca5d0d8b39fce0c3ffc65d828b7c",
+      "kind": "independent_retrieval",
+      "metrics": {
+        "hit_at_1": {
+          "passed": 10,
+          "total": 12,
+          "rate": 0.8333333333333334
+        },
+        "hit_at_3": {
+          "passed": 11,
+          "total": 12,
+          "rate": 0.9166666666666666
+        },
+        "recall_at_3": 0.875,
+        "mrr_at_3": 0.875
+      },
+      "dataset_sha256": "2cca33900533bd313d8e126a0046787e980f97fe36fbf04e2576c1ec54f3b387",
+      "source_sha256": "a0f91e8c3b0a80bd967bf57c66f9c7236ba434b7deb68c08eccf49fb0639c40a",
+      "failed_case_ids": []
+    }
+  },
+  "development_debug_runs": [
+    "runs_v2/dev_llm_initial.json",
+    "runs_v2/dev_llm_v2.json",
+    "runs_v2/dev_llm_v3.json"
+  ],
+  "all_saved_live_attempts": {
+    "runs": 5,
+    "llm_calls": 290,
+    "reported_tokens": 570203,
+    "estimated_cost": null,
+    "note": "Includes failed development attempts; debug protocols/metrics differ. Not a single benchmark."
+  }
+}

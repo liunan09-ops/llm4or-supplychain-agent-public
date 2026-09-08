@@ -1,0 +1,87 @@
+{
+  "command": ".venv/bin/python -m pytest --junitxml=evaluation/evidence/pytest-final.xml",
+  "baseline": {
+    "total": 232,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 26.804
+  },
+  "final": {
+    "total": 269,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 2.166
+  },
+  "added": 37,
+  "phases": {
+    "baseline": {
+      "total": 232,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 26.804
+    },
+    "final": {
+      "total": 269,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 2.166
+    },
+    "phase1": {
+      "total": 243,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 1.094
+    },
+    "phase2": {
+      "total": 247,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 2.321
+    },
+    "phase3": {
+      "total": 257,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 1.74
+    },
+    "phase4": {
+      "total": 260,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 1.661
+    },
+    "phase5": {
+      "total": 269,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 2.155
+    },
+    "phase6": {
+      "total": 269,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 2.216
+    },
+    "phase7": {
+      "total": 269,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 2.172
+    }
+  },
+  "warnings": [
+    "Starlette testclient httpx deprecation",
+    "anyio BlockingPortal alias deprecation"
+  ]
+}

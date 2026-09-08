@@ -1,0 +1,152 @@
+{
+  "created_at": "2026-09-07T04:38:08.862040+00:00",
+  "request": {
+    "scenario_id": "factory-demo",
+    "message": "预算15000元，计划周期延长到14天，全部物料不能缺货",
+    "mode": "llm"
+  },
+  "response": {
+    "request_id": "2586eed215cb4388b1eb83fc6e240d9e",
+    "status": "completed",
+    "mode": "llm",
+    "model": "deepseek-v4-flash",
+    "intent": {
+      "action": "optimize",
+      "parameters": {
+        "budget": 15000.0,
+        "budget_change_pct": null,
+        "horizon_days": 14,
+        "min_service_level": 1.0,
+        "protected_skus": [
+          "MOTOR",
+          "SENSOR",
+          "BELT",
+          "BEARING",
+          "PLC"
+        ],
+        "excluded_skus": [],
+        "demand_updates": []
+      },
+      "questions": [],
+      "reason": "预算调整为15000元，计划周期延长至14天，全部物料不能缺货，因此设置每个SKU的最低服务水平为1并保护所有SKU。"
+    },
+    "result": {
+      "status": "optimal",
+      "message": "已获得并独立校验整数最优补货方案。",
+      "orders": [
+        {
+          "sku_id": "MOTOR",
+          "name": "伺服电机",
+          "initial_stock": 8,
+          "demand": 30,
+          "order_qty": 22,
+          "ending_stock": 0,
+          "shortage": 0,
+          "purchase_cost": 4840.0,
+          "holding_cost": 0.0,
+          "shortage_cost": 0.0
+        },
+        {
+          "sku_id": "SENSOR",
+          "name": "光电传感器",
+          "initial_stock": 20,
+          "demand": 65,
+          "order_qty": 45,
+          "ending_stock": 0,
+          "shortage": 0,
+          "purchase_cost": 2925.0,
+          "holding_cost": 0.0,
+          "shortage_cost": 0.0
+        },
+        {
+          "sku_id": "BELT",
+          "name": "同步带",
+          "initial_stock": 15,
+          "demand": 90,
+          "order_qty": 75,
+          "ending_stock": 0,
+          "shortage": 0,
+          "purchase_cost": 2100.0,
+          "holding_cost": 0.0,
+          "shortage_cost": 0.0
+        },
+        {
+          "sku_id": "BEARING",
+          "name": "轴承",
+          "initial_stock": 40,
+          "demand": 150,
+          "order_qty": 110,
+          "ending_stock": 0,
+          "shortage": 0,
+          "purchase_cost": 1760.0,
+          "holding_cost": 0.0,
+          "shortage_cost": 0.0
+        },
+        {
+          "sku_id": "PLC",
+          "name": "控制器",
+          "initial_stock": 4,
+          "demand": 10,
+          "order_qty": 6,
+          "ending_stock": 0,
+          "shortage": 0,
+          "purchase_cost": 2760.0,
+          "holding_cost": 0.0,
+          "shortage_cost": 0.0
+        }
+      ],
+      "purchase_cost": 14385.0,
+      "holding_cost": 0.0,
+      "shortage_cost": 0.0,
+      "total_cost": 14385.0,
+      "fill_rate": 1.0,
+      "budget": 15000.0,
+      "solver_seconds": 0.003970333000324899,
+      "mip_gap": 0.0,
+      "lower_bound": 14385.0,
+      "validation": {
+        "valid": true,
+        "checks": 139,
+        "violations": []
+      },
+      "diagnostics": []
+    },
+    "explanation": "已找到最优方案。采购支出 14,385.00 元，预算 15,000.00 元；总目标成本 14,385.00 元（采购＋期末持有＋缺货罚金），需求满足率 100.0%，缺货 0 件。结果已通过独立业务约束检查。以上为合成场景的决策建议，未执行采购。",
+    "trace": [
+      {
+        "name": "load_scenario",
+        "status": "ok",
+        "elapsed_ms": 0.0,
+        "detail": "华东工厂 · 周度物料补货 / 合成数据"
+      },
+      {
+        "name": "interpret_request",
+        "status": "ok",
+        "elapsed_ms": 1050.797665999653,
+        "detail": "真实模型解析"
+      },
+      {
+        "name": "optimize_replenishment",
+        "status": "ok",
+        "elapsed_ms": 4.671666999911395,
+        "detail": "已获得并独立校验整数最优补货方案。"
+      },
+      {
+        "name": "verify_constraints",
+        "status": "ok",
+        "elapsed_ms": 0.27866700020240387,
+        "detail": "139 项检查；0 项违反"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1418,
+      "completion_tokens": 93,
+      "total_tokens": 1511
+    },
+    "usage_known": true,
+    "provider_calls": 1,
+    "http_attempts": 1,
+    "local_guarded": false,
+    "elapsed_ms": 1055.8646670001508
+  }
+}

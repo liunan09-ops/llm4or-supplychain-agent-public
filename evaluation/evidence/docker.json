@@ -1,0 +1,20 @@
+{
+  "build": {
+    "command": "docker build -t supplychain-agent:v2 .",
+    "chunk_id": "ab3037",
+    "wall_time_seconds": 0.000002083,
+    "exit_code": 127,
+    "original_token_count": 9,
+    "output": "zsh:1: command not found: docker\n"
+  },
+  "run": {
+    "command": "docker run --rm -d --name supplychain-v2-acceptance -p 127.0.0.1:8765:8765 supplychain-agent:v2",
+    "chunk_id": "df58de",
+    "wall_time_seconds": 0.000002125,
+    "exit_code": 127,
+    "original_token_count": 9,
+    "output": "zsh:1: command not found: docker\n"
+  },
+  "verified": false,
+  "reason": "Docker executable and Docker/Podman/Colima runtime unavailable on this host."
+}

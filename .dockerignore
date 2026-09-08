@@ -1,0 +1,15 @@
+.git
+.venv
+.env*
+.runtime
+reports
+__pycache__
+.pytest_cache
+.ruff_cache
+tests
+dist
+*.egg-info
+evaluation/runs_v2
+evaluation/evidence
+evaluation/results_v2.json
+evaluation/report_v2.md

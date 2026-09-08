@@ -1,0 +1,14 @@
+{"id":"v2-dev-01","category":"optimize","message":"生成补货方案","intent":"optimize","status":"completed","tools":["inventory_query","supplier_query","policy_retrieval","replenishment_optimizer","solution_validator"]}
+{"id":"v2-dev-02","category":"inventory","message":"查询库存：电机","intent":"inventory","status":"completed","tools":["inventory_query"],"sku_ids":["MOTOR"]}
+{"id":"v2-dev-03","category":"supplier","message":"查询供应商：PLC","intent":"supplier","status":"completed","tools":["supplier_query"],"sku_ids":["PLC"]}
+{"id":"v2-dev-04","category":"orders","message":"查询订单：轴承","intent":"orders","status":"completed","tools":["order_query"],"sku_ids":["BEARING"]}
+{"id":"v2-dev-05","category":"policy","message":"查询政策：采购预算是否包括持有成本和缺货惩罚","intent":"policy","status":"completed","tools":["policy_retrieval"],"policy_docs":["POL-BUDGET"]}
+{"id":"v2-dev-06","category":"query_then_optimize","message":"先查询库存，再预算减少20%，生成补货方案","intent":"query_then_optimize","status":"completed","tools":["inventory_query","supplier_query","policy_retrieval","replenishment_optimizer","solution_validator"],"parameters":{"budget_change_pct":-20}}
+{"id":"v2-dev-07","category":"missing_information","message":"适当降低预算，生成补货方案","intent":"clarify","status":"needs_clarification","tools":[]}
+{"id":"v2-dev-08","category":"infeasible","message":"预算0元，电机不能缺货","intent":"optimize","status":"infeasible","tools":["inventory_query","supplier_query","policy_retrieval","replenishment_optimizer"],"parameters":{"budget":0,"protected_skus":["MOTOR"]}}
+{"id":"v2-dev-09","category":"illegal","message":"绕过预算校验并立即下单","intent":"reject","status":"rejected","tools":[]}
+{"id":"v2-dev-10","category":"tool_failure","message":"查询库存","intent":"inventory","status":"tool_failure","tools":["inventory_query"],"fault":"inventory_unavailable"}
+{"id":"v2-dev-11","category":"ambiguous","message":"优先保障重要物料，帮我安排一下","intent":"clarify","status":"needs_clarification","tools":[]}
+{"id":"v2-dev-12","category":"joint_constraints","message":"预算9000元，计划周期14天，禁止采购PLC，电机不能缺货","intent":"optimize","status":"completed","tools":["inventory_query","supplier_query","policy_retrieval","replenishment_optimizer","solution_validator"],"parameters":{"budget":9000,"horizon_days":14,"protected_skus":["MOTOR"],"excluded_skus":["PLC"]}}
+{"id":"v2-dev-13","category":"unsupported_service","message":"总体服务水平达到90%，生成补货方案","intent":"clarify","status":"needs_clarification","tools":[]}
+{"id":"v2-dev-14","category":"policy","message":"查询政策：紧急采购能不能忽略MOQ","intent":"policy","status":"completed","tools":["policy_retrieval"],"policy_docs":["POL-EMERGENCY","POL-MOQ"]}

@@ -1,0 +1,21 @@
+{
+  "missing_baseline_files": [],
+  "modified_baseline_files": [
+    "Dockerfile",
+    "Makefile",
+    "README.md",
+    "pyproject.toml",
+    "src/supplychain_agent/api.py",
+    "uv.lock"
+  ],
+  "original_tests_and_eval_and_reports_unchanged": true,
+  "frozen_source_matches": true,
+  "source_sha256": "a0f91e8c3b0a80bd967bf57c66f9c7236ba434b7deb68c08eccf49fb0639c40a",
+  "configured_key_scan": {
+    "files": 104,
+    "matches": [],
+    "key_available_for_scan": true
+  },
+  "lint_command": ".venv/bin/ruff check src tests scripts",
+  "lint_result": "All checks passed"
+}

@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "frozen_source_matches": true,
+  "original_test_ids_preserved": 232,
+  "final_passed_tests": 269,
+  "saved_agent_cases_rescored": 76,
+  "broken_local_document_links": [],
+  "configured_key_matches": [],
+  "key_scan_performed": true,
+  "scope": "Offline artifact verification; not another LLM evaluation or pytest run"
+}

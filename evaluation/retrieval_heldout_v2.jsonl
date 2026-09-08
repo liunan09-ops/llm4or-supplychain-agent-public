@@ -1,0 +1,12 @@
+{"id":"rag-test-01","query":"采购建议能否直接提交付款？","relevant_documents":["POL-APPROVAL"]}
+{"id":"rag-test-02","query":"下单数量很少时，至少得买几件？","relevant_documents":["POL-MOQ"]}
+{"id":"rag-test-03","query":"停线急单是否可以自动缩短交期？","relevant_documents":["POL-EMERGENCY"]}
+{"id":"rag-test-04","query":"供应商失去资质以后还能增加采购量吗？","relevant_documents":["POL-SUPPLIER"]}
+{"id":"rag-test-05","query":"预算降低比例是对哪个原始金额计算？","relevant_documents":["POL-BUDGET"]}
+{"id":"rag-test-06","query":"订单已收货还能重复计入可用库存吗？","relevant_documents":["POL-LEAD"]}
+{"id":"rag-test-07","query":"关键物料标签是不是强制零缺货？","relevant_documents":["POL-SERVICE"]}
+{"id":"rag-test-08","query":"求解不可行时是否允许自动放宽预算？","relevant_documents":["POL-APPROVAL","POL-BUDGET"]}
+{"id":"rag-test-09","query":"Is this budget a cap on all objective costs?","relevant_documents":["POL-BUDGET"]}
+{"id":"rag-test-10","query":"How are already received shipments counted?","relevant_documents":["POL-LEAD"]}
+{"id":"rag-test-11","query":"Does a rush order waive the minimum purchase quantity?","relevant_documents":["POL-EMERGENCY","POL-MOQ"]}
+{"id":"rag-test-12","query":"Does every material need to satisfy the service floor separately?","relevant_documents":["POL-SERVICE"]}

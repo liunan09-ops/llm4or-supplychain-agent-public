@@ -1,0 +1,46 @@
+{
+  "disjoint": true,
+  "source_matches_freeze": true,
+  "structured_solver_labels": [
+    {
+      "case": "v2-test-01",
+      "solver_status": "optimal",
+      "expected_status": "completed"
+    },
+    {
+      "case": "v2-test-02",
+      "solver_status": "optimal",
+      "expected_status": "completed"
+    },
+    {
+      "case": "v2-test-12",
+      "solver_status": "optimal",
+      "expected_status": "completed"
+    },
+    {
+      "case": "v2-test-13",
+      "solver_status": "optimal",
+      "expected_status": "completed"
+    },
+    {
+      "case": "v2-test-16",
+      "solver_status": "infeasible",
+      "expected_status": "infeasible"
+    },
+    {
+      "case": "v2-test-17",
+      "solver_status": "infeasible",
+      "expected_status": "infeasible"
+    },
+    {
+      "case": "v2-test-22",
+      "solver_status": "optimal",
+      "expected_status": "completed"
+    },
+    {
+      "case": "v2-test-23",
+      "solver_status": "optimal",
+      "expected_status": "completed"
+    }
+  ]
+}
