@@ -1,0 +1,40 @@
+{
+  "success": true,
+  "protected_checkpoint_files_unchanged": 92,
+  "original_test_ids_preserved": 269,
+  "final_passed_tests": 308,
+  "added_tests": 39,
+  "real_embedding_integration_tests_passed": 3,
+  "failure_error_skip": 0,
+  "retrieval_rows_rescored": 54,
+  "lexical_rankings_and_scores_identical_to_core": true,
+  "frozen_datasets_and_source_match": true,
+  "regression": {
+    "all_case_scores_unchanged": true,
+    "rerun_cases": {
+      "v1_rules_dev": 24,
+      "v1_rules_test": 12,
+      "v2_demo_dev": {
+        "cases": 14,
+        "end_to_end_success": {
+          "passed": 14,
+          "total": 14,
+          "rate": 1.0
+        }
+      },
+      "v2_demo_heldout": {
+        "cases": 24,
+        "end_to_end_success": {
+          "passed": 17,
+          "total": 24,
+          "rate": 0.7083333333333334
+        }
+      }
+    },
+    "new_live_llm_calls": 0
+  },
+  "historical_saved_agent_cases_rescored": 76,
+  "new_live_llm_evaluation": false,
+  "configured_secret_matches": 0,
+  "configured_secret_scan_performed": true
+}

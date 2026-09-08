@@ -1,0 +1,56 @@
+# Semantic Retrieval checkpoint 文件清单
+
+基于 Core ad58e78；本次精确提交 46 个文件。完整 pytest 308 passed、Ruff 通过；重复 retrieval 逐例输出及指标一致。
+
+## 提交文件
+
+- [.env.example](.env.example)
+- [FILES_CHANGED_SEMANTIC.md](FILES_CHANGED_SEMANTIC.md)
+- [README.md](README.md)
+- [RESUME_AGENT_V2_EVIDENCE.md](RESUME_AGENT_V2_EVIDENCE.md)
+- [SEMANTIC_RETRIEVAL_REPORT.md](SEMANTIC_RETRIEVAL_REPORT.md)
+- [evaluation/semantic_v2/PROTOCOL.md](evaluation/semantic_v2/PROTOCOL.md)
+- [evaluation/semantic_v2/checkpoint_comparison/dev_hybrid.json](evaluation/semantic_v2/checkpoint_comparison/dev_hybrid.json)
+- [evaluation/semantic_v2/checkpoint_comparison/dev_lexical.json](evaluation/semantic_v2/checkpoint_comparison/dev_lexical.json)
+- [evaluation/semantic_v2/checkpoint_comparison/dev_semantic.json](evaluation/semantic_v2/checkpoint_comparison/dev_semantic.json)
+- [evaluation/semantic_v2/checkpoint_comparison/freeze.json](evaluation/semantic_v2/checkpoint_comparison/freeze.json)
+- [evaluation/semantic_v2/checkpoint_comparison/heldout_hybrid.json](evaluation/semantic_v2/checkpoint_comparison/heldout_hybrid.json)
+- [evaluation/semantic_v2/checkpoint_comparison/heldout_lexical.json](evaluation/semantic_v2/checkpoint_comparison/heldout_lexical.json)
+- [evaluation/semantic_v2/checkpoint_comparison/heldout_semantic.json](evaluation/semantic_v2/checkpoint_comparison/heldout_semantic.json)
+- [evaluation/semantic_v2/checkpoint_comparison/summary.json](evaluation/semantic_v2/checkpoint_comparison/summary.json)
+- [evaluation/semantic_v2/checkpoint_gate.json](evaluation/semantic_v2/checkpoint_gate.json)
+- [evaluation/semantic_v2/comparison/dev_hybrid.json](evaluation/semantic_v2/comparison/dev_hybrid.json)
+- [evaluation/semantic_v2/comparison/dev_lexical.json](evaluation/semantic_v2/comparison/dev_lexical.json)
+- [evaluation/semantic_v2/comparison/dev_semantic.json](evaluation/semantic_v2/comparison/dev_semantic.json)
+- [evaluation/semantic_v2/comparison/freeze.json](evaluation/semantic_v2/comparison/freeze.json)
+- [evaluation/semantic_v2/comparison/heldout_hybrid.json](evaluation/semantic_v2/comparison/heldout_hybrid.json)
+- [evaluation/semantic_v2/comparison/heldout_lexical.json](evaluation/semantic_v2/comparison/heldout_lexical.json)
+- [evaluation/semantic_v2/comparison/heldout_semantic.json](evaluation/semantic_v2/comparison/heldout_semantic.json)
+- [evaluation/semantic_v2/comparison/summary.json](evaluation/semantic_v2/comparison/summary.json)
+- [evaluation/semantic_v2/protected_checkpoint_files.json](evaluation/semantic_v2/protected_checkpoint_files.json)
+- [evaluation/semantic_v2/pytest-baseline.xml](evaluation/semantic_v2/pytest-baseline.xml)
+- [evaluation/semantic_v2/pytest-final.xml](evaluation/semantic_v2/pytest-final.xml)
+- [evaluation/semantic_v2/regression/summary.json](evaluation/semantic_v2/regression/summary.json)
+- [evaluation/semantic_v2/regression/v1_rules_dev/report.json](evaluation/semantic_v2/regression/v1_rules_dev/report.json)
+- [evaluation/semantic_v2/regression/v1_rules_dev/report.md](evaluation/semantic_v2/regression/v1_rules_dev/report.md)
+- [evaluation/semantic_v2/regression/v1_rules_test/report.json](evaluation/semantic_v2/regression/v1_rules_test/report.json)
+- [evaluation/semantic_v2/regression/v1_rules_test/report.md](evaluation/semantic_v2/regression/v1_rules_test/report.md)
+- [evaluation/semantic_v2/regression/v2_demo_dev.json](evaluation/semantic_v2/regression/v2_demo_dev.json)
+- [evaluation/semantic_v2/regression/v2_demo_heldout.json](evaluation/semantic_v2/regression/v2_demo_heldout.json)
+- [evaluation/semantic_v2/verification.json](evaluation/semantic_v2/verification.json)
+- [pyproject.toml](pyproject.toml)
+- [scripts/prepare_embeddings.py](scripts/prepare_embeddings.py)
+- [scripts/regress_semantic.py](scripts/regress_semantic.py)
+- [scripts/verify_semantic_evidence.py](scripts/verify_semantic_evidence.py)
+- [src/supplychain_agent/v2/api.py](src/supplychain_agent/v2/api.py)
+- [src/supplychain_agent/v2/embeddings.py](src/supplychain_agent/v2/embeddings.py)
+- [src/supplychain_agent/v2/semantic_evaluation.py](src/supplychain_agent/v2/semantic_evaluation.py)
+- [src/supplychain_agent/v2/semantic_retrieval.py](src/supplychain_agent/v2/semantic_retrieval.py)
+- [tests/test_embedding_download.py](tests/test_embedding_download.py)
+- [tests/test_semantic_integration.py](tests/test_semantic_integration.py)
+- [tests/test_semantic_retrieval.py](tests/test_semantic_retrieval.py)
+- [uv.lock](uv.lock)
+
+## 有意保留
+
+模型、数据库和缓存留在被忽略的 .runtime / .venv；demo.svg 及所有项目外原有文件未提交。简历 PDF 未修改。

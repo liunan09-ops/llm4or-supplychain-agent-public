@@ -12,7 +12,8 @@ from ..schemas import PlanParameters, StrictModel
 from .agent import Agent
 from .contracts import Request, Response
 from .database import BusinessStore, DataError
-from .retrieval import PolicyRetriever, seed_policies
+from .retrieval import seed_policies
+from .semantic_retrieval import create_retriever
 from .trace import TraceStore
 
 
@@ -26,7 +27,11 @@ def install_routes(app, audit_path, capacity):
         os.getenv("AGENT_BUSINESS_PATH", str(path.with_name("business.sqlite3")))
     )
     seed_policies(business)
-    retriever = PolicyRetriever(business.policies())
+    retriever = create_retriever(
+        business.policies(),
+        backend=os.getenv("AGENT_RETRIEVAL_BACKEND", "lexical"),
+        model_dir=os.getenv("AGENT_EMBEDDING_MODEL_DIR"),
+    )
     traces = TraceStore(path)
     agent = Agent(business, retriever, traces)
     app.state.v2_agent = agent

@@ -1,0 +1,12 @@
+{
+  "previous_checkpoint": "ad58e78bcd98b06510bbca6f8f803f96c961e21f",
+  "pytest": {
+    "passed": 308,
+    "failed": 0,
+    "skipped": 0,
+    "warnings": 2
+  },
+  "ruff": "passed",
+  "retrieval_rankings_and_metrics_match_previous": true,
+  "comparison": "checkpoint_comparison/summary.json"
+}

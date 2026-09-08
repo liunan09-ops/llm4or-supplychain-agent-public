@@ -20,6 +20,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8.3,<10", "ruff>=0.11,<1"]
+semantic = ["onnxruntime==1.23.2", "tokenizers==0.22.2"]
 
 [project.scripts]
 supplychain = "supplychain_agent.cli:main"
@@ -30,8 +31,8 @@ packages = ["src/supplychain_agent"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q"
+markers = ["embedding_integration: requires explicitly downloaded, hash-verified BGE weights"]
 
 [tool.ruff]
 target-version = "py311"
 line-length = 100
-
