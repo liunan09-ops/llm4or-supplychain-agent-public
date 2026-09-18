@@ -1,4 +1,4 @@
-.PHONY: install install-lexical prepare-model test test-lexical lint demo serve serve-lexical eval eval-v2 eval-v2-llm rag-v2 docker-build
+.PHONY: install install-lexical prepare-model test test-lexical lint demo demo-v2 serve serve-lexical eval eval-v2 eval-v2-llm rag-v2 docker-build
 
 PYTHON ?= .venv/bin/python
 OUTPUT_ROOT ?= .runtime/evaluations
@@ -19,6 +19,8 @@ lint:
 	$(PYTHON) -m ruff format --check src tests scripts
 demo:
 	$(PYTHON) -m supplychain_agent.cli demo
+demo-v2:
+	$(PYTHON) scripts/demo_v2.py
 serve:
 	AGENT_RETRIEVAL_BACKEND=hybrid $(PYTHON) -m supplychain_agent.cli serve
 serve-lexical:

@@ -1,0 +1,929 @@
+{
+  "request_id": "c8279ce93f824cfabec93b6fb5782e24",
+  "version": "v2",
+  "status": "completed",
+  "mode": "demo",
+  "model": null,
+  "intent": {
+    "action": "query_then_optimize",
+    "parameters": {
+      "budget": 9000.0,
+      "budget_change_pct": null,
+      "horizon_days": null,
+      "min_service_level": null,
+      "protected_skus": [
+        "MOTOR"
+      ],
+      "excluded_skus": [],
+      "demand_updates": []
+    },
+    "sku_ids": [],
+    "policy_query": "",
+    "questions": [],
+    "reason": "已完整匹配受限规则语法；所有条件将交由确定性求解器执行。"
+  },
+  "result": {
+    "status": "optimal",
+    "message": "已获得并独立校验整数最优补货方案。",
+    "orders": [
+      {
+        "sku_id": "BEARING",
+        "name": "轴承",
+        "initial_stock": 40,
+        "demand": 150,
+        "order_qty": 97,
+        "ending_stock": 0,
+        "shortage": 13,
+        "purchase_cost": 1552.0,
+        "holding_cost": 0.0,
+        "shortage_cost": 975.0
+      },
+      {
+        "sku_id": "BELT",
+        "name": "同步带",
+        "initial_stock": 15,
+        "demand": 90,
+        "order_qty": 0,
+        "ending_stock": 0,
+        "shortage": 75,
+        "purchase_cost": 0.0,
+        "holding_cost": 0.0,
+        "shortage_cost": 7500.0
+      },
+      {
+        "sku_id": "MOTOR",
+        "name": "伺服电机",
+        "initial_stock": 8,
+        "demand": 30,
+        "order_qty": 22,
+        "ending_stock": 0,
+        "shortage": 0,
+        "purchase_cost": 4840.0,
+        "holding_cost": 0.0,
+        "shortage_cost": 0.0
+      },
+      {
+        "sku_id": "PLC",
+        "name": "控制器",
+        "initial_stock": 4,
+        "demand": 10,
+        "order_qty": 0,
+        "ending_stock": 0,
+        "shortage": 6,
+        "purchase_cost": 0.0,
+        "holding_cost": 0.0,
+        "shortage_cost": 10800.0
+      },
+      {
+        "sku_id": "SENSOR",
+        "name": "光电传感器",
+        "initial_stock": 25,
+        "demand": 65,
+        "order_qty": 40,
+        "ending_stock": 0,
+        "shortage": 0,
+        "purchase_cost": 2600.0,
+        "holding_cost": 0.0,
+        "shortage_cost": 0.0
+      }
+    ],
+    "purchase_cost": 8992.0,
+    "holding_cost": 0.0,
+    "shortage_cost": 19275.0,
+    "total_cost": 28267.0,
+    "fill_rate": 0.7275362318840579,
+    "budget": 9000.0,
+    "solver_seconds": 0.00990954099688679,
+    "mip_gap": 0.0,
+    "lower_bound": 28267.0,
+    "validation": {
+      "valid": true,
+      "checks": 139,
+      "violations": []
+    },
+    "diagnostics": []
+  },
+  "explanation": "BEARING：现货 40，在途 0，7 天窗口内可用库存 40，原始需求 150。[SQLite snapshot cc18a8ef96f0]\nBELT：现货 15，在途 12，7 天窗口内可用库存 15，原始需求 90。[SQLite snapshot cc18a8ef96f0]\nMOTOR：现货 8，在途 0，7 天窗口内可用库存 8，原始需求 30。[SQLite snapshot cc18a8ef96f0]\nPLC：现货 4，在途 0，7 天窗口内可用库存 4，原始需求 10。[SQLite snapshot cc18a8ef96f0]\nSENSOR：现货 20，在途 5，7 天窗口内可用库存 25，原始需求 65。[SQLite snapshot cc18a8ef96f0]\nBEARING：供应商 SUP-B（approved），单价 16.0，MOQ 30，上限 180，交期 4 天。[SQLite snapshot cc18a8ef96f0]\nBELT：供应商 SUP-B（approved），单价 28.0，MOQ 20，上限 100，交期 5 天。[SQLite snapshot cc18a8ef96f0]\nMOTOR：供应商 SUP-A（approved），单价 220.0，MOQ 5，上限 40，交期 3 天。[SQLite snapshot cc18a8ef96f0]\nPLC：供应商 SUP-C（approved），单价 460.0，MOQ 2，上限 12，交期 10 天。[SQLite snapshot cc18a8ef96f0]\nSENSOR：供应商 SUP-A（approved），单价 65.0，MOQ 10，上限 80，交期 2 天。[SQLite snapshot cc18a8ef96f0]\n[POL-APPROVAL:02 · policies/approval.md] POL-APPROVAL 采购审批规则\n## 异常处理\n约束不可行时报告阻碍条件，由申请人决定是否提交新的预算或服务要求；不得自动放宽预算、MOQ、服务水平或改写供应商资质。\n[POL-BUDGET:01 · policies/budget.md] POL-BUDGET 预算规则\n## 预算硬约束\n采购支出不得超过预算。预算只限制采购成本，不包括期末持有成本和缺货惩罚；优化目标则包含三者。未指定预算时使用场景默认预算；“预算降低百分比”相对于场景默认预算计算一次。绝对预算与相对预算变动不能同时指定。不得将降低总成本误解成降低预算。\n[POL-EMERGENCY:01 · policies/emergency.md] POL-EMERGENCY 紧急采购规则\n## 紧急采购不豁免约束\n停线风险、紧急采购或急单不自动豁免预算、供应商资质、MOQ、交期及供货上限。申请人需要给出具体 SKU、数量或服务要求。不支持通过加价自动缩短交期，也不支持未经审批的替代供应商。当前模型不包含加急运输决策。\n方案状态 optimal；采购成本 8992.00 / 预算 9000.00；总目标成本 28267.00；总体满足率 72.75%。独立校验通过。\n建议采购数量：BEARING 97；BELT 0；MOTOR 22；PLC 0；SENSOR 40。仅建议，未下单。",
+  "facts": {
+    "inventory": [
+      {
+        "sku_id": "BEARING",
+        "name": "轴承",
+        "on_hand": 40,
+        "demand": 150,
+        "holding_cost": 0.5,
+        "shortage_penalty": 75.0,
+        "critical": 0,
+        "in_transit": 0,
+        "arriving_in_horizon": 0,
+        "available_in_horizon": 40,
+        "horizon_days": 7
+      },
+      {
+        "sku_id": "BELT",
+        "name": "同步带",
+        "on_hand": 15,
+        "demand": 90,
+        "holding_cost": 1.0,
+        "shortage_penalty": 100.0,
+        "critical": 0,
+        "in_transit": 12,
+        "arriving_in_horizon": 0,
+        "available_in_horizon": 15,
+        "horizon_days": 7
+      },
+      {
+        "sku_id": "MOTOR",
+        "name": "伺服电机",
+        "on_hand": 8,
+        "demand": 30,
+        "holding_cost": 8.0,
+        "shortage_penalty": 1500.0,
+        "critical": 1,
+        "in_transit": 0,
+        "arriving_in_horizon": 0,
+        "available_in_horizon": 8,
+        "horizon_days": 7
+      },
+      {
+        "sku_id": "PLC",
+        "name": "控制器",
+        "on_hand": 4,
+        "demand": 10,
+        "holding_cost": 12.0,
+        "shortage_penalty": 1800.0,
+        "critical": 1,
+        "in_transit": 0,
+        "arriving_in_horizon": 0,
+        "available_in_horizon": 4,
+        "horizon_days": 7
+      },
+      {
+        "sku_id": "SENSOR",
+        "name": "光电传感器",
+        "on_hand": 20,
+        "demand": 65,
+        "holding_cost": 2.0,
+        "shortage_penalty": 450.0,
+        "critical": 1,
+        "in_transit": 5,
+        "arriving_in_horizon": 5,
+        "available_in_horizon": 25,
+        "horizon_days": 7
+      }
+    ],
+    "suppliers": [
+      {
+        "sku_id": "BEARING",
+        "supplier_id": "SUP-B",
+        "unit_cost": 16.0,
+        "min_order_qty": 30,
+        "max_order_qty": 180,
+        "lead_time_days": 4,
+        "supplier_name": "合成传动供应商B",
+        "status": "approved"
+      },
+      {
+        "sku_id": "BELT",
+        "supplier_id": "SUP-B",
+        "unit_cost": 28.0,
+        "min_order_qty": 20,
+        "max_order_qty": 100,
+        "lead_time_days": 5,
+        "supplier_name": "合成传动供应商B",
+        "status": "approved"
+      },
+      {
+        "sku_id": "MOTOR",
+        "supplier_id": "SUP-A",
+        "unit_cost": 220.0,
+        "min_order_qty": 5,
+        "max_order_qty": 40,
+        "lead_time_days": 3,
+        "supplier_name": "合成机电供应商A",
+        "status": "approved"
+      },
+      {
+        "sku_id": "PLC",
+        "supplier_id": "SUP-C",
+        "unit_cost": 460.0,
+        "min_order_qty": 2,
+        "max_order_qty": 12,
+        "lead_time_days": 10,
+        "supplier_name": "合成控制供应商C",
+        "status": "approved"
+      },
+      {
+        "sku_id": "SENSOR",
+        "supplier_id": "SUP-A",
+        "unit_cost": 65.0,
+        "min_order_qty": 10,
+        "max_order_qty": 80,
+        "lead_time_days": 2,
+        "supplier_name": "合成机电供应商A",
+        "status": "approved"
+      }
+    ]
+  },
+  "citations": [
+    {
+      "id": "POL-APPROVAL:02",
+      "source": "policies/approval.md",
+      "text": "POL-APPROVAL 采购审批规则\n## 异常处理\n约束不可行时报告阻碍条件，由申请人决定是否提交新的预算或服务要求；不得自动放宽预算、MOQ、服务水平或改写供应商资质。",
+      "source_sha256": "1ddd395308051e42523d35aef1e8165e94244d5df8d8a8ab93469bc384273a5e",
+      "provenance": "synthetic / demo data"
+    },
+    {
+      "id": "POL-BUDGET:01",
+      "source": "policies/budget.md",
+      "text": "POL-BUDGET 预算规则\n## 预算硬约束\n采购支出不得超过预算。预算只限制采购成本，不包括期末持有成本和缺货惩罚；优化目标则包含三者。未指定预算时使用场景默认预算；“预算降低百分比”相对于场景默认预算计算一次。绝对预算与相对预算变动不能同时指定。不得将降低总成本误解成降低预算。",
+      "source_sha256": "167b16d640a28fa9501fc895a0741b88d0fd6a99aa3fb2a390dce983e018435a",
+      "provenance": "synthetic / demo data"
+    },
+    {
+      "id": "POL-EMERGENCY:01",
+      "source": "policies/emergency.md",
+      "text": "POL-EMERGENCY 紧急采购规则\n## 紧急采购不豁免约束\n停线风险、紧急采购或急单不自动豁免预算、供应商资质、MOQ、交期及供货上限。申请人需要给出具体 SKU、数量或服务要求。不支持通过加价自动缩短交期，也不支持未经审批的替代供应商。当前模型不包含加急运输决策。",
+      "source_sha256": "8bc18c55a40df063ddebd471067c96ffa0e395ddb09b2afda04fe03df98481c9",
+      "provenance": "synthetic / demo data"
+    }
+  ],
+  "trace": [
+    {
+      "sequence": 1,
+      "kind": "state",
+      "name": "load_snapshot",
+      "status": "running",
+      "elapsed_ms": 0.0,
+      "data": {}
+    },
+    {
+      "sequence": 2,
+      "kind": "state",
+      "name": "detect_intent",
+      "status": "running",
+      "elapsed_ms": 0.0,
+      "data": {}
+    },
+    {
+      "sequence": 3,
+      "kind": "intent",
+      "name": "locked_intent",
+      "status": "query_then_optimize",
+      "elapsed_ms": 0.0,
+      "data": {
+        "action": "query_then_optimize",
+        "parameters": {
+          "budget": 9000.0,
+          "budget_change_pct": null,
+          "horizon_days": null,
+          "min_service_level": null,
+          "protected_skus": [
+            "MOTOR"
+          ],
+          "excluded_skus": [],
+          "demand_updates": []
+        },
+        "sku_ids": [],
+        "policy_query": "",
+        "questions": [],
+        "reason": "已完整匹配受限规则语法；所有条件将交由确定性求解器执行。"
+      }
+    },
+    {
+      "sequence": 4,
+      "kind": "state",
+      "name": "choose_tool",
+      "status": "running",
+      "elapsed_ms": 0.0,
+      "data": {}
+    },
+    {
+      "sequence": 5,
+      "kind": "tool",
+      "name": "inventory_query",
+      "status": "ok",
+      "elapsed_ms": 0.026,
+      "data": {
+        "call_id": "a1512622118a4ffc948a900f6da044b5",
+        "attempt": 1,
+        "arguments": {
+          "sku_ids": []
+        },
+        "result": {
+          "rows": [
+            {
+              "sku_id": "BEARING",
+              "name": "轴承",
+              "on_hand": 40,
+              "demand": 150,
+              "holding_cost": 0.5,
+              "shortage_penalty": 75.0,
+              "critical": 0,
+              "in_transit": 0,
+              "arriving_in_horizon": 0,
+              "available_in_horizon": 40,
+              "horizon_days": 7
+            },
+            {
+              "sku_id": "BELT",
+              "name": "同步带",
+              "on_hand": 15,
+              "demand": 90,
+              "holding_cost": 1.0,
+              "shortage_penalty": 100.0,
+              "critical": 0,
+              "in_transit": 12,
+              "arriving_in_horizon": 0,
+              "available_in_horizon": 15,
+              "horizon_days": 7
+            },
+            {
+              "sku_id": "MOTOR",
+              "name": "伺服电机",
+              "on_hand": 8,
+              "demand": 30,
+              "holding_cost": 8.0,
+              "shortage_penalty": 1500.0,
+              "critical": 1,
+              "in_transit": 0,
+              "arriving_in_horizon": 0,
+              "available_in_horizon": 8,
+              "horizon_days": 7
+            },
+            {
+              "sku_id": "PLC",
+              "name": "控制器",
+              "on_hand": 4,
+              "demand": 10,
+              "holding_cost": 12.0,
+              "shortage_penalty": 1800.0,
+              "critical": 1,
+              "in_transit": 0,
+              "arriving_in_horizon": 0,
+              "available_in_horizon": 4,
+              "horizon_days": 7
+            },
+            {
+              "sku_id": "SENSOR",
+              "name": "光电传感器",
+              "on_hand": 20,
+              "demand": 65,
+              "holding_cost": 2.0,
+              "shortage_penalty": 450.0,
+              "critical": 1,
+              "in_transit": 5,
+              "arriving_in_horizon": 5,
+              "available_in_horizon": 25,
+              "horizon_days": 7
+            }
+          ],
+          "snapshot_id": "cc18a8ef96f0239dba65ad262def21e8ea60ff394bba37ad73f10dc7d7af255a",
+          "source": "sqlite:inventory + purchase_orders",
+          "provenance": "synthetic / demo data"
+        }
+      }
+    },
+    {
+      "sequence": 6,
+      "kind": "state",
+      "name": "choose_tool",
+      "status": "running",
+      "elapsed_ms": 0.0,
+      "data": {}
+    },
+    {
+      "sequence": 7,
+      "kind": "tool",
+      "name": "supplier_query",
+      "status": "ok",
+      "elapsed_ms": 0.006,
+      "data": {
+        "call_id": "b6e471473afb46548ddc40f71c62ae12",
+        "attempt": 1,
+        "arguments": {
+          "sku_ids": []
+        },
+        "result": {
+          "rows": [
+            {
+              "sku_id": "BEARING",
+              "supplier_id": "SUP-B",
+              "unit_cost": 16.0,
+              "min_order_qty": 30,
+              "max_order_qty": 180,
+              "lead_time_days": 4,
+              "supplier_name": "合成传动供应商B",
+              "status": "approved"
+            },
+            {
+              "sku_id": "BELT",
+              "supplier_id": "SUP-B",
+              "unit_cost": 28.0,
+              "min_order_qty": 20,
+              "max_order_qty": 100,
+              "lead_time_days": 5,
+              "supplier_name": "合成传动供应商B",
+              "status": "approved"
+            },
+            {
+              "sku_id": "MOTOR",
+              "supplier_id": "SUP-A",
+              "unit_cost": 220.0,
+              "min_order_qty": 5,
+              "max_order_qty": 40,
+              "lead_time_days": 3,
+              "supplier_name": "合成机电供应商A",
+              "status": "approved"
+            },
+            {
+              "sku_id": "PLC",
+              "supplier_id": "SUP-C",
+              "unit_cost": 460.0,
+              "min_order_qty": 2,
+              "max_order_qty": 12,
+              "lead_time_days": 10,
+              "supplier_name": "合成控制供应商C",
+              "status": "approved"
+            },
+            {
+              "sku_id": "SENSOR",
+              "supplier_id": "SUP-A",
+              "unit_cost": 65.0,
+              "min_order_qty": 10,
+              "max_order_qty": 80,
+              "lead_time_days": 2,
+              "supplier_name": "合成机电供应商A",
+              "status": "approved"
+            }
+          ],
+          "snapshot_id": "cc18a8ef96f0239dba65ad262def21e8ea60ff394bba37ad73f10dc7d7af255a",
+          "source": "sqlite:sku_supplier + suppliers",
+          "provenance": "synthetic / demo data"
+        }
+      }
+    },
+    {
+      "sequence": 8,
+      "kind": "state",
+      "name": "choose_tool",
+      "status": "running",
+      "elapsed_ms": 0.0,
+      "data": {}
+    },
+    {
+      "sequence": 9,
+      "kind": "tool",
+      "name": "policy_retrieval",
+      "status": "ok",
+      "elapsed_ms": 10.467,
+      "data": {
+        "call_id": "cdaddfc1b2c046ee8902caf7ab7e1135",
+        "attempt": 1,
+        "arguments": {
+          "query": "采购预算 MOQ 交期 服务水平"
+        },
+        "result": {
+          "query": "采购预算 MOQ 交期 服务水平",
+          "backend": "hybrid",
+          "embedding": "tfidf + bge / reciprocal-rank-fusion",
+          "index": "two FAISS IndexFlatIP indices + RRF",
+          "corpus_sha256": "e4a834f964a64eeeced7e4e88b9a3c63dcba3947f04ed82b19432850e063de04",
+          "top_k": 3,
+          "rrf_constant": 60,
+          "candidate_k_per_backend": 5,
+          "hits": [
+            {
+              "score": 0.03252247488101534,
+              "citation": {
+                "id": "POL-APPROVAL:02",
+                "source": "policies/approval.md",
+                "text": "POL-APPROVAL 采购审批规则\n## 异常处理\n约束不可行时报告阻碍条件，由申请人决定是否提交新的预算或服务要求；不得自动放宽预算、MOQ、服务水平或改写供应商资质。",
+                "source_sha256": "1ddd395308051e42523d35aef1e8165e94244d5df8d8a8ab93469bc384273a5e",
+                "provenance": "synthetic / demo data"
+              },
+              "components": {
+                "lexical": {
+                  "rank": 1,
+                  "score": 0.2892468571662903,
+                  "rrf_contribution": 0.01639344262295082
+                },
+                "semantic": {
+                  "rank": 2,
+                  "score": 0.6029805541038513,
+                  "rrf_contribution": 0.016129032258064516
+                }
+              }
+            },
+            {
+              "score": 0.03177805800756621,
+              "citation": {
+                "id": "POL-BUDGET:01",
+                "source": "policies/budget.md",
+                "text": "POL-BUDGET 预算规则\n## 预算硬约束\n采购支出不得超过预算。预算只限制采购成本，不包括期末持有成本和缺货惩罚；优化目标则包含三者。未指定预算时使用场景默认预算；“预算降低百分比”相对于场景默认预算计算一次。绝对预算与相对预算变动不能同时指定。不得将降低总成本误解成降低预算。",
+                "source_sha256": "167b16d640a28fa9501fc895a0741b88d0fd6a99aa3fb2a390dce983e018435a",
+                "provenance": "synthetic / demo data"
+              },
+              "components": {
+                "lexical": {
+                  "rank": 5,
+                  "score": 0.08652354031801224,
+                  "rrf_contribution": 0.015384615384615385
+                },
+                "semantic": {
+                  "rank": 1,
+                  "score": 0.614994466304779,
+                  "rrf_contribution": 0.01639344262295082
+                }
+              }
+            },
+            {
+              "score": 0.031746031746031744,
+              "citation": {
+                "id": "POL-EMERGENCY:01",
+                "source": "policies/emergency.md",
+                "text": "POL-EMERGENCY 紧急采购规则\n## 紧急采购不豁免约束\n停线风险、紧急采购或急单不自动豁免预算、供应商资质、MOQ、交期及供货上限。申请人需要给出具体 SKU、数量或服务要求。不支持通过加价自动缩短交期，也不支持未经审批的替代供应商。当前模型不包含加急运输决策。",
+                "source_sha256": "8bc18c55a40df063ddebd471067c96ffa0e395ddb09b2afda04fe03df98481c9",
+                "provenance": "synthetic / demo data"
+              },
+              "components": {
+                "lexical": {
+                  "rank": 3,
+                  "score": 0.15807825326919556,
+                  "rrf_contribution": 0.015873015873015872
+                },
+                "semantic": {
+                  "rank": 3,
+                  "score": 0.5956677794456482,
+                  "rrf_contribution": 0.015873015873015872
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sequence": 10,
+      "kind": "retrieval",
+      "name": "policy_evidence",
+      "status": "ok",
+      "elapsed_ms": 0.0,
+      "data": {
+        "query": "采购预算 MOQ 交期 服务水平",
+        "backend": "hybrid",
+        "embedding": "tfidf + bge / reciprocal-rank-fusion",
+        "index": "two FAISS IndexFlatIP indices + RRF",
+        "corpus_sha256": "e4a834f964a64eeeced7e4e88b9a3c63dcba3947f04ed82b19432850e063de04",
+        "top_k": 3,
+        "rrf_constant": 60,
+        "candidate_k_per_backend": 5,
+        "hits": [
+          {
+            "score": 0.03252247488101534,
+            "citation": {
+              "id": "POL-APPROVAL:02",
+              "source": "policies/approval.md",
+              "text": "POL-APPROVAL 采购审批规则\n## 异常处理\n约束不可行时报告阻碍条件，由申请人决定是否提交新的预算或服务要求；不得自动放宽预算、MOQ、服务水平或改写供应商资质。",
+              "source_sha256": "1ddd395308051e42523d35aef1e8165e94244d5df8d8a8ab93469bc384273a5e",
+              "provenance": "synthetic / demo data"
+            },
+            "components": {
+              "lexical": {
+                "rank": 1,
+                "score": 0.2892468571662903,
+                "rrf_contribution": 0.01639344262295082
+              },
+              "semantic": {
+                "rank": 2,
+                "score": 0.6029805541038513,
+                "rrf_contribution": 0.016129032258064516
+              }
+            }
+          },
+          {
+            "score": 0.03177805800756621,
+            "citation": {
+              "id": "POL-BUDGET:01",
+              "source": "policies/budget.md",
+              "text": "POL-BUDGET 预算规则\n## 预算硬约束\n采购支出不得超过预算。预算只限制采购成本，不包括期末持有成本和缺货惩罚；优化目标则包含三者。未指定预算时使用场景默认预算；“预算降低百分比”相对于场景默认预算计算一次。绝对预算与相对预算变动不能同时指定。不得将降低总成本误解成降低预算。",
+              "source_sha256": "167b16d640a28fa9501fc895a0741b88d0fd6a99aa3fb2a390dce983e018435a",
+              "provenance": "synthetic / demo data"
+            },
+            "components": {
+              "lexical": {
+                "rank": 5,
+                "score": 0.08652354031801224,
+                "rrf_contribution": 0.015384615384615385
+              },
+              "semantic": {
+                "rank": 1,
+                "score": 0.614994466304779,
+                "rrf_contribution": 0.01639344262295082
+              }
+            }
+          },
+          {
+            "score": 0.031746031746031744,
+            "citation": {
+              "id": "POL-EMERGENCY:01",
+              "source": "policies/emergency.md",
+              "text": "POL-EMERGENCY 紧急采购规则\n## 紧急采购不豁免约束\n停线风险、紧急采购或急单不自动豁免预算、供应商资质、MOQ、交期及供货上限。申请人需要给出具体 SKU、数量或服务要求。不支持通过加价自动缩短交期，也不支持未经审批的替代供应商。当前模型不包含加急运输决策。",
+              "source_sha256": "8bc18c55a40df063ddebd471067c96ffa0e395ddb09b2afda04fe03df98481c9",
+              "provenance": "synthetic / demo data"
+            },
+            "components": {
+              "lexical": {
+                "rank": 3,
+                "score": 0.15807825326919556,
+                "rrf_contribution": 0.015873015873015872
+              },
+              "semantic": {
+                "rank": 3,
+                "score": 0.5956677794456482,
+                "rrf_contribution": 0.015873015873015872
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "sequence": 11,
+      "kind": "state",
+      "name": "choose_tool",
+      "status": "running",
+      "elapsed_ms": 0.0,
+      "data": {}
+    },
+    {
+      "sequence": 12,
+      "kind": "tool",
+      "name": "replenishment_optimizer",
+      "status": "ok",
+      "elapsed_ms": 10.174,
+      "data": {
+        "call_id": "9a945adcad1841ba9fc12ad1533a0b3c",
+        "attempt": 1,
+        "arguments": {
+          "parameters": {
+            "budget": 9000.0,
+            "budget_change_pct": null,
+            "horizon_days": null,
+            "min_service_level": null,
+            "protected_skus": [
+              "MOTOR"
+            ],
+            "excluded_skus": [],
+            "demand_updates": []
+          }
+        },
+        "result": {
+          "plan_id": "299984e3cc9a468cb0dfd6b1317744da",
+          "status": "optimal",
+          "diagnostics": [],
+          "next": "solution_validator"
+        }
+      }
+    },
+    {
+      "sequence": 13,
+      "kind": "state",
+      "name": "choose_tool",
+      "status": "running",
+      "elapsed_ms": 0.0,
+      "data": {}
+    },
+    {
+      "sequence": 14,
+      "kind": "tool",
+      "name": "solution_validator",
+      "status": "ok",
+      "elapsed_ms": 0.161,
+      "data": {
+        "call_id": "64407dd9e05b4e3a978f4eb005b319bd",
+        "attempt": 1,
+        "arguments": {
+          "plan_id": "299984e3cc9a468cb0dfd6b1317744da"
+        },
+        "result": {
+          "plan_id": "299984e3cc9a468cb0dfd6b1317744da",
+          "validation": {
+            "valid": true,
+            "checks": 139,
+            "violations": []
+          },
+          "result": {
+            "status": "optimal",
+            "message": "已获得并独立校验整数最优补货方案。",
+            "orders": [
+              {
+                "sku_id": "BEARING",
+                "name": "轴承",
+                "initial_stock": 40,
+                "demand": 150,
+                "order_qty": 97,
+                "ending_stock": 0,
+                "shortage": 13,
+                "purchase_cost": 1552.0,
+                "holding_cost": 0.0,
+                "shortage_cost": 975.0
+              },
+              {
+                "sku_id": "BELT",
+                "name": "同步带",
+                "initial_stock": 15,
+                "demand": 90,
+                "order_qty": 0,
+                "ending_stock": 0,
+                "shortage": 75,
+                "purchase_cost": 0.0,
+                "holding_cost": 0.0,
+                "shortage_cost": 7500.0
+              },
+              {
+                "sku_id": "MOTOR",
+                "name": "伺服电机",
+                "initial_stock": 8,
+                "demand": 30,
+                "order_qty": 22,
+                "ending_stock": 0,
+                "shortage": 0,
+                "purchase_cost": 4840.0,
+                "holding_cost": 0.0,
+                "shortage_cost": 0.0
+              },
+              {
+                "sku_id": "PLC",
+                "name": "控制器",
+                "initial_stock": 4,
+                "demand": 10,
+                "order_qty": 0,
+                "ending_stock": 0,
+                "shortage": 6,
+                "purchase_cost": 0.0,
+                "holding_cost": 0.0,
+                "shortage_cost": 10800.0
+              },
+              {
+                "sku_id": "SENSOR",
+                "name": "光电传感器",
+                "initial_stock": 25,
+                "demand": 65,
+                "order_qty": 40,
+                "ending_stock": 0,
+                "shortage": 0,
+                "purchase_cost": 2600.0,
+                "holding_cost": 0.0,
+                "shortage_cost": 0.0
+              }
+            ],
+            "purchase_cost": 8992.0,
+            "holding_cost": 0.0,
+            "shortage_cost": 19275.0,
+            "total_cost": 28267.0,
+            "fill_rate": 0.7275362318840579,
+            "budget": 9000.0,
+            "solver_seconds": 0.00990954099688679,
+            "mip_gap": 0.0,
+            "lower_bound": 28267.0,
+            "validation": {
+              "valid": true,
+              "checks": 139,
+              "violations": []
+            },
+            "diagnostics": []
+          },
+          "source": "independent_validator + deterministic_cost_recalculation"
+        }
+      }
+    },
+    {
+      "sequence": 15,
+      "kind": "state",
+      "name": "choose_tool",
+      "status": "running",
+      "elapsed_ms": 0.0,
+      "data": {}
+    },
+    {
+      "sequence": 16,
+      "kind": "state",
+      "name": "explain_from_evidence",
+      "status": "running",
+      "elapsed_ms": 0.0,
+      "data": {}
+    },
+    {
+      "sequence": 17,
+      "kind": "state",
+      "name": "answer_evidence",
+      "status": "ok",
+      "elapsed_ms": 0.0,
+      "data": {
+        "selection": {
+          "evidence_ids": [
+            "inventory:BEARING",
+            "inventory:BELT",
+            "inventory:MOTOR",
+            "inventory:PLC",
+            "inventory:SENSOR",
+            "supplier:BEARING",
+            "supplier:BELT",
+            "supplier:MOTOR",
+            "supplier:PLC",
+            "supplier:SENSOR",
+            "POL-APPROVAL:02",
+            "POL-BUDGET:01",
+            "POL-EMERGENCY:01",
+            "plan",
+            "orders:plan"
+          ]
+        },
+        "catalog": {
+          "inventory:BEARING": {
+            "text": "BEARING：现货 40，在途 0，7 天窗口内可用库存 40，原始需求 150。[SQLite snapshot cc18a8ef96f0]",
+            "required": true
+          },
+          "inventory:BELT": {
+            "text": "BELT：现货 15，在途 12，7 天窗口内可用库存 15，原始需求 90。[SQLite snapshot cc18a8ef96f0]",
+            "required": true
+          },
+          "inventory:MOTOR": {
+            "text": "MOTOR：现货 8，在途 0，7 天窗口内可用库存 8，原始需求 30。[SQLite snapshot cc18a8ef96f0]",
+            "required": true
+          },
+          "inventory:PLC": {
+            "text": "PLC：现货 4，在途 0，7 天窗口内可用库存 4，原始需求 10。[SQLite snapshot cc18a8ef96f0]",
+            "required": true
+          },
+          "inventory:SENSOR": {
+            "text": "SENSOR：现货 20，在途 5，7 天窗口内可用库存 25，原始需求 65。[SQLite snapshot cc18a8ef96f0]",
+            "required": true
+          },
+          "supplier:BEARING": {
+            "text": "BEARING：供应商 SUP-B（approved），单价 16.0，MOQ 30，上限 180，交期 4 天。[SQLite snapshot cc18a8ef96f0]",
+            "required": false
+          },
+          "supplier:BELT": {
+            "text": "BELT：供应商 SUP-B（approved），单价 28.0，MOQ 20，上限 100，交期 5 天。[SQLite snapshot cc18a8ef96f0]",
+            "required": false
+          },
+          "supplier:MOTOR": {
+            "text": "MOTOR：供应商 SUP-A（approved），单价 220.0，MOQ 5，上限 40，交期 3 天。[SQLite snapshot cc18a8ef96f0]",
+            "required": false
+          },
+          "supplier:PLC": {
+            "text": "PLC：供应商 SUP-C（approved），单价 460.0，MOQ 2，上限 12，交期 10 天。[SQLite snapshot cc18a8ef96f0]",
+            "required": false
+          },
+          "supplier:SENSOR": {
+            "text": "SENSOR：供应商 SUP-A（approved），单价 65.0，MOQ 10，上限 80，交期 2 天。[SQLite snapshot cc18a8ef96f0]",
+            "required": false
+          },
+          "POL-APPROVAL:02": {
+            "text": "[POL-APPROVAL:02 · policies/approval.md] POL-APPROVAL 采购审批规则\n## 异常处理\n约束不可行时报告阻碍条件，由申请人决定是否提交新的预算或服务要求；不得自动放宽预算、MOQ、服务水平或改写供应商资质。",
+            "required": false
+          },
+          "POL-BUDGET:01": {
+            "text": "[POL-BUDGET:01 · policies/budget.md] POL-BUDGET 预算规则\n## 预算硬约束\n采购支出不得超过预算。预算只限制采购成本，不包括期末持有成本和缺货惩罚；优化目标则包含三者。未指定预算时使用场景默认预算；“预算降低百分比”相对于场景默认预算计算一次。绝对预算与相对预算变动不能同时指定。不得将降低总成本误解成降低预算。",
+            "required": false
+          },
+          "POL-EMERGENCY:01": {
+            "text": "[POL-EMERGENCY:01 · policies/emergency.md] POL-EMERGENCY 紧急采购规则\n## 紧急采购不豁免约束\n停线风险、紧急采购或急单不自动豁免预算、供应商资质、MOQ、交期及供货上限。申请人需要给出具体 SKU、数量或服务要求。不支持通过加价自动缩短交期，也不支持未经审批的替代供应商。当前模型不包含加急运输决策。",
+            "required": false
+          },
+          "plan": {
+            "text": "方案状态 optimal；采购成本 8992.00 / 预算 9000.00；总目标成本 28267.00；总体满足率 72.75%。独立校验通过。",
+            "required": true
+          },
+          "orders:plan": {
+            "text": "建议采购数量：BEARING 97；BELT 0；MOTOR 22；PLC 0；SENSOR 40。仅建议，未下单。",
+            "required": true
+          }
+        }
+      }
+    },
+    {
+      "sequence": 18,
+      "kind": "final",
+      "name": "outcome",
+      "status": "completed",
+      "elapsed_ms": 0.0,
+      "data": {}
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  },
+  "usage_known": true,
+  "llm_calls": 0,
+  "http_attempts": 0,
+  "tool_calls": 5,
+  "elapsed_ms": 35.261,
+  "snapshot_id": "cc18a8ef96f0239dba65ad262def21e8ea60ff394bba37ad73f10dc7d7af255a",
+  "estimated_cost": null,
+  "provenance": "synthetic / demo data"
+}

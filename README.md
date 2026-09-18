@@ -200,6 +200,22 @@ curl --fail http://127.0.0.1:8765/v2/health
 
 ## Demo
 
+### 一条命令运行 V2 并导出截图
+
+完成本地依赖安装后，运行 `make demo-v2`，或：
+
+```bash
+.venv/bin/python scripts/demo_v2.py
+# 已准备 BGE 后可显式启用 hybrid；解析仍为离线规则，不调用 LLM。
+.venv/bin/python scripts/demo_v2.py --backend hybrid
+```
+
+默认使用 `demo + lexical`，不需要 Key。脚本直接调用现有 V2 Agent，展示实际意图、工具执行、检索引用、求解、验证与采购明细；每次在新的 `.runtime/demo-v2-*` 目录生成 HTML、SVG、JSON 和 SQLite Trace。真实模式可显式指定 `--mode llm --backend hybrid`，需配置 Key；不会伪装成功或覆盖旧输出。[演示与截图指南](docs/demo.md)。
+
+下图来自一次真实本地执行，**offline rules + hybrid / LLM calls=0**；仅用合成数据，不代表真实 LLM 评测成绩。[对应原始响应](docs/assets/demo-v2.response.json)。
+
+![V2 合成数据演示：意图、工具、检索、Solver、Validator 与补货方案](docs/assets/demo-v2.svg)
+
 ### A. 库存查询：按意图选择最短路径
 
 ```text
