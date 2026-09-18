@@ -6,7 +6,7 @@
 >
 > 数字来自已保存的 Final Release 验证记录；评测采用固定合成留出集，具体口径与失败案例见下文。
 
-[快速运行](#quick-start) · [验证结果](#evaluation) · [真实 Demo Trace](#demo) · [最终技术报告](AGENT_V2_FINAL_REPORT.md)
+[快速运行](#quick-start) · [验证结果](#evaluation) · [Demo](#demo) · [面试准备](docs/interview.md) · [最终技术报告](AGENT_V2_FINAL_REPORT.md)
 
 ## Problem：带业务约束的补货决策
 
