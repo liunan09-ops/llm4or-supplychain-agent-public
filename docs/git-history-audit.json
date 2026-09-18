@@ -1,0 +1,2273 @@
+{
+  "audit_created_utc": "2026-09-18T15:14:15.581812+00:00",
+  "audited_head": "0396f2d94f070a3bc3ccf21a19670f4b8db9c1ac",
+  "scope": "All local refs/reflogs, all locally available commit/tree/blob objects, current project snapshot. Not remote copies or backups.",
+  "refs": [
+    {
+      "ref": "refs/codex/turn-diffs/captures/1789743799860/eda0492b-c5de-429d-95a8-1465fda1659c/base",
+      "sha": "b0f561a87bdbee682e78a80436007b0e7aea48e5"
+    },
+    {
+      "ref": "refs/codex/turn-diffs/checkpoints/2d74735a3e407abc3dba2bccf157c1877730dd26fb9d667bfa16834ea4a35b63/8331929145d0d76c9f77f14fad01d48518aea9874b487a7dcc13a0408be071f8/1789742327201/42376dd3-13e3-4ded-82f0-518ce1a7f255",
+      "sha": "b0f561a87bdbee682e78a80436007b0e7aea48e5"
+    },
+    {
+      "ref": "refs/heads/agent-runtime-platform",
+      "sha": "024188475375ce05480b49159892fb975ab6d3ee"
+    },
+    {
+      "ref": "refs/heads/main",
+      "sha": "5a7f8f21d26807aeb02f21731adc0062f9c41fa1"
+    },
+    {
+      "ref": "refs/heads/supplychain-agent-v2",
+      "sha": "0396f2d94f070a3bc3ccf21a19670f4b8db9c1ac"
+    }
+  ],
+  "commits": [
+    "5a7f8f21d26807aeb02f21731adc0062f9c41fa1",
+    "357e0ee4944f9310fb6c49631b9d9c9a5a00a138",
+    "7acb74658dd1f16469532275ce42270049705707",
+    "64ce2d187532206a7bea7c9ccf46e27f747c49c8",
+    "345493bd83cafeeb340601b170bed7547b3746dc",
+    "024188475375ce05480b49159892fb975ab6d3ee",
+    "ad58e78bcd98b06510bbca6f8f803f96c961e21f",
+    "f85e98b078061414b95027612f00c5ebf3b3d92c",
+    "e10ce8f9766337b8e42f83b2d057722d51a0612d",
+    "fb31ff2b9725f1f8bcdc2f55a1996a09515b15bf",
+    "c9b1da82aa5708b9192e2610f3c2c754d3cc7c81",
+    "3083337a630e66eac71c0e65fac7e31f76b78475",
+    "c4201d92cd1a1803329d172f37bb6754076b2618",
+    "3d523285d5801394aaed5f36da7f3b548a6e6d76",
+    "7cd89a62c12d701f05bc5bbbed5b5c66e5d955a6",
+    "9112c055a7e2f8453258afa129db649b20695730",
+    "0396f2d94f070a3bc3ccf21a19670f4b8db9c1ac"
+  ],
+  "counts": {
+    "reachable_commits": 17,
+    "reflog_commits": 17,
+    "all_local_commit_objects": 17,
+    "object_counts": {
+      "tree": 224,
+      "blob": 669,
+      "commit": 17
+    },
+    "unique_paths": 435,
+    "total_blob_bytes": 34573000
+  },
+  "commit_reachable_blob_count": 556,
+  "credential_scan": {
+    "confirmed_secrets_found": 0,
+    "configured_credentials_checked": 1,
+    "raw_provider_token_private_key_matches": 0,
+    "container_extraction_errors": 0,
+    "nested_container_errors": 0,
+    "note": "Generic literal matches reviewed as test placeholders. No guarantee for obfuscated credentials or image text."
+  },
+  "history_risk_files": [
+    {
+      "path": "supplychain-agent/evaluation/evidence/pytest-baseline.xml",
+      "categories": [
+        "machine_hostname"
+      ],
+      "commits": [
+        "ad58e78bcd98b06510bbca6f8f803f96c961e21f",
+        "f85e98b078061414b95027612f00c5ebf3b3d92c",
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "e281ea5c2c83905d80d4dfa282036892b3a523c2"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/evaluation/evidence/pytest-final.xml",
+      "categories": [
+        "machine_hostname"
+      ],
+      "commits": [
+        "ad58e78bcd98b06510bbca6f8f803f96c961e21f",
+        "f85e98b078061414b95027612f00c5ebf3b3d92c",
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "148a632626dfc98c537e28e57e0b74b71261c6f7"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/evaluation/evidence/pytest-phase1.xml",
+      "categories": [
+        "machine_hostname"
+      ],
+      "commits": [
+        "ad58e78bcd98b06510bbca6f8f803f96c961e21f",
+        "f85e98b078061414b95027612f00c5ebf3b3d92c",
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "ad3641f9e50add3a891001cf95e952e1c8d45a53"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/evaluation/evidence/pytest-phase2.xml",
+      "categories": [
+        "machine_hostname"
+      ],
+      "commits": [
+        "ad58e78bcd98b06510bbca6f8f803f96c961e21f",
+        "f85e98b078061414b95027612f00c5ebf3b3d92c",
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "685262572524999b8170c1f773953f9a0c9882ca"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/evaluation/evidence/pytest-phase3.xml",
+      "categories": [
+        "machine_hostname"
+      ],
+      "commits": [
+        "ad58e78bcd98b06510bbca6f8f803f96c961e21f",
+        "f85e98b078061414b95027612f00c5ebf3b3d92c",
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "ac3e51b2ab643c58b7e9ca3bb7aa5703b2d28e1e"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/evaluation/evidence/pytest-phase4.xml",
+      "categories": [
+        "machine_hostname"
+      ],
+      "commits": [
+        "ad58e78bcd98b06510bbca6f8f803f96c961e21f",
+        "f85e98b078061414b95027612f00c5ebf3b3d92c",
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "ca7ee000235f4d50e5b339750e31821fafbe28b0"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/evaluation/evidence/pytest-phase5.xml",
+      "categories": [
+        "machine_hostname"
+      ],
+      "commits": [
+        "ad58e78bcd98b06510bbca6f8f803f96c961e21f",
+        "f85e98b078061414b95027612f00c5ebf3b3d92c",
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "e39b0b2ecd8f84a731e33ab0dac71b08b19b7af1"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/evaluation/evidence/pytest-phase6.xml",
+      "categories": [
+        "machine_hostname"
+      ],
+      "commits": [
+        "ad58e78bcd98b06510bbca6f8f803f96c961e21f",
+        "f85e98b078061414b95027612f00c5ebf3b3d92c",
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "864e4703c2ddf189cdc3c3e8db095e09e83568f5"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/evaluation/evidence/pytest-phase7.xml",
+      "categories": [
+        "machine_hostname"
+      ],
+      "commits": [
+        "ad58e78bcd98b06510bbca6f8f803f96c961e21f",
+        "f85e98b078061414b95027612f00c5ebf3b3d92c",
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "25165554000ec39d9f436de6719c9d8f2b0c8698"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/evaluation/final/pytest-final.xml",
+      "categories": [
+        "machine_hostname"
+      ],
+      "commits": [
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "35f702d922eb0da9325734fa39f7e9d5bc9606d7"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/evaluation/final/regression/v1_rules_dev/report.json",
+      "categories": [
+        "personal_path"
+      ],
+      "commits": [
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "edb8e76a4b138dc3b4a8d8352ead987c14428c2c"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/evaluation/final/regression/v1_rules_test/report.json",
+      "categories": [
+        "personal_path"
+      ],
+      "commits": [
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "766415d61faeb3f7e2f56c6fd1413f820dca1052"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/evaluation/final/regression/v2_demo_dev.json",
+      "categories": [
+        "personal_path"
+      ],
+      "commits": [
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "01e6ed4883847a6ed3159d8071413ddc870edc0b"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/evaluation/final/regression/v2_demo_heldout.json",
+      "categories": [
+        "personal_path"
+      ],
+      "commits": [
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "f7ee7157c0e08689eb7dc18fd70d59e705bbae6e"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/evaluation/semantic_v2/pytest-baseline.xml",
+      "categories": [
+        "machine_hostname"
+      ],
+      "commits": [
+        "f85e98b078061414b95027612f00c5ebf3b3d92c",
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "3d2241007c6538539049d01c592e7f4faa37e795"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/evaluation/semantic_v2/pytest-final.xml",
+      "categories": [
+        "machine_hostname"
+      ],
+      "commits": [
+        "f85e98b078061414b95027612f00c5ebf3b3d92c",
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "f9bc1b5ca0280f2be2f58119b3c4515202118063"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/evaluation/semantic_v2/regression/v1_rules_dev/report.json",
+      "categories": [
+        "personal_path"
+      ],
+      "commits": [
+        "f85e98b078061414b95027612f00c5ebf3b3d92c",
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "782a6f0e7891001d0c37d28affbed1b969b0fed9"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/evaluation/semantic_v2/regression/v1_rules_test/report.json",
+      "categories": [
+        "personal_path"
+      ],
+      "commits": [
+        "f85e98b078061414b95027612f00c5ebf3b3d92c",
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "290e09cc77fbc4cf3c4b1464d9609e5c98a431e3"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/evaluation/semantic_v2/regression/v2_demo_dev.json",
+      "categories": [
+        "personal_path"
+      ],
+      "commits": [
+        "f85e98b078061414b95027612f00c5ebf3b3d92c",
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "a6abb92ceb07b21061ab2aefcf31ed93d506cf70"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/evaluation/semantic_v2/regression/v2_demo_heldout.json",
+      "categories": [
+        "personal_path"
+      ],
+      "commits": [
+        "f85e98b078061414b95027612f00c5ebf3b3d92c",
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "63c5e8695eb87d07898359fca3f9df50d59a241d"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/reports/first-test-llm/report.json",
+      "categories": [
+        "personal_path"
+      ],
+      "commits": [
+        "ad58e78bcd98b06510bbca6f8f803f96c961e21f",
+        "f85e98b078061414b95027612f00c5ebf3b3d92c",
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "99224fb3897bd2d5641ad6728d9d13081de3d1e9"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/reports/first-test-rules/report.json",
+      "categories": [
+        "personal_path"
+      ],
+      "commits": [
+        "ad58e78bcd98b06510bbca6f8f803f96c961e21f",
+        "f85e98b078061414b95027612f00c5ebf3b3d92c",
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "849a072a95417427829b1e4ad98008d2d46b4f7d"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/reports/llm-dev-v1.1/report.json",
+      "categories": [
+        "personal_path"
+      ],
+      "commits": [
+        "ad58e78bcd98b06510bbca6f8f803f96c961e21f",
+        "f85e98b078061414b95027612f00c5ebf3b3d92c",
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "af9e637d3a3fc1577f8377172287fb0296f8ea72"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/reports/llm-dev-v1.2/report.json",
+      "categories": [
+        "personal_path"
+      ],
+      "commits": [
+        "ad58e78bcd98b06510bbca6f8f803f96c961e21f",
+        "f85e98b078061414b95027612f00c5ebf3b3d92c",
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "c8f427df800cbb0b9deb6ce075944db4e42b4eeb"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/reports/rules-dev-v1.1/report.json",
+      "categories": [
+        "personal_path"
+      ],
+      "commits": [
+        "ad58e78bcd98b06510bbca6f8f803f96c961e21f",
+        "f85e98b078061414b95027612f00c5ebf3b3d92c",
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "5d5de970aafdc20abd57c4d87ed37937bc7b6e94"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/reports/rules-dev-v1.2/report.json",
+      "categories": [
+        "personal_path"
+      ],
+      "commits": [
+        "ad58e78bcd98b06510bbca6f8f803f96c961e21f",
+        "f85e98b078061414b95027612f00c5ebf3b3d92c",
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "7b164cd7efcfd7278a3b8549d75f20a603054b5a"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/reports/rules-dev-v1/report.json",
+      "categories": [
+        "personal_path"
+      ],
+      "commits": [
+        "ad58e78bcd98b06510bbca6f8f803f96c961e21f",
+        "f85e98b078061414b95027612f00c5ebf3b3d92c",
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "8efb0894f90aca3266dbceb7984360a21bc49c67"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/reports/v2-regression-rules-dev/report.json",
+      "categories": [
+        "personal_path"
+      ],
+      "commits": [
+        "ad58e78bcd98b06510bbca6f8f803f96c961e21f",
+        "f85e98b078061414b95027612f00c5ebf3b3d92c",
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "83f54e8feca8223d0f87bc5a792bc3013878fb56"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    },
+    {
+      "path": "supplychain-agent/reports/v2-regression-rules-test/report.json",
+      "categories": [
+        "personal_path"
+      ],
+      "commits": [
+        "ad58e78bcd98b06510bbca6f8f803f96c961e21f",
+        "f85e98b078061414b95027612f00c5ebf3b3d92c",
+        "e10ce8f9766337b8e42f83b2d057722d51a0612d"
+      ],
+      "risk_blobs": [
+        "4b934428d19a9a9fe2316b16f1cf10e0dad1fd59"
+      ],
+      "in_current_head": false,
+      "action": "Do not publish existing history; export current sanitized project tree or review a history rewrite in a disposable clone."
+    }
+  ],
+  "commit_metadata": {
+    "commits_with_author_and_committer_email": 17,
+    "github_noreply_addresses": 0,
+    "values_redacted": true,
+    "action": "Confirm public author identity; use approved identity for new clean repository."
+  },
+  "non_commit_snapshot_objects": [
+    {
+      "blob": "00b825e6d7722503a31e710f26282c9b94e1ba71",
+      "bytes": 10720,
+      "kind": "text",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/PDF_QA_FINAL.json"
+      ],
+      "sample_tree": "a896f4ac65f3a30a6eff00a8306d08ee768785dd",
+      "commit": null,
+      "flags": [
+        "personal_path",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "0235e0b25d8147bb9d7a8733c96ad6a84e3cd4ce",
+      "bytes": 638,
+      "kind": "text",
+      "paths": [],
+      "sample_tree": null,
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "04929bd73d77e83a6c324a70420ff0754c2d5945",
+      "bytes": 1161736,
+      "kind": "binary",
+      "paths": [
+        "tmp/resume_20260907/fontcache/c6cafe6b1a56ed8b739253d6df90ca6a-le64.cache-9"
+      ],
+      "sample_tree": "1ab5fa25c8a26ba352ea8f3e28d1f065adcfe5aa",
+      "commit": null,
+      "flags": [
+        "local_cache",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "09cc43609ce42b0ac02e22f002a0920cc4aec6eb",
+      "bytes": 2928,
+      "kind": "binary",
+      "paths": [
+        "tmp/resume_20260907/fontcache/0bfc5946a545e3c0afc84264b33d15b1-le64.cache-9"
+      ],
+      "sample_tree": "1ab5fa25c8a26ba352ea8f3e28d1f065adcfe5aa",
+      "commit": null,
+      "flags": [
+        "local_cache",
+        "personal_path",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "0cb1cb4e94deea4829123151cac63b3f640c23fd",
+      "bytes": 8397,
+      "kind": "text",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/RETROSPECTIVE_PROJECT_EVOLUTION.md"
+      ],
+      "sample_tree": "a896f4ac65f3a30a6eff00a8306d08ee768785dd",
+      "commit": null,
+      "flags": [
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "0ddec134438275f992837c98535c9a9be0600d66",
+      "bytes": 8196,
+      "kind": "binary",
+      "paths": [
+        ".DS_Store"
+      ],
+      "sample_tree": "d16d5b04317bc89c0e3cec4fc4b7e0406f31172c",
+      "commit": null,
+      "flags": [
+        "local_cache"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "115700feecafdc443f841db6610c372bfd3bdefc",
+      "bytes": 163336,
+      "kind": "binary",
+      "paths": [
+        "tmp/resume_20260907/render/page-1.png"
+      ],
+      "sample_tree": "1ab5fa25c8a26ba352ea8f3e28d1f065adcfe5aa",
+      "commit": null,
+      "flags": [
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "13d9e48ad95afb17ba6781df5f3da0e1ec153b0f",
+      "bytes": 11141,
+      "kind": "text",
+      "paths": [],
+      "sample_tree": null,
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "17c481bf4e2b0c9ae267e75d7b43dc9a39e89310",
+      "bytes": 449399,
+      "kind": "pdf",
+      "paths": [
+        "优化版简历/刘楠_运筹优化算法_2027届_优化版.pdf"
+      ],
+      "sample_tree": "6503ef4bc49c3da3c3b28d119307de1620e6853e",
+      "commit": null,
+      "flags": [
+        "contact_information_in_extracted_text",
+        "email",
+        "private_document_review",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "18516cc2cac296658bf43a41541bf1bcf684ea9c",
+      "bytes": 2249,
+      "kind": "text",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/PROJECT_SHOWCASE.md"
+      ],
+      "sample_tree": "a896f4ac65f3a30a6eff00a8306d08ee768785dd",
+      "commit": null,
+      "flags": [
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "1920e876937f40acf5c104f335b4a28ea2e8531a",
+      "bytes": 4040,
+      "kind": "text",
+      "paths": [
+        "supplychain-agent/src/supplychain_agent/api.py"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "194bc32d9aa708ceac161f772c1df5d1a9dd5f8b",
+      "bytes": 187229,
+      "kind": "zip",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/刘楠_2027届_大模型应用与Agent研发.docx"
+      ],
+      "sample_tree": "a896f4ac65f3a30a6eff00a8306d08ee768785dd",
+      "commit": null,
+      "flags": [
+        "archive_or_office_container",
+        "contact_information_in_extracted_text",
+        "recruiting_material"
+      ],
+      "container_format": "docx",
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "1e19c68e15fb24ec74f5a3e148ba2c357f6a5c76",
+      "bytes": 7666,
+      "kind": "text",
+      "paths": [],
+      "sample_tree": null,
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "1eee983fc5af55e2898e1efc977b58355a718337",
+      "bytes": 329,
+      "kind": "text",
+      "paths": [
+        "转向AI求职包/supplychain_agent/pyproject.toml"
+      ],
+      "sample_tree": "2887a9964b6c964035caae3f608316652480937c",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "219071cbab4bf39329bed5bb27c0b295d8de0cfe",
+      "bytes": 3352,
+      "kind": "text",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/PDF_QA_FINAL.json"
+      ],
+      "sample_tree": "23c4651d87f364a3480b4b6384d9d3b7f2238e06",
+      "commit": null,
+      "flags": [
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "2418fb8b9ad0833a7864d6c82ba22bd85b632b79",
+      "bytes": 56,
+      "kind": "text",
+      "paths": [
+        "转向AI求职包/supplychain_agent/.gitignore"
+      ],
+      "sample_tree": "2887a9964b6c964035caae3f608316652480937c",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "257a96f78048dda81e97eb2b726c7fc0d9ffd3d9",
+      "bytes": 2970,
+      "kind": "text",
+      "paths": [
+        "tmp/resume_20260907/revised_content.txt"
+      ],
+      "sample_tree": "1ab5fa25c8a26ba352ea8f3e28d1f065adcfe5aa",
+      "commit": null,
+      "flags": [
+        "email",
+        "phone_candidate",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "284ecc52a687c32e5e3304f2c4ae243751a01006",
+      "bytes": 6148,
+      "kind": "binary",
+      "paths": [
+        ".DS_Store"
+      ],
+      "sample_tree": "a896f4ac65f3a30a6eff00a8306d08ee768785dd",
+      "commit": null,
+      "flags": [
+        "local_cache"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "30d7fe7a086a3cf340031facb1709fa3c25f50af",
+      "bytes": 7730,
+      "kind": "text",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/build_resumes.py"
+      ],
+      "sample_tree": "23c4651d87f364a3480b4b6384d9d3b7f2238e06",
+      "commit": null,
+      "flags": [
+        "email",
+        "phone_candidate",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "31391498415eb9ac49ea62e6ba6e987b4c3c81c4",
+      "bytes": 2600,
+      "kind": "text",
+      "paths": [
+        "秋招投递材料_20260907/刘楠_2027届_AI应用与Agent研发_网申文本.txt"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [
+        "email",
+        "phone_candidate",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "326df77ce1135c70187cec842619e9fa54c655e8",
+      "bytes": 102785,
+      "kind": "pdf",
+      "paths": [
+        "tmp/resume_20260907/render_v2/刘楠_2027届_运筹优化算法_秋招投递版.pdf"
+      ],
+      "sample_tree": "1ab5fa25c8a26ba352ea8f3e28d1f065adcfe5aa",
+      "commit": null,
+      "flags": [
+        "contact_information_in_extracted_text",
+        "private_document_review",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "328dc2b9873f8ded891a93c87509e96c25854ab1",
+      "bytes": 1403,
+      "kind": "text",
+      "paths": [
+        "转向AI求职包/supplychain_agent/scagent/data.py"
+      ],
+      "sample_tree": "7d5ed3360194cbb3f580c289f72d75ee3803c748",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "35ac42def781193b212e5495d090c8eb6171033a",
+      "bytes": 11783,
+      "kind": "text",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/build_resumes.py"
+      ],
+      "sample_tree": "a896f4ac65f3a30a6eff00a8306d08ee768785dd",
+      "commit": null,
+      "flags": [
+        "email",
+        "phone_candidate",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "41fc9fd4cffcdb3142bfcb0c68f143d8e7cdf393",
+      "bytes": 331021,
+      "kind": "pdf",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/刘楠_2027届_OR与AI决策智能.pdf"
+      ],
+      "sample_tree": "23c4651d87f364a3480b4b6384d9d3b7f2238e06",
+      "commit": null,
+      "flags": [
+        "contact_information_in_extracted_text",
+        "private_document_review",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "42a4d2325e72e8a1cc075f2654c80fc5936cb993",
+      "bytes": 837,
+      "kind": "text",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/PUBLIC_REPO_METADATA.json"
+      ],
+      "sample_tree": "a896f4ac65f3a30a6eff00a8306d08ee768785dd",
+      "commit": null,
+      "flags": [
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "42cc1ca39aa9dfdcac0bd9de2b9dfedf077d6a21",
+      "bytes": 380280,
+      "kind": "pdf",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/刘楠_2027届_OR与AI决策智能.pdf"
+      ],
+      "sample_tree": "b0f561a87bdbee682e78a80436007b0e7aea48e5",
+      "commit": null,
+      "flags": [
+        "contact_information_in_extracted_text",
+        "private_document_review",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "464807f9209457556696615b68e172b330a831d8",
+      "bytes": 114258,
+      "kind": "binary",
+      "paths": [
+        "tmp/resume_or_20260907/page-1.png"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "46d3c974cebcd5ebbc138c693d89f4da67ef8668",
+      "bytes": 4870,
+      "kind": "text",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/README.md"
+      ],
+      "sample_tree": "a896f4ac65f3a30a6eff00a8306d08ee768785dd",
+      "commit": null,
+      "flags": [
+        "personal_path",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "48eb2ee5757554d86a0e43dbb24d603833a7a278",
+      "bytes": 4619,
+      "kind": "text",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/PUBLIC_RELEASE_AUDIT.md"
+      ],
+      "sample_tree": "a896f4ac65f3a30a6eff00a8306d08ee768785dd",
+      "commit": null,
+      "flags": [
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "4d8fe223cbe1dd10f7b76a22e5917735bc29f420",
+      "bytes": 72,
+      "kind": "text",
+      "paths": [
+        "supplychain-agent/.dockerignore"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "4f8cfb2ca319f730a0ff3fa0847c1580aada26d9",
+      "bytes": 104467,
+      "kind": "text",
+      "paths": [
+        "supplychain-agent/reports/demo.svg"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "55c1a547a3447c02f9c3978d214e94c290e613c1",
+      "bytes": 1186464,
+      "kind": "binary",
+      "paths": [
+        "tmp/resume_20260907/fontcache/c6cafe6b1a56ed8b739253d6df90ca6a-le64.cache-11"
+      ],
+      "sample_tree": "1ab5fa25c8a26ba352ea8f3e28d1f065adcfe5aa",
+      "commit": null,
+      "flags": [
+        "local_cache",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "56c7b98668736bc0674864eb3df3f4c3ce9f9b0d",
+      "bytes": 15313,
+      "kind": "text",
+      "paths": [
+        "职业规划_2027届_第一版.md"
+      ],
+      "sample_tree": "07b338c0384277db042c30a0bcbf973d8b8fedcb",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "57aed4cc6f762cf25311e1b92a60c81f4b7c90c9",
+      "bytes": 196863,
+      "kind": "zip",
+      "paths": [
+        "SupplyChain-Agent_项目交付.zip"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [
+        "archive_or_office_container"
+      ],
+      "container_format": "zip",
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "58fa99b8026705fafa6c6153fb601b90a9d481d1",
+      "bytes": 147022,
+      "kind": "binary",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/resume_assets/portrait.png",
+        "优化版简历/证件照.png"
+      ],
+      "sample_tree": "6503ef4bc49c3da3c3b28d119307de1620e6853e",
+      "commit": null,
+      "flags": [
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "5c4928c6c5800cd125c914a609b937482c219529",
+      "bytes": 3533,
+      "kind": "text",
+      "paths": [
+        "supplychain-agent/src/supplychain_agent/v2/contracts.py"
+      ],
+      "sample_tree": "7aa7252ca52ba27899cfb4bf3a7589c7f3db3c4e",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "5d1e55739472cb623599bb04483f5cda49ece0c6",
+      "bytes": 323388,
+      "kind": "pdf",
+      "paths": [
+        "tmp/resume_or_20260907_final/刘楠_2027届_运筹优化与供应链决策.pdf",
+        "秋招投递材料_20260907/刘楠_2027届_运筹优化与供应链决策.pdf"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [
+        "contact_information_in_extracted_text",
+        "private_document_review",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "5e03e121a26030cba8a89b37359451b147e01d7f",
+      "bytes": 325583,
+      "kind": "pdf",
+      "paths": [
+        "tmp/resume_ai_20260907_final/刘楠_2027届_AI应用与Agent研发.pdf",
+        "秋招投递材料_20260907/刘楠_2027届_AI应用与Agent研发.pdf"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [
+        "contact_information_in_extracted_text",
+        "private_document_review",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "5ec70efa5fd64482043a47d565c19504918b7a5e",
+      "bytes": 431169,
+      "kind": "binary",
+      "paths": [
+        "tmp/resume_ai_20260907_v2/page-1.png"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "5f64da1eb78781b8e521e9085103c1206f29fbf3",
+      "bytes": 163168,
+      "kind": "binary",
+      "paths": [
+        "tmp/resume_20260907/render_v2/page-1.png"
+      ],
+      "sample_tree": "1ab5fa25c8a26ba352ea8f3e28d1f065adcfe5aa",
+      "commit": null,
+      "flags": [
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "60a94b6cf71b891b94c60779f9fed3e6706b67af",
+      "bytes": 10318,
+      "kind": "text",
+      "paths": [
+        "supplychain-agent/AGENT_V2_AUDIT.md"
+      ],
+      "sample_tree": "7aa7252ca52ba27899cfb4bf3a7589c7f3db3c4e",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "60bcd3f60abc011d58a0ee07f3a0e4d340191f91",
+      "bytes": 26070,
+      "kind": "text",
+      "paths": [],
+      "sample_tree": null,
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "661c1ac5f388f304357a56ea85925dc2eae6ce5e",
+      "bytes": 13791,
+      "kind": "text",
+      "paths": [],
+      "sample_tree": null,
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "698ada626136f06220632d9f4fc1fc3fccb7041e",
+      "bytes": 9282,
+      "kind": "text",
+      "paths": [
+        "秋招投递材料_20260907/build_resumes.py"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [
+        "email",
+        "phone_candidate",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "6baf42b3c045b669ecab9b3114f6346e678f7772",
+      "bytes": 734,
+      "kind": "text",
+      "paths": [
+        "supplychain-agent/pyproject.toml"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "746c315d145aa209527216d4313cb2b1e8285499",
+      "bytes": 320295,
+      "kind": "pdf",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/刘楠_2027届_大模型应用与Agent研发.pdf"
+      ],
+      "sample_tree": "23c4651d87f364a3480b4b6384d9d3b7f2238e06",
+      "commit": null,
+      "flags": [
+        "contact_information_in_extracted_text",
+        "private_document_review",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "7662d70b2da00bd8100d2a520fe1ddb746ab9767",
+      "bytes": 11170,
+      "kind": "text",
+      "paths": [
+        "build_revised_resume.py"
+      ],
+      "sample_tree": "6503ef4bc49c3da3c3b28d119307de1620e6853e",
+      "commit": null,
+      "flags": [
+        "email",
+        "personal_path",
+        "phone_candidate",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "78f1c5ecf8b7a483e8aaa729e806fc0f2023227a",
+      "bytes": 11386,
+      "kind": "text",
+      "paths": [
+        "秋招投递材料_20260907/岗位清单_20260907.md"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "7ab221284249be89ef3ca3e8724bac3fa8b801de",
+      "bytes": 187243,
+      "kind": "zip",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/刘楠_2027届_大模型应用与Agent研发.docx"
+      ],
+      "sample_tree": "b0f561a87bdbee682e78a80436007b0e7aea48e5",
+      "commit": null,
+      "flags": [
+        "archive_or_office_container",
+        "contact_information_in_extracted_text",
+        "recruiting_material"
+      ],
+      "container_format": "docx",
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "7b3fdca61fae4287233610079fcd23d05cb42bd5",
+      "bytes": 231,
+      "kind": "text",
+      "paths": [
+        "supplychain-agent/Dockerfile"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "7b439dc2a22f752d6d6e0049f9918ff9ed594e22",
+      "bytes": 10776,
+      "kind": "text",
+      "paths": [
+        "scripts/optimize_resume_20260907.py"
+      ],
+      "sample_tree": "1ab5fa25c8a26ba352ea8f3e28d1f065adcfe5aa",
+      "commit": null,
+      "flags": [
+        "email",
+        "personal_path",
+        "phone_candidate",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "7f746c8740caea11aebac0ade1dc592e1f217326",
+      "bytes": 325506,
+      "kind": "pdf",
+      "paths": [
+        "tmp/resume_ai_20260907_v2/刘楠_2027届_AI应用与Agent研发.pdf"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [
+        "contact_information_in_extracted_text",
+        "private_document_review",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "81cd9a507cabd70c40134e41a7386f32f0bfd9b6",
+      "bytes": 1757,
+      "kind": "text",
+      "paths": [
+        "转向AI求职包/supplychain_agent/scagent/retrieval.py"
+      ],
+      "sample_tree": "7d5ed3360194cbb3f580c289f72d75ee3803c748",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "81cdf86c5290dee453c6fcc9b0ee136073398a73",
+      "bytes": 7403,
+      "kind": "text",
+      "paths": [
+        "supplychain-agent/src/supplychain_agent/v2/tools.py"
+      ],
+      "sample_tree": "7aa7252ca52ba27899cfb4bf3a7589c7f3db3c4e",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "8363b1168630beee97f07eeea5917456aad3a533",
+      "bytes": 370502,
+      "kind": "pdf",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/刘楠_2027届_OR与AI决策智能.pdf"
+      ],
+      "sample_tree": "a896f4ac65f3a30a6eff00a8306d08ee768785dd",
+      "commit": null,
+      "flags": [
+        "contact_information_in_extracted_text",
+        "private_document_review",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "853027e6f86e3f06d6ed03cbaa033c66275374b5",
+      "bytes": 6851,
+      "kind": "text",
+      "paths": [
+        "转向AI求职包/supplychain_agent/scagent/agent.py"
+      ],
+      "sample_tree": "2887a9964b6c964035caae3f608316652480937c",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "876bcd9638a2ac93905342ec3e2a3171be37a05b",
+      "bytes": 3862,
+      "kind": "text",
+      "paths": [
+        "supplychain-agent/FILES_CHANGED_SEMANTIC.md"
+      ],
+      "sample_tree": "caf912c6c22cabf7169289d253997bb21b9b2388",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "877de42b8c058e67c694c61f46b30eb354ffb1ba",
+      "bytes": 38857,
+      "kind": "zip",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/刘楠_2027届_大模型应用与Agent研发.docx"
+      ],
+      "sample_tree": "23c4651d87f364a3480b4b6384d9d3b7f2238e06",
+      "commit": null,
+      "flags": [
+        "archive_or_office_container",
+        "contact_information_in_extracted_text",
+        "recruiting_material"
+      ],
+      "container_format": "docx",
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "88fd44d2daa282ebb324472c48890781230464e6",
+      "bytes": 3712,
+      "kind": "text",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/README.md"
+      ],
+      "sample_tree": "23c4651d87f364a3480b4b6384d9d3b7f2238e06",
+      "commit": null,
+      "flags": [
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "8cfbf6e5f09501ec266e0239b322db78261667b8",
+      "bytes": 8788,
+      "kind": "text",
+      "paths": [
+        "build_revised_resume_pdf.py"
+      ],
+      "sample_tree": "6503ef4bc49c3da3c3b28d119307de1620e6853e",
+      "commit": null,
+      "flags": [
+        "email",
+        "phone_candidate",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "8fa8f1affb007700c6ded3464cff16835b39e49c",
+      "bytes": 39064,
+      "kind": "zip",
+      "paths": [
+        "秋招投递材料_20260907/刘楠_2027届_AI应用与Agent研发.docx"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [
+        "archive_or_office_container",
+        "contact_information_in_extracted_text",
+        "recruiting_material"
+      ],
+      "container_format": "docx",
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "954ace5a01727eefb836622161bde4d3e32f5d52",
+      "bytes": 38994,
+      "kind": "zip",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/刘楠_2027届_OR与AI决策智能.docx"
+      ],
+      "sample_tree": "23c4651d87f364a3480b4b6384d9d3b7f2238e06",
+      "commit": null,
+      "flags": [
+        "archive_or_office_container",
+        "contact_information_in_extracted_text",
+        "recruiting_material"
+      ],
+      "container_format": "docx",
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "9630a6c8b47c3dbacdbe6364dac6097d456c66a1",
+      "bytes": 11353,
+      "kind": "binary",
+      "paths": [
+        "tmp/resume_20260907/Im23.jpg"
+      ],
+      "sample_tree": "1ab5fa25c8a26ba352ea8f3e28d1f065adcfe5aa",
+      "commit": null,
+      "flags": [
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "96b30e8027400b6825f7c7fad100331204213002",
+      "bytes": 5498,
+      "kind": "text",
+      "paths": [
+        "转向AI求职包/supplychain_agent/scagent/optimizer.py"
+      ],
+      "sample_tree": "7d5ed3360194cbb3f580c289f72d75ee3803c748",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "975e1555a21e0b52dcacbc1821cf2d64fc22fa05",
+      "bytes": 2714,
+      "kind": "text",
+      "paths": [
+        "秋招投递材料_20260907/刘楠_2027届_运筹优化与供应链决策_网申文本.txt"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [
+        "email",
+        "phone_candidate",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "9857e90b11be5ad570b0578c0aa70f10a214ae6a",
+      "bytes": 114807,
+      "kind": "binary",
+      "paths": [
+        "tmp/resume_ai_20260907/page-1.png"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "98994fca18abff6b6312b840728f61245d6b827b",
+      "bytes": 42800,
+      "kind": "text",
+      "paths": [
+        "supplychain-agent/evaluation/semantic_v2/pytest-final.xml"
+      ],
+      "sample_tree": "caf912c6c22cabf7169289d253997bb21b9b2388",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "99be860d0462833a30ec2f44ea32c07a219667bb",
+      "bytes": 430,
+      "kind": "text",
+      "paths": [
+        "supplychain-agent/.env.example"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "9af9fbc0cc036e973fcd621a6916f65bbc52d809",
+      "bytes": 39185,
+      "kind": "zip",
+      "paths": [
+        "秋招投递材料_20260907/刘楠_2027届_运筹优化与供应链决策.docx"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [
+        "archive_or_office_container",
+        "contact_information_in_extracted_text",
+        "recruiting_material"
+      ],
+      "container_format": "docx",
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "9b09571f8c013312d04e25ccebf516e81807cf06",
+      "bytes": 101,
+      "kind": "text",
+      "paths": [
+        "转向AI求职包/supplychain_agent/scagent/__init__.py"
+      ],
+      "sample_tree": "7d5ed3360194cbb3f580c289f72d75ee3803c748",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "9d3c56799683db6ac9abf9871a1cabd15594b644",
+      "bytes": 102850,
+      "kind": "pdf",
+      "paths": [
+        "tmp/resume_20260907/render/刘楠_2027届_运筹优化算法_秋招投递版.pdf"
+      ],
+      "sample_tree": "1ab5fa25c8a26ba352ea8f3e28d1f065adcfe5aa",
+      "commit": null,
+      "flags": [
+        "contact_information_in_extracted_text",
+        "private_document_review",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "9fdba844ff1d162404fa907c953146597e5a358b",
+      "bytes": 463514,
+      "kind": "binary",
+      "paths": [
+        "tmp/resume_or_20260907_final/page-1.png"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "a06ac7054c694bbcd3f929df89d0ce5dde3276cd",
+      "bytes": 7373,
+      "kind": "text",
+      "paths": [],
+      "sample_tree": null,
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "a344447945462f4e9a4f89d873fd8cfb46853045",
+      "bytes": 447196,
+      "kind": "binary",
+      "paths": [
+        "tmp/resume_ai_20260907_final/page-1.png"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "a39ac47b1eef58fd846a0e8285f5113b75a3d16c",
+      "bytes": 526243,
+      "kind": "binary",
+      "paths": [
+        "tmp/pdfs/liunan_resume.png"
+      ],
+      "sample_tree": "6503ef4bc49c3da3c3b28d119307de1620e6853e",
+      "commit": null,
+      "flags": [
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "a5a66d43149f755e340337d579515599234047ea",
+      "bytes": 456,
+      "kind": "text",
+      "paths": [
+        "tmp/resume_fonts_20260907/fonts.conf"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "a6375aa4dbc3f9a33712fb9d2c174ca581a8ec60",
+      "bytes": 187227,
+      "kind": "zip",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/刘楠_2027届_OR与AI决策智能.docx"
+      ],
+      "sample_tree": "a896f4ac65f3a30a6eff00a8306d08ee768785dd",
+      "commit": null,
+      "flags": [
+        "archive_or_office_container",
+        "contact_information_in_extracted_text",
+        "recruiting_material"
+      ],
+      "container_format": "docx",
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "a6ec894c722b9034cd9cb4e2d3fb68891231292d",
+      "bytes": 682005,
+      "kind": "zip",
+      "paths": [
+        "秋招投递材料_20260907/刘楠_2027秋招投递材料.zip"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [
+        "archive_or_office_container",
+        "contact_information_in_extracted_text",
+        "recruiting_material"
+      ],
+      "container_format": "zip",
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "a88626d9e5a47e591d4b93b4e14abc8ea3757f27",
+      "bytes": 51155,
+      "kind": "zip",
+      "paths": [
+        "output/resume/刘楠_2027届_运筹优化算法_秋招投递版.docx"
+      ],
+      "sample_tree": "1ab5fa25c8a26ba352ea8f3e28d1f065adcfe5aa",
+      "commit": null,
+      "flags": [
+        "archive_or_office_container",
+        "contact_information_in_extracted_text",
+        "recruiting_material"
+      ],
+      "container_format": "docx",
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "adb6d3b08c7fa4626d5b06df30c871bbe6f4e11a",
+      "bytes": 24298,
+      "kind": "text",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/AGENT_INTERVIEW_EVIDENCE_PACK.md"
+      ],
+      "sample_tree": "a896f4ac65f3a30a6eff00a8306d08ee768785dd",
+      "commit": null,
+      "flags": [
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "b06fed5accfc3f7f163c9017a6bb38a9586bd7e1",
+      "bytes": 81508,
+      "kind": "pdf",
+      "paths": [
+        "tmp/resume_or_20260907/刘楠_2027届_运筹优化与供应链决策.pdf"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [
+        "contact_information_in_extracted_text",
+        "private_document_review",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "b1fa8101ec27316ff31ca73c0dda1aac9bb6f959",
+      "bytes": 770,
+      "kind": "text",
+      "paths": [
+        "tmp/resume_20260907/render_v3.log"
+      ],
+      "sample_tree": "1ab5fa25c8a26ba352ea8f3e28d1f065adcfe5aa",
+      "commit": null,
+      "flags": [
+        "personal_path",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "b527097d9a683731e628b433c9efe79d7b7bdbfd",
+      "bytes": 97,
+      "kind": "text",
+      "paths": [
+        ".codex/environments/environment.toml"
+      ],
+      "sample_tree": "d16d5b04317bc89c0e3cec4fc4b7e0406f31172c",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "b66e8b4b291e473d2db2865084a9410565f1f12b",
+      "bytes": 97087,
+      "kind": "pdf",
+      "paths": [
+        "优化版简历/pdf/刘楠_运筹优化算法_2027届_优化版.pdf"
+      ],
+      "sample_tree": "6503ef4bc49c3da3c3b28d119307de1620e6853e",
+      "commit": null,
+      "flags": [
+        "contact_information_in_extracted_text",
+        "private_document_review",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "bd8bada347c8fe3c5660de248cde672c7a584360",
+      "bytes": 85867,
+      "kind": "pdf",
+      "paths": [
+        "tmp/resume_ai_20260907/刘楠_2027届_AI应用与Agent研发.pdf"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [
+        "contact_information_in_extracted_text",
+        "private_document_review",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "be7741aa4bf289f33dde9fda5843afad8cc225dd",
+      "bytes": 338,
+      "kind": "text",
+      "paths": [
+        "supplychain-agent/Makefile"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "beb7347b26cfee9c38abd048a7b0dc653027c127",
+      "bytes": 245,
+      "kind": "text",
+      "paths": [
+        "tmp/resume_20260907/fonts.conf"
+      ],
+      "sample_tree": "1ab5fa25c8a26ba352ea8f3e28d1f065adcfe5aa",
+      "commit": null,
+      "flags": [
+        "personal_path",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "bf5f252d3ee33479c9a971ba04b8e5e38e0d3c20",
+      "bytes": 187291,
+      "kind": "zip",
+      "paths": [
+        "优化版简历/刘楠_运筹优化算法_2027届_优化版.docx"
+      ],
+      "sample_tree": "6503ef4bc49c3da3c3b28d119307de1620e6853e",
+      "commit": null,
+      "flags": [
+        "archive_or_office_container",
+        "contact_information_in_extracted_text",
+        "recruiting_material"
+      ],
+      "container_format": "docx",
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "c7f8c49661457132816d55bcff021892b836076e",
+      "bytes": 23597,
+      "kind": "text",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/PROJECT_TIMELINE_EVIDENCE_AUDIT.md"
+      ],
+      "sample_tree": "a896f4ac65f3a30a6eff00a8306d08ee768785dd",
+      "commit": null,
+      "flags": [
+        "personal_path",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "ca68768b56f890941fc1c8bafd8bbebb67d1a70a",
+      "bytes": 3843,
+      "kind": "text",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/RESUME_GAP_AUDIT_FINAL.md"
+      ],
+      "sample_tree": "a896f4ac65f3a30a6eff00a8306d08ee768785dd",
+      "commit": null,
+      "flags": [
+        "email",
+        "phone_candidate",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "cf2ad46e3a7d246be8c9922e0106e4e114f29129",
+      "bytes": 273584,
+      "kind": "binary",
+      "paths": [
+        "tmp/resume_20260907/fontcache/39a3f58aab2d24da5997a38f2e026a75-le64.cache-9"
+      ],
+      "sample_tree": "1ab5fa25c8a26ba352ea8f3e28d1f065adcfe5aa",
+      "commit": null,
+      "flags": [
+        "local_cache",
+        "personal_path",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "d0a9b978af3ce3ac2a62ca76d263f231a02e2804",
+      "bytes": 8764,
+      "kind": "text",
+      "paths": [
+        "supplychain-agent/src/supplychain_agent/v2/database.py"
+      ],
+      "sample_tree": "7aa7252ca52ba27899cfb4bf3a7589c7f3db3c4e",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "d1be8dc434756030cec338622afb8885cc6b3c86",
+      "bytes": 3440,
+      "kind": "text",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/ATS_SIMULATION_FINAL.md"
+      ],
+      "sample_tree": "a896f4ac65f3a30a6eff00a8306d08ee768785dd",
+      "commit": null,
+      "flags": [
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "d1e3eaf2c1d504b1d953218c5369585942d99c4f",
+      "bytes": 8196,
+      "kind": "binary",
+      "paths": [
+        "tmp/.DS_Store"
+      ],
+      "sample_tree": "d16d5b04317bc89c0e3cec4fc4b7e0406f31172c",
+      "commit": null,
+      "flags": [
+        "local_cache"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "d2fc551339a2c20dd9cd2fa9416d6fef96be656b",
+      "bytes": 138709,
+      "kind": "text",
+      "paths": [
+        "supplychain-agent/uv.lock"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "d59d5417f2e89dcad7ad49111d29881c81cfb1c9",
+      "bytes": 347808,
+      "kind": "pdf",
+      "paths": [
+        "tmp/resume_20260907/render_v3/刘楠_2027届_运筹优化算法_秋招投递版.pdf"
+      ],
+      "sample_tree": "1ab5fa25c8a26ba352ea8f3e28d1f065adcfe5aa",
+      "commit": null,
+      "flags": [
+        "contact_information_in_extracted_text",
+        "private_document_review",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "d715c0ce8e256ac4822d05cf26e871d6e53a8571",
+      "bytes": 608759,
+      "kind": "binary",
+      "paths": [
+        "tmp/resume_20260907/render_v3/page-1.png"
+      ],
+      "sample_tree": "1ab5fa25c8a26ba352ea8f3e28d1f065adcfe5aa",
+      "commit": null,
+      "flags": [
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "d832b28f1d066b0859beeaa77acb9fa6e8508ab1",
+      "bytes": 8001,
+      "kind": "text",
+      "paths": [
+        "supplychain-agent/README.md"
+      ],
+      "sample_tree": "4e4e002456adb91d8a5f77287f7f10298d4d8e36",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "db4d3cf58f4eb99f5a4b8e542f78c1f99da6e6b4",
+      "bytes": 756643,
+      "kind": "zip",
+      "paths": [
+        "SupplyChain-Agent_V2_源码与证据.zip"
+      ],
+      "sample_tree": "caf912c6c22cabf7169289d253997bb21b9b2388",
+      "commit": null,
+      "flags": [
+        "archive_or_office_container"
+      ],
+      "container_format": "zip",
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "db77834d492258c5db859f7fdd1383f7e15e5901",
+      "bytes": 605975,
+      "kind": "binary",
+      "paths": [
+        "tmp/resume_20260907/render_v4/page-1.png"
+      ],
+      "sample_tree": "1ab5fa25c8a26ba352ea8f3e28d1f065adcfe5aa",
+      "commit": null,
+      "flags": [
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "e24c7894c5d221b9b8c334e9f59a9b5b1f3b6545",
+      "bytes": 17421,
+      "kind": "text",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/FINAL_RESUME_INTEGRATION_REPORT.md"
+      ],
+      "sample_tree": "a896f4ac65f3a30a6eff00a8306d08ee768785dd",
+      "commit": null,
+      "flags": [
+        "email",
+        "personal_path",
+        "phone_candidate",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "e28e15494062586dc1cc7e18b4069aa05ea63669",
+      "bytes": 5729,
+      "kind": "text",
+      "paths": [
+        "supplychain-agent/tests/test_v2_tools_db.py"
+      ],
+      "sample_tree": "7aa7252ca52ba27899cfb4bf3a7589c7f3db3c4e",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "e510e39c81c6454a81bc2b4e05e065838d0a6fff",
+      "bytes": 10352,
+      "kind": "text",
+      "paths": [
+        "职业规划_2027届_第一版.md"
+      ],
+      "sample_tree": "66b6dd3bbb87722c49587cc0a3d33754a6cd7e32",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "e808a0ecd570298850e411438aa3ab6d2a2c02b6",
+      "bytes": 2540,
+      "kind": "text",
+      "paths": [
+        "转向AI求职包/supplychain_agent/data/policies.json"
+      ],
+      "sample_tree": "7d5ed3360194cbb3f580c289f72d75ee3803c748",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "eb2cc80e026f18d8b9391c47206fadd0cee0a664",
+      "bytes": 2862,
+      "kind": "text",
+      "paths": [
+        "转向AI求职包/supplychain_agent/scagent/tools.py"
+      ],
+      "sample_tree": "7d5ed3360194cbb3f580c289f72d75ee3803c748",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "ec2eff59802d5fd3e463772a40ec61cbb42086b5",
+      "bytes": 362596,
+      "kind": "pdf",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/刘楠_2027届_大模型应用与Agent研发.pdf"
+      ],
+      "sample_tree": "a896f4ac65f3a30a6eff00a8306d08ee768785dd",
+      "commit": null,
+      "flags": [
+        "contact_information_in_extracted_text",
+        "private_document_review",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "ec908a2fecda884d646e8d80a785b1cdd2eab888",
+      "bytes": 3318,
+      "kind": "text",
+      "paths": [
+        "转向AI求职包/supplychain_agent/scagent/__main__.py"
+      ],
+      "sample_tree": "2887a9964b6c964035caae3f608316652480937c",
+      "commit": null,
+      "flags": [],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "f271cc9cf3224f5a644eb188c3cbef249f90c515",
+      "bytes": 6148,
+      "kind": "binary",
+      "paths": [
+        "output/.DS_Store"
+      ],
+      "sample_tree": "1ab5fa25c8a26ba352ea8f3e28d1f065adcfe5aa",
+      "commit": null,
+      "flags": [
+        "local_cache"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "fb65b91b3a4568e3bd8b7b8cbe9679139436f154",
+      "bytes": 30463,
+      "kind": "binary",
+      "paths": [
+        "tmp/resume_20260907/render_v3/page-2.png"
+      ],
+      "sample_tree": "1ab5fa25c8a26ba352ea8f3e28d1f065adcfe5aa",
+      "commit": null,
+      "flags": [
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "fd4991660a5c832be719f3da0808ddc0e3693af7",
+      "bytes": 187255,
+      "kind": "zip",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/刘楠_2027届_OR与AI决策智能.docx"
+      ],
+      "sample_tree": "b0f561a87bdbee682e78a80436007b0e7aea48e5",
+      "commit": null,
+      "flags": [
+        "archive_or_office_container",
+        "contact_information_in_extracted_text",
+        "recruiting_material"
+      ],
+      "container_format": "docx",
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "fddb2972b8989b7b37bed28ca04a11dafd990a8f",
+      "bytes": 23850,
+      "kind": "text",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/AGENT_INTERVIEW_EVIDENCE_PACK.md"
+      ],
+      "sample_tree": "23c4651d87f364a3480b4b6384d9d3b7f2238e06",
+      "commit": null,
+      "flags": [
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "ff820e52e66628c184ca36989084345c96b54c74",
+      "bytes": 356876,
+      "kind": "pdf",
+      "paths": [
+        "2027_CAMPUS_RECRUITING_PACKAGE/刘楠_2027届_大模型应用与Agent研发.pdf"
+      ],
+      "sample_tree": "b0f561a87bdbee682e78a80436007b0e7aea48e5",
+      "commit": null,
+      "flags": [
+        "contact_information_in_extracted_text",
+        "private_document_review",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    },
+    {
+      "blob": "ffdfeeacc273778deba22e5a6237f399a6070cb5",
+      "bytes": 345638,
+      "kind": "pdf",
+      "paths": [
+        "output/pdf/刘楠_2027届_运筹优化算法_秋招投递版.pdf",
+        "tmp/resume_20260907/render_v4/刘楠_2027届_运筹优化算法_秋招投递版.pdf"
+      ],
+      "sample_tree": "1ab5fa25c8a26ba352ea8f3e28d1f065adcfe5aa",
+      "commit": null,
+      "flags": [
+        "contact_information_in_extracted_text",
+        "private_document_review",
+        "recruiting_material"
+      ],
+      "container_format": null,
+      "action": "Exclude from public export; no existing commit can be attributed. Do not delete local objects without separate approval."
+    }
+  ],
+  "container_summary": {
+    "pdf": 17,
+    "docx": 10,
+    "zip": 3,
+    "containers_with_contact_candidates": 28,
+    "nested_pdf_examined": 2,
+    "nested_zip_containers_examined": 5,
+    "extraction_errors": 0
+  },
+  "fsck": {
+    "returncode": 0,
+    "counts": {
+      "unreachable blob": 68,
+      "unreachable tree": 67
+    },
+    "diagnostic_lines": 0
+  },
+  "large_files": {
+    "threshold_bytes": 5242880,
+    "exceeding_threshold": [],
+    "largest_object_bytes": 1186464,
+    "largest_commit_reachable_blob_bytes": 1142214
+  },
+  "lfs_pointers": 0,
+  "database_or_model_files_found": 0,
+  "current_release": {
+    "engineering_ready": true,
+    "current_project_snapshot_scan": "PASS",
+    "existing_history_ready": false,
+    "license_selected": false,
+    "ready_to_push": false
+  },
+  "limitations": [
+    "No OCR/steganography analysis of image/font/cache binary payloads.",
+    "Unreferenced objects have no reliable commit/date attribution; tree paths are snapshot-relative.",
+    "No remote fetch, private backup scan, key validity probes, history rewrite, pruning or push.",
+    "Counts refer to audited HEAD before the documentation commit."
+  ]
+}
