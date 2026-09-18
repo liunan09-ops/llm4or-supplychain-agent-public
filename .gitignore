@@ -11,3 +11,24 @@ __pycache__/
 dist/
 *.egg-info/
 
+# Local outputs, packaging, model weights and private credential files.
+.DS_Store
+build/
+.mypy_cache/
+.coverage*
+htmlcov/
+*.log
+*.tmp
+*.part
+*.zip
+*.onnx
+*.safetensors
+*.pt
+*.pth
+*.db
+*.db-shm
+*.db-wal
+*.pem
+*.key
+*.p12
+*.pfx
