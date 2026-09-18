@@ -2,9 +2,9 @@
 
 **面向供应链补货的 LLM + 运筹优化（OR）决策 Agent。** 将自然语言需求转化为可追溯、可求解、可独立验证的补货建议：DeepSeek 理解意图并调用工具，RAG 检索采购政策，MILP 计算采购量，Validator 验证方案后输出决策。
 
-> **6 类业务工具 · Hybrid Agent E2E 22/24 · 检索 Hit@1 11/12 · 313 tests passed**
+> **6 类业务工具 · Hybrid Agent E2E 22/24 · 检索 Hit@1 11/12 · 318 tests passed**
 >
-> 数字来自已保存的 Final Release 验证记录；评测采用固定合成留出集，具体口径与失败案例见下文。
+> 当前完整测试 318 项通过；E2E 引用历史固定合成留出集，检索指标经本轮复跑确认。具体口径与失败案例见下文。
 
 [快速运行](#quick-start) · [验证结果](#evaluation) · [Demo](#demo) · [面试准备](docs/interview.md) · [最终技术报告](AGENT_V2_FINAL_REPORT.md)
 
@@ -246,7 +246,7 @@ User Request：先查询库存，再预算9000元，电机不能缺货
 
 ## Evaluation
 
-以下均为 **Final Release 已保存的验证结果**，并非本次 README 编辑重新运行的实验。开发集与留出集固定，使用 **fixed synthetic held-out dataset**；数据由同一 AI 辅助过程编写，不是第三方独立盲测，也不能外推为生产准确率。
+Agent E2E 表引用 **Final Release 已保存的真实模型验证结果**；检索表在本轮相同数据集复跑后指标保持一致。开发集与留出集固定，使用 **fixed synthetic held-out dataset**；数据由同一 AI 辅助过程编写，不是第三方独立盲测，也不能外推为生产准确率。
 
 ### Retrieval：同一固定留出集 12 条
 
@@ -270,7 +270,7 @@ User Request：先查询库存，再预算9000元，电机不能缺货
 
 ## Testing
 
-Final Release 完整验证记录为 **313 passed，0 failed / errors / skipped**，其中包含 4 项真实 embedding 集成测试。[验收记录](evaluation/release/verification.json)。
+当前完整验证为 **318 passed，0 failed / skipped**，含 4 项真实 embedding 集成测试，保留 2 条既有依赖弃用警告。原 Final Release 为 313 项，本轮新增 5 项 Demo 展示与失败边界测试；没有修改核心算法或固定评测答案。[本轮质量检查](docs/quality-check.md) · [历史验收记录](evaluation/release/verification.json)。
 
 测试覆盖参数协议、Agent 路由与工具调用、澄清/拒绝和失败处理、MILP 约束与不可行场景、独立 Validator、FastAPI、SQLite Trace、三路检索及评测回归。Docker 生命周期另用实际 HTTP 请求验证。
 
@@ -280,7 +280,7 @@ Final Release 完整验证记录为 **313 passed，0 failed / errors / skipped**
 RUN_EMBEDDING_INTEGRATION=1 .venv/bin/python -m pytest
 ```
 
-不准备模型时可运行 `AGENT_RETRIEVAL_BACKEND=lexical .venv/bin/python -m pytest`，但真实 embedding 集成测试会跳过，不能套用 313 项全部通过的口径。
+不准备模型时可运行 `AGENT_RETRIEVAL_BACKEND=lexical .venv/bin/python -m pytest`，但真实 embedding 集成测试会跳过，不能套用 318 项全部通过的口径。
 
 原离线回归逐例评分保持一致：V1 共 36 条，V2 demo 开发集 14/14、留出集 17/24；demo 不等同于真实 LLM 的端到端能力。[回归记录](evaluation/release/regression/summary.json)。检索与离线评测可输出至新的运行目录：
 
@@ -305,6 +305,6 @@ RUN_EMBEDDING_INTEGRATION=1 .venv/bin/python -m pytest
 
 Personal project，包含 AI-assisted development；**Not an ABB internal system. Contains no ABB confidential data.** 所有业务数据均为 synthetic/demo data。
 
-功能已冻结：`PROJECT_FROZEN_FOR_2027_CAMPUS_RECRUITING`。本 README 仅整理既有能力与证据。[最终报告](AGENT_V2_FINAL_REPORT.md) · [冻结记录](FINAL_FREEZE_DECISION.md)。
+核心功能保持冻结：`PROJECT_FROZEN_FOR_2027_CAMPUS_RECRUITING`。本轮仅完善展示、运行配置、Demo 封装与面试材料。[本轮收尾记录](docs/recruiting-release.md) · [历史最终报告](AGENT_V2_FINAL_REPORT.md) · [冻结记录](FINAL_FREEZE_DECISION.md)。
 
 公开发布请使用干净项目快照：当前项目树已完成安全审计，但旧 Git 历史未完成脱敏，不应直接公开整个求职材料仓库。[安全审计与发布边界](PUBLIC_REPO_SAFETY_AUDIT.md)。
