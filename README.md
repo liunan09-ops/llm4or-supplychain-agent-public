@@ -136,6 +136,8 @@ FastAPI 提供请求与 Trace 查询接口，Pydantic 校验输入和工具协�
 
 以下命令均在 `supplychain-agent/` 项目目录执行，使用 Python 3.12 与 uv。首次安装依赖、下载模型需要联网；准备完成后的 `demo` 推理不需要 LLM API。
 
+完整环境变量、Make 命令、健康检查与故障排查见 [运行与复现指南](docs/running.md)。
+
 ### 本地离线模式：先运行 lexical baseline
 
 ```bash

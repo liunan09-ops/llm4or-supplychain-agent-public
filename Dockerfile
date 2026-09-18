@@ -13,7 +13,11 @@ COPY src ./src
 COPY evals ./evals
 COPY evaluation ./evaluation
 COPY scripts/prepare_embeddings.py ./scripts/prepare_embeddings.py
-RUN case "$WITH_SEMANTIC" in \
+# Keep completed downloads across build retries; use one download at a time on
+# constrained networks. Package versions and hashes still come from uv.lock.
+RUN --mount=type=cache,target=/root/.cache/uv \
+    export UV_LINK_MODE=copy UV_CONCURRENT_DOWNLOADS=1 UV_HTTP_TIMEOUT=120; \
+    case "$WITH_SEMANTIC" in \
       0) uv sync --frozen --no-dev --no-editable ;; \
       1) uv sync --frozen --no-dev --no-editable --extra semantic ;; \
       *) echo "WITH_SEMANTIC must be 0 or 1" >&2; exit 2 ;; \
